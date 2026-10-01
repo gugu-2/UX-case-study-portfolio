@@ -16,7 +16,7 @@ interface TouchpointNode {
   tagWidth: number
   tagHeight: number
   label: string
-  type: "positive" | "friction" // blue (up) or yellow (down)
+  type: "positive" | "friction" // blue (up) or green (down)
   direction: "up" | "down"
 }
 
@@ -254,6 +254,20 @@ const exactReferenceDataset: ProductJourneyDataset = {
 const productDatasets: Record<ProductId, ProductJourneyDataset> = {
   linear: {
     ...exactReferenceDataset,
+    nodes: [
+      { id: "p1", x: 130, y: 275, tagX: 95, tagY: 200, tagWidth: 78, tagHeight: 28, label: "Discovers on\nDev Twitter", type: "positive", direction: "up" },
+      { id: "p2", x: 180, y: 263, tagX: 145, tagY: 175, tagWidth: 80, tagHeight: 28, label: "Recommended\nby Staff Eng", type: "positive", direction: "up" },
+      { id: "p3", x: 245, y: 275, tagX: 215, tagY: 195, tagWidth: 75, tagHeight: 26, label: "Install App\n< 10s", type: "positive", direction: "up" },
+      { id: "p4", x: 295, y: 285, tagX: 265, tagY: 215, tagWidth: 80, tagHeight: 28, label: "GitHub OAuth\nSync", type: "positive", direction: "up" },
+      { id: "p5", x: 360, y: 290, tagX: 325, tagY: 330, tagWidth: 85, tagHeight: 30, label: "Unfamiliar\nVim shortcuts", type: "friction", direction: "down" },
+      { id: "p6", x: 430, y: 245, tagX: 395, tagY: 290, tagWidth: 85, tagHeight: 30, label: "Messy legacy\nbacklog clutter", type: "friction", direction: "down" },
+      { id: "p7", x: 505, y: 190, tagX: 470, tagY: 110, tagWidth: 85, tagHeight: 30, label: "Press 'C' opens\nissue in <2s", type: "positive", direction: "up" },
+      { id: "p8", x: 600, y: 230, tagX: 565, tagY: 275, tagWidth: 85, tagHeight: 30, label: "Lost in board\ngroup filters", type: "friction", direction: "down" },
+      { id: "p9", x: 715, y: 184, tagX: 675, tagY: 105, tagWidth: 85, tagHeight: 28, label: "Home-row 'S'\ntriage mastery", type: "positive", direction: "up" },
+      { id: "p10", x: 825, y: 150, tagX: 785, tagY: 75, tagWidth: 85, tagHeight: 28, label: "PR Merge\nAuto-Closes", type: "positive", direction: "up" },
+      { id: "p11", x: 918, y: 190, tagX: 880, tagY: 115, tagWidth: 85, tagHeight: 28, label: "Continuous\nCycle Rollover", type: "positive", direction: "up" },
+      { id: "p12", x: 980, y: 212, tagX: 940, tagY: 140, tagWidth: 70, tagHeight: 26, label: "Zero-bloat\nFlow State", type: "positive", direction: "up" },
+    ],
     takeaways: ["Speed First", "Keyboard Flow", "Git Automation", "Zero Clutter", "Continuous Cycles"],
     subStages: ["Discovery", "Workspace Setup", "Daily Execution", "PR Merge & Release", "Cycle Rollover"],
     delights: [
@@ -283,6 +297,20 @@ const productDatasets: Record<ProductId, ProductJourneyDataset> = {
   },
   mixpanel: {
     ...exactReferenceDataset,
+    nodes: [
+      { id: "p1", x: 130, y: 275, tagX: 95, tagY: 200, tagWidth: 78, tagHeight: 28, label: "Ad-hoc SQL\nbacklog pain", type: "positive", direction: "up" },
+      { id: "p2", x: 180, y: 263, tagX: 145, tagY: 175, tagWidth: 80, tagHeight: 28, label: "Executive\ndata mandate", type: "positive", direction: "up" },
+      { id: "p3", x: 245, y: 275, tagX: 215, tagY: 195, tagWidth: 75, tagHeight: 26, label: "Connect SDK\n& Warehouse", type: "positive", direction: "up" },
+      { id: "p4", x: 295, y: 285, tagX: 265, tagY: 215, tagWidth: 80, tagHeight: 28, label: "Select initial\nkpi metrics", type: "positive", direction: "up" },
+      { id: "p5", x: 360, y: 290, tagX: 325, tagY: 330, tagWidth: 85, tagHeight: 30, label: "Messy duplicate\nevent schemas", type: "friction", direction: "down" },
+      { id: "p6", x: 430, y: 245, tagX: 395, tagY: 290, tagWidth: 85, tagHeight: 30, label: "Unformatted\ntracking calls", type: "friction", direction: "down" },
+      { id: "p7", x: 505, y: 190, tagX: 470, tagY: 110, tagWidth: 85, tagHeight: 30, label: "Build 5-step\nfunnel report", type: "positive", direction: "up" },
+      { id: "p8", x: 600, y: 230, tagX: 565, tagY: 275, tagWidth: 85, tagHeight: 30, label: "Unexplained\nstep 3 drop-off", type: "friction", direction: "down" },
+      { id: "p9", x: 715, y: 184, tagX: 675, tagY: 105, tagWidth: 85, tagHeight: 28, label: "Session Replay\nreveals bug", type: "positive", direction: "up" },
+      { id: "p10", x: 825, y: 150, tagX: 785, tagY: 75, tagWidth: 85, tagHeight: 28, label: "Spark AI\nInsight Digest", type: "positive", direction: "up" },
+      { id: "p11", x: 918, y: 190, tagX: 880, tagY: 115, tagWidth: 85, tagHeight: 28, label: "Slack Alert\nLive KPI Sync", type: "positive", direction: "up" },
+      { id: "p12", x: 980, y: 212, tagX: 940, tagY: 140, tagWidth: 70, tagHeight: 26, label: "Cohort Retention\nForecast", type: "positive", direction: "up" },
+    ],
     takeaways: ["Product Intelligence", "Spark AI Insights", "Session Replay", "Experiments & Flags", "Warehouse Connect"],
     subStages: ["Event Ingestion", "Lexicon Governance", "Funnels & Replay", "A/B Experiments", "AI Executive Digest"],
     delights: [
@@ -312,6 +340,20 @@ const productDatasets: Record<ProductId, ProductJourneyDataset> = {
   },
   frame: {
     ...exactReferenceDataset,
+    nodes: [
+      { id: "p1", x: 130, y: 275, tagX: 95, tagY: 200, tagWidth: 78, tagHeight: 28, label: "#1 Product\nof the Day", type: "positive", direction: "up" },
+      { id: "p2", x: 180, y: 263, tagX: 145, tagY: 175, tagWidth: 80, tagHeight: 28, label: "Recommended\nby founder", type: "positive", direction: "up" },
+      { id: "p3", x: 245, y: 275, tagX: 215, tagY: 195, tagWidth: 75, tagHeight: 26, label: "Workspace\nSetup in 1-Click", type: "positive", direction: "up" },
+      { id: "p4", x: 295, y: 285, tagX: 265, tagY: 215, tagWidth: 80, tagHeight: 28, label: "Import Notion\n& Asana data", type: "positive", direction: "up" },
+      { id: "p5", x: 360, y: 290, tagX: 325, tagY: 330, tagWidth: 85, tagHeight: 30, label: "Fragmented\nguest permissions", type: "friction", direction: "down" },
+      { id: "p6", x: 430, y: 245, tagX: 395, tagY: 290, tagWidth: 85, tagHeight: 30, label: "Lost context\nin Slack threads", type: "friction", direction: "down" },
+      { id: "p7", x: 505, y: 190, tagX: 470, tagY: 110, tagWidth: 85, tagHeight: 30, label: "Type '@' to link\ntask in doc", type: "positive", direction: "up" },
+      { id: "p8", x: 600, y: 230, tagX: 565, tagY: 275, tagWidth: 85, tagHeight: 30, label: "Overlapping\ncanvas frames", type: "friction", direction: "down" },
+      { id: "p9", x: 715, y: 184, tagX: 675, tagY: 105, tagWidth: 85, tagHeight: 28, label: "Sub-50ms CMD+K\nOmni-Search", type: "positive", direction: "up" },
+      { id: "p10", x: 825, y: 150, tagX: 785, tagY: 75, tagWidth: 85, tagHeight: 28, label: "Live Multiplayer\nAudio Huddle", type: "positive", direction: "up" },
+      { id: "p11", x: 918, y: 190, tagX: 880, tagY: 115, tagWidth: 85, tagHeight: 28, label: "Consolidated\n4 SaaS tools", type: "positive", direction: "up" },
+      { id: "p12", x: 980, y: 212, tagX: 940, tagY: 140, tagWidth: 70, tagHeight: 26, label: "Connected OS\nKnowledge Hub", type: "positive", direction: "up" },
+    ],
     takeaways: ["Unified OS", "CMD+K Search", "Doc-to-Task", "Infinite Canvas", "Multiplayer Presence"],
     subStages: ["Workspace Hub", "Document Drafting", "Task Linking", "Team Review", "Knowledge Base"],
     delights: [
@@ -341,6 +383,20 @@ const productDatasets: Record<ProductId, ProductJourneyDataset> = {
   },
   miro: {
     ...exactReferenceDataset,
+    nodes: [
+      { id: "p1", x: 130, y: 275, tagX: 95, tagY: 200, tagWidth: 78, tagHeight: 28, label: "Guest link in\ncalendar invite", type: "positive", direction: "up" },
+      { id: "p2", x: 180, y: 263, tagX: 145, tagY: 175, tagWidth: 80, tagHeight: 28, label: "Design sprint\nkickoff alert", type: "positive", direction: "up" },
+      { id: "p3", x: 245, y: 275, tagX: 215, tagY: 195, tagWidth: 75, tagHeight: 26, label: "Instant WebGL\nCanvas load", type: "positive", direction: "up" },
+      { id: "p4", x: 295, y: 285, tagX: 265, tagY: 215, tagWidth: 80, tagHeight: 28, label: "Select Sprint\nRetro template", type: "positive", direction: "up" },
+      { id: "p5", x: 360, y: 290, tagX: 325, tagY: 330, tagWidth: 85, tagHeight: 30, label: "Accidental pan\naway from frame", type: "friction", direction: "down" },
+      { id: "p6", x: 430, y: 245, tagX: 395, tagY: 290, tagWidth: 85, tagHeight: 30, label: "Visual clutter\n100+ stickies", type: "friction", direction: "down" },
+      { id: "p7", x: 505, y: 190, tagX: 470, tagY: 110, tagWidth: 85, tagHeight: 30, label: "'Bring to Me'\nfocuses room", type: "positive", direction: "up" },
+      { id: "p8", x: 600, y: 230, tagX: 565, tagY: 275, tagWidth: 85, tagHeight: 30, label: "Unsorted messy\nbrainstorm wall", type: "friction", direction: "down" },
+      { id: "p9", x: 715, y: 184, tagX: 675, tagY: 105, tagWidth: 85, tagHeight: 28, label: "Auto-cluster\nstickies by tag", type: "positive", direction: "up" },
+      { id: "p10", x: 825, y: 150, tagX: 785, tagY: 75, tagWidth: 85, tagHeight: 28, label: "5-min Dot Voting\nwith Timer", type: "positive", direction: "up" },
+      { id: "p11", x: 918, y: 190, tagX: 880, tagY: 115, tagWidth: 85, tagHeight: 28, label: "Export frames\nto Jira Epics", type: "positive", direction: "up" },
+      { id: "p12", x: 980, y: 212, tagX: 940, tagY: 140, tagWidth: 70, tagHeight: 26, label: "Retrospective\nsign-off & deck", type: "positive", direction: "up" },
+    ],
     takeaways: ["Infinite Canvas", "Hardware WebGL", "Sticky Clustering", "Live Cursors", "Spatial Frames"],
     subStages: ["Template Setup", "Sprint Kickoff", "Idea Generation", "Synthesis & Voting", "Export & Handoff"],
     delights: [
@@ -370,6 +426,20 @@ const productDatasets: Record<ProductId, ProductJourneyDataset> = {
   },
   minimal: {
     ...exactReferenceDataset,
+    nodes: [
+      { id: "p1", x: 130, y: 275, tagX: 95, tagY: 200, tagWidth: 78, tagHeight: 28, label: "Discovered on\nReact Ecosystem", type: "positive", direction: "up" },
+      { id: "p2", x: 180, y: 263, tagX: 145, tagY: 175, tagWidth: 80, tagHeight: 28, label: "Figma Community\nLTS release", type: "positive", direction: "up" },
+      { id: "p3", x: 245, y: 275, tagX: 215, tagY: 195, tagWidth: 75, tagHeight: 26, label: "Clone Repo\n& Figma Kit", type: "positive", direction: "up" },
+      { id: "p4", x: 295, y: 285, tagX: 265, tagY: 215, tagWidth: 80, tagHeight: 28, label: "Review 6 core\ndashboards", type: "positive", direction: "up" },
+      { id: "p5", x: 360, y: 290, tagX: 325, tagY: 330, tagWidth: 85, tagHeight: 30, label: "Dense data\nmodel layout", type: "friction", direction: "down" },
+      { id: "p6", x: 430, y: 245, tagX: 395, tagY: 290, tagWidth: 85, tagHeight: 30, label: "Legacy ERP\nspreadsheet bloat", type: "friction", direction: "down" },
+      { id: "p7", x: 505, y: 190, tagX: 470, tagY: 110, tagWidth: 85, tagHeight: 30, label: "Deploy Treasury\n& Cash Cockpit", type: "positive", direction: "up" },
+      { id: "p8", x: 600, y: 230, tagX: 565, tagY: 275, tagWidth: 85, tagHeight: 30, label: "Fear of wrong\nwire transfer", type: "friction", direction: "down" },
+      { id: "p9", x: 715, y: 184, tagX: 675, tagY: 105, tagWidth: 85, tagHeight: 28, label: "Tactile slider\nconfirms wire", type: "positive", direction: "up" },
+      { id: "p10", x: 825, y: 150, tagX: 785, tagY: 75, tagWidth: 85, tagHeight: 28, label: "Immutable PDF\nAudit Slip", type: "positive", direction: "up" },
+      { id: "p11", x: 918, y: 190, tagX: 880, tagY: 115, tagWidth: 85, tagHeight: 28, label: "Dual Dark/Light\nTheme sync", type: "positive", direction: "up" },
+      { id: "p12", x: 980, y: 212, tagX: 940, tagY: 140, tagWidth: 70, tagHeight: 26, label: "100% WCAG AA\nEnterprise Pass", type: "positive", direction: "up" },
+    ],
     takeaways: ["Treasury Ledger", "Dual Rail Nav", "Tactile Sliders", "OKLCH Tokens", "Instant Reconcile"],
     subStages: ["Treasury Audit", "Beneficiary Selection", "Amount Slider", "Ledger Sync", "Audit Reconcile"],
     delights: [
@@ -423,14 +493,14 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
 
         {/* Top-Right: Point Take away Box matching reference image */}
         <div className="flex flex-col items-end gap-3 shrink-0">
-          <div className="p-4 rounded-2xl border border-border bg-muted/30 min-w-[220px] text-xs space-y-2">
+          <div className="p-4 rounded-2xl border border-border bg-card min-w-[220px] text-xs space-y-2">
             <span className="font-bold text-foreground text-xs block">
               Point Take away
             </span>
             <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-muted-foreground">
               {dataset.takeaways.map((t, idx) => (
                 <div key={idx} className="flex items-center gap-1.5 truncate">
-                  <span className="text-amber-500 text-xs font-black">•</span>
+                  <span className="text-emerald-500 text-xs font-black">•</span>
                   <span className="truncate">{t}</span>
                 </div>
               ))}
@@ -438,7 +508,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
           </div>
 
           {/* Toggle between Product Dataset and Exact Image Reference Dataset */}
-          <div className="flex items-center bg-muted/60 p-1 rounded-xl border border-border text-xs font-bold">
+          <div className="flex items-center bg-muted p-1 rounded-xl border border-border text-xs font-bold">
             <button
               onClick={() => setDataMode("product")}
               className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
@@ -463,12 +533,12 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
         </div>
       </div>
 
-      {/* 2. Main Master Table Structure with Orange Touch Points Tab & 5 Columns */}
+      {/* 2. Main Master Table Structure with Green Touch Points Tab & 5 Columns */}
       <div className="rounded-3xl border border-border bg-card overflow-hidden shadow-md">
         {/* Top 5 Column Header Bar */}
-        <div className="grid grid-cols-12 border-b border-border bg-muted/40 text-xs font-black uppercase tracking-wider">
+        <div className="grid grid-cols-12 border-b border-border bg-card text-xs font-black uppercase tracking-wider">
           {/* Empty corner aligned with left vertical sidebar */}
-          <div className="col-span-2 sm:col-span-1 p-3 border-r border-border bg-muted/20" />
+          <div className="col-span-2 sm:col-span-1 p-3 border-r border-border bg-card" />
           {/* 5 Column Titles */}
           <div className="col-span-10 sm:col-span-11 grid grid-cols-5 divide-x divide-border text-center">
             <div className="py-3 px-2 font-black text-xs sm:text-sm text-foreground tracking-widest">ENTICE</div>
@@ -479,12 +549,14 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
           </div>
         </div>
 
-        {/* The Graphic Canvas Row with TOUCH POINTS vertical orange badge */}
-        <div className="grid grid-cols-12 min-h-[380px] bg-muted/10 relative border-b border-border">
-          {/* Left Vertical Orange TOUCH POINTS Tab */}
-          <div className="col-span-2 sm:col-span-1 border-r border-border bg-muted/20 p-2 flex items-center justify-center">
-            <div className="bg-[#FF9900] text-white font-black tracking-widest text-xs uppercase px-2 py-8 rounded-xl flex items-center justify-center shadow-sm">
-              <span className="rotate-[-90deg] whitespace-nowrap">TOUCH POINTS</span>
+        {/* The Graphic Canvas Row with TOUCH POINTS vertical green badge */}
+        <div className="grid grid-cols-12 min-h-[380px] bg-card relative border-b border-border">
+          {/* Left Vertical Green TOUCH POINTS Tab */}
+          <div className="col-span-2 sm:col-span-1 border-r border-border bg-card flex items-center justify-start p-0 overflow-visible relative select-none">
+            <div className="absolute left-0 w-10 h-36 bg-[#00AB55] rounded-r-2xl flex items-center justify-center shadow-md z-10">
+              <span className="rotate-[-90deg] whitespace-nowrap text-white font-black text-xs sm:text-sm tracking-widest uppercase select-none drop-shadow-xs">
+                TOUCH POINTS
+              </span>
             </div>
           </div>
 
@@ -499,21 +571,21 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
               <div />
             </div>
 
-            {/* SVG Graphic Wave with Glowing Gradient and Interactive Connectors */}
+            {/* SVG Graphic Wave with Glowing Green Gradient and Interactive Connectors */}
             <svg
               viewBox="0 0 1000 360"
               className="absolute inset-0 w-full h-full overflow-visible select-none"
               preserveAspectRatio="none"
             >
               <defs>
-                {/* Yellow Amber Glow Gradient beneath the wave */}
-                <linearGradient id="yellowAreaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#EAB308" stopOpacity="0.30" />
-                  <stop offset="60%" stopColor="#CA8A04" stopOpacity="0.10" />
-                  <stop offset="100%" stopColor="#CA8A04" stopOpacity="0.0" />
+                {/* Emerald Green Area Glow Gradient beneath the wave */}
+                <linearGradient id="greenAreaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#10B981" stopOpacity="0.32" />
+                  <stop offset="60%" stopColor="#059669" stopOpacity="0.10" />
+                  <stop offset="100%" stopColor="#047857" stopOpacity="0.0" />
                 </linearGradient>
 
-                {/* Drop shadow / glow filter for the wave */}
+                {/* Drop shadow / glow filter for the green wave */}
                 <filter id="waveGlow" x="-10%" y="-10%" width="120%" height="120%">
                   <feGaussianBlur stdDeviation="2.5" result="blur" />
                   <feMerge>
@@ -526,22 +598,22 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
               {/* Shaded Area Beneath the Wave */}
               <path
                 d={`${dataset.curvePath} L 1000 360 L 0 360 Z`}
-                fill="url(#yellowAreaGradient)"
+                fill="url(#greenAreaGradient)"
               />
 
-              {/* The Thick Glowing Yellow Curve */}
+              {/* The Thick Glowing Green Curve */}
               <path
                 d={dataset.curvePath}
                 fill="none"
-                stroke="#EAB308"
+                stroke="#10B981"
                 strokeWidth="4.5"
                 strokeLinecap="round"
                 filter="url(#waveGlow)"
               />
 
-              {/* Dashed Connector Lines from Nodes to Speech Bubbles */}
+              {/* Dashed Connector Lines from Nodes to Speech Bubbles (Green / Cyan, Zero Yellow) */}
               {dataset.nodes.map((n) => {
-                const strokeColor = n.type === "positive" ? "#0284C7" : "#EAB308"
+                const strokeColor = n.type === "positive" ? "#0284C7" : "#10B981"
                 const targetY = n.direction === "up" ? n.tagY + n.tagHeight : n.tagY
                 return (
                   <line
@@ -557,7 +629,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
                 )
               })}
 
-              {/* Callout Speech Bubble Cards */}
+              {/* Callout Speech Bubble Cards with Green Accent Border */}
               {dataset.nodes.map((n) => {
                 const lines = n.label.split("\n")
                 return (
@@ -568,7 +640,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
                       width={n.tagWidth}
                       height={n.tagHeight}
                       rx="6"
-                      className="fill-card stroke-border"
+                      className="fill-card stroke-emerald-500/30"
                       strokeWidth="1.2"
                     />
                     {lines.map((l, lIdx) => (
@@ -587,9 +659,9 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
                 )
               })}
 
-              {/* Nodes on the Wave Line */}
+              {/* Nodes on the Wave Line (Emerald Green, Zero Yellow) */}
               {dataset.nodes.map((n) => {
-                const ringColor = n.type === "positive" ? "#0284C7" : "#EAB308"
+                const ringColor = n.type === "positive" ? "#0284C7" : "#10B981"
                 return (
                   <g key={`node-${n.id}`}>
                     {/* Outer ring */}
@@ -611,7 +683,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
         </div>
 
         {/* Sub-Stage Indicator Row (Discover, Enrolment, Learning, achievement, Extend) */}
-        <div className="grid grid-cols-12 border-b border-border bg-muted/20 text-xs">
+        <div className="grid grid-cols-12 border-b border-border bg-card text-xs">
           <div className="col-span-2 sm:col-span-1 p-2 border-r border-border" />
           <div className="col-span-10 sm:col-span-11 grid grid-cols-5 divide-x divide-border text-center font-bold text-muted-foreground">
             {dataset.subStages.map((s, idx) => (
@@ -624,7 +696,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
 
         {/* DELIGHTS Row */}
         <div className="grid grid-cols-12 border-b border-border text-xs">
-          <div className="col-span-2 sm:col-span-1 p-2 border-r border-border bg-muted/30 flex items-center justify-center">
+          <div className="col-span-2 sm:col-span-1 p-2 border-r border-border bg-card flex items-center justify-center">
             <span className="rotate-[-90deg] whitespace-nowrap text-[10px] font-black tracking-widest text-foreground uppercase">
               DELIGHTS
             </span>
@@ -640,8 +712,8 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
 
         {/* OPPORTUNITIES Row */}
         <div className="grid grid-cols-12 border-b border-border text-xs">
-          <div className="col-span-2 sm:col-span-1 p-2 border-r border-border bg-muted/30 flex items-center justify-center">
-            <span className="rotate-[-90deg] whitespace-nowrap text-[10px] font-black tracking-widest text-amber-600 dark:text-amber-400 uppercase">
+          <div className="col-span-2 sm:col-span-1 p-2 border-r border-border bg-card flex items-center justify-center">
+            <span className="rotate-[-90deg] whitespace-nowrap text-[10px] font-black tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
               OPPORTUNITIES
             </span>
           </div>
@@ -656,7 +728,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
 
         {/* USERS Row with Capsule Avatars */}
         <div className="grid grid-cols-12 border-b border-border text-xs">
-          <div className="col-span-2 sm:col-span-1 p-2 border-r border-border bg-muted/30 flex items-center justify-center">
+          <div className="col-span-2 sm:col-span-1 p-2 border-r border-border bg-card flex items-center justify-center">
             <span className="rotate-[-90deg] whitespace-nowrap text-[10px] font-black tracking-widest text-foreground uppercase">
               USERS
             </span>
@@ -664,7 +736,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
           <div className="col-span-10 sm:col-span-11 grid grid-cols-5 divide-x divide-border bg-card">
             {dataset.userAvatars.map((avatars, idx) => (
               <div key={idx} className="p-3 flex items-center gap-1">
-                <div className="flex items-center -space-x-2 bg-muted/60 p-1 rounded-full border border-border">
+                <div className="flex items-center -space-x-2 bg-muted p-1 rounded-full border border-border">
                   {avatars.map((url, aIdx) => (
                     <img
                       key={aIdx}
@@ -685,8 +757,8 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
         </div>
 
         {/* SUMMARY Row matching reference image — Clean layout with ZERO overlap */}
-        <div className="grid grid-cols-12 text-xs bg-muted/15">
-          <div className="col-span-2 sm:col-span-1 p-2 border-r border-border bg-muted/30 flex items-center justify-center">
+        <div className="grid grid-cols-12 text-xs bg-card">
+          <div className="col-span-2 sm:col-span-1 p-2 border-r border-border bg-card flex items-center justify-center">
             <span className="rotate-[-90deg] whitespace-nowrap text-[10px] font-black tracking-widest text-foreground uppercase">
               SUMMARY
             </span>

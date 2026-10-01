@@ -303,17 +303,154 @@ const productSkillOverrides: Record<ProductId, Record<string, number>> = {
   },
 }
 
+const productSkillDetails: Record<ProductId, Record<string, { description?: string; deliverables?: string }>> = {
+  linear: {
+    ia: {
+      description: "Sub-50ms Keyboard-First IA, 14-screen workflow hierarchy, single-key action bindings ('C', 'S', 'P', 'A'), and bidirectional Git branch state synchronization.",
+      deliverables: "Keyboard Navigation IA Tree, Shortcut Matrix, State Machine Schema",
+    },
+    "interaction-design": {
+      description: "Sub-16ms optimistic UI micro-feedback, tactile toast notifications, instant board drag-and-drop, and home-row triage sweeps.",
+      deliverables: "Optimistic State Spec, Keyboard Event Handlers, Motion Timing Curves",
+    },
+    "ui-design": {
+      description: "Obsidian dark mode palette, sub-pixel border radiuses (6px/8px), monospace ticket metadata badges, and 100% WCAG AA contrast.",
+      deliverables: "Obsidian Token Architecture, Master Figma Screen Inventory, SVG Icon Kit",
+    },
+    "ux-strategy": {
+      description: "The Linear Method: Replacing sprint theater and story pointing with continuous rolling 2-week cadences and automated Git PR closures.",
+      deliverables: "Linear Method Playbook, Rolling Cycle Spec, Zero-Ceremony Handoff",
+    },
+    "ux-audits": {
+      description: "Empirical usability benchmarking against legacy Jira workflows, proving 86.8% reduction in issue creation latency (2.4s vs 18.2s).",
+      deliverables: "Comparative Latency Benchmark, SUS Evaluation Deck (Grade A+ 91.4)",
+    },
+    wireframing: {
+      description: "High-density developer tool layouts, split-pane command palettes, and keyboard-focused issue inspector dialogs.",
+      deliverables: "Desktop Command Center Wireframes, Split Inspector Specs",
+    },
+    "quantitative-research": {
+      description: "Rigorous unassisted developer testing across 140 engineers, validating 96% task success and sub-2.4s creation time.",
+      deliverables: "Developer Workflow Benchmark (n=140), Quantitative Telemetry Dashboard",
+    },
+  },
+  mixpanel: {
+    "quantitative-research": {
+      description: "Multi-million event cohort telemetry, 5-step conversion drop-off funnels, and retention cohort heatmaps without SQL dependencies.",
+      deliverables: "Quantitative Telemetry Model, Funnel Segmentation Report, Statistical Significance Matrix",
+    },
+    analysis: {
+      description: "Root-cause anomaly detection, behavioral user path exploration, and Spark AI automated explanatory digests.",
+      deliverables: "Behavioral Path Graph, Event Anomaly Framework, Spark AI Prompt Architecture",
+    },
+    ia: {
+      description: "Event Lexicon Governance: Unifying fragmented event taxonomies, property naming standards, and multi-tenant data dictionary rules.",
+      deliverables: "Lexicon Event Schema, Property Dictionary, Data Governance Protocol",
+    },
+    "ui-design": {
+      description: "Visual query builder with modular step blocks, chromatic cohort spectrums, and dark/light analytical dashboard boards.",
+      deliverables: "Query Builder Token Language, Interactive Funnel Visualizer, Board Widget Specs",
+    },
+    "ux-strategy": {
+      description: "Transforming raw data engineering into democratized self-serve product intelligence for modern growth teams.",
+      deliverables: "Self-Serve Adoption Framework, Product Intelligence Architecture, A/B Testing Workflow",
+    },
+    "ux-audits": {
+      description: "Audit of enterprise SQL dependencies, reducing time-to-insight from 30 seconds to 4.2 seconds across 55 participants.",
+      deliverables: "Ad-hoc SQL Friction Audit, Usability Study Report (SUS 88.5)",
+    },
+  },
+  frame: {
+    ia: {
+      description: "Connected Workspace IA: Unifying docs, tasks, and infinite whiteboards into a single tab with bi-directional backlinks.",
+      deliverables: "Unified Entity Schema, Backlink Graph Topology, CMD+K Route Map",
+    },
+    "interaction-design": {
+      description: "Sub-50ms CMD+K Omni-Search, inline '@' task generation from rich text docs, and multiplayer audio huddle presence.",
+      deliverables: "Omni-Search Protocol, Inline Action Triggers, Multiplayer Spatial Interaction",
+    },
+    branding: {
+      description: "Playful, clean, modern workspace visual identity with high-contrast monochrome base and vibrant accent indicators.",
+      deliverables: "Connected OS Brand Guidelines, Iconography System, Marketing Landing Asset Suite",
+    },
+    "ui-design": {
+      description: "Modular connected canvas panes, flexible split-screen viewports, and unified typography for long-form reading and rapid triage.",
+      deliverables: "Pane Layout Engine, Typography Rhythm Matrix, Universal Component Library",
+    },
+    "ux-writing": {
+      description: "Contextual empty states, keyboard command hints, inline markdown slash-menu syntax, and unified notification microcopy.",
+      deliverables: "Workspace Microcopy Matrix, Command Menu Strings, Empty State Catalog",
+    },
+  },
+  miro: {
+    "interaction-design": {
+      description: "Hardware-accelerated WebGL infinite canvas pan/zoom at 60fps, smooth vector scaling, and real-time multiplayer cursor telemetry.",
+      deliverables: "WebGL Interaction Spec, Multiplayer Cursor Telemetry, Spatial Gesture Engine",
+    },
+    "workshop-facilitation": {
+      description: "Collaborative sprint tools: 5-minute dot-voting timer, participant attention beacon ('Bring to Me'), and sticky note clustering.",
+      deliverables: "Sprint Facilitation Toolkit, Dot-Voting Logic Model, Participant Control Spec",
+    },
+    wireframing: {
+      description: "Rapid low-fi collaborative wireframing library with magnetic smart connectors and multi-participant live drafting.",
+      deliverables: "Miro Component Stencils, Connector Routing Logic, Agile Retro Canvas",
+    },
+    "ui-design": {
+      description: "High-visibility canvas chrome, spatial minimap radar, floating tool palettes, and ergonomic toolbar clustering.",
+      deliverables: "Floating Palette Design Spec, Canvas Coordinate Engine, Vector Frame Library",
+    },
+    "design-thinking": {
+      description: "Agile retrospective frameworks, double-diamond divergence/convergence templates, and user journey mapping stencils.",
+      deliverables: "Retrospective Template Suite, Empathy Canvas Pack, Remote Workshop Playbook",
+    },
+  },
+  minimal: {
+    "ui-design": {
+      description: "Production design system with OKLCH semantic tokens, 6 complete business dashboard paradigms, and 50+ screens.",
+      deliverables: "Atomic Design Token Engine, 50+ Screen Master Kit, Dual Theme Elevation Tokens",
+    },
+    ia: {
+      description: "Dual-rail navigation architecture (vertical left rail vs ultrawide horizontal bar) across 6 distinct SaaS enterprise domains.",
+      deliverables: "Dual Navigation Hierarchy, Domain Model Architecture, Multi-Tenant Routing Tree",
+    },
+    "ux-audits": {
+      description: "Comprehensive WCAG 2.2 AA accessibility audit, 48px touch bounding box enforcement, and color-contrast verification.",
+      deliverables: "Accessibility Compliance Audit, Touch Ergonomics Matrix, Semantic Contrast Table",
+    },
+    "interaction-design": {
+      description: "Tactile physical-resistance wire confirmation slider, room reservation carousels, and optimistic UI state transitions.",
+      deliverables: "Tactile Slider Component Contract, Carousels Gesture Spec, Micro-Interaction Specs",
+    },
+    branding: {
+      description: "Vivid organic emerald primary token (#00AB55) balancing enterprise trust with fresh consumer-grade vibrancy.",
+      deliverables: "Design System Guidelines, Multi-Tone Palette Token Sheet, Typography Scale",
+    },
+  },
+}
+
+const productProductionContext: Record<ProductId, string> = {
+  linear: "Applied rigorously across Linear's 3-month high-velocity sprint in 2020 to establish a new gold standard in developer ergonomics.",
+  mixpanel: "Engineered across Mixpanel's 4-month architecture initiative in 2021 to redefine self-serve product intelligence for the AI era.",
+  frame: "Developed across Frame's 2-month rapid build cycle in 2021, launching to #1 Product of the Day on Product Hunt.",
+  miro: "Refined across Miro's 1.5-month visual collaboration overhaul in late 2020 to power remote enterprise war rooms.",
+  minimal: "Architected across Pritam's comprehensive 1-year master systems build (2020–2021) as the foundational backbone for enterprise SaaS.",
+}
+
 export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMatrixViewProps) {
   const productConfig = productsConfig[currentProduct] || productsConfig.linear
   const [activeSkillId, setActiveSkillId] = useState<string>("ia")
   const [viewMode, setViewMode] = useState<"product" | "reference">("product")
 
-  // Generate competencies list based on active mode
+  // Generate competencies list based on active mode with bespoke product text
   const skills: PolarSkill[] = defaultReferenceSkills.map((s) => {
-    if (viewMode === "product" && productSkillOverrides[currentProduct]?.[s.id] !== undefined) {
+    if (viewMode === "product") {
+      const levelOverride = productSkillOverrides[currentProduct]?.[s.id]
+      const detailOverride = productSkillDetails[currentProduct]?.[s.id]
       return {
         ...s,
-        level: productSkillOverrides[currentProduct][s.id],
+        level: levelOverride !== undefined ? levelOverride : s.level,
+        description: detailOverride?.description || s.description,
+        deliverables: detailOverride?.deliverables || s.deliverables,
       }
     }
     return s
@@ -322,12 +459,12 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
   const selectedSkill = skills.find((s) => s.id === activeSkillId) || skills[0]
 
   // SVG Geometry Settings matching the user reference image
-  const size = 720
+  const size = 900
   const center = size / 2
-  const innerHubRadius = 46
-  const ringStep = 32
+  const innerHubRadius = 50
+  const ringStep = 36
   const totalRings = 5 // Levels 1 through 5
-  const maxRadius = innerHubRadius + totalRings * ringStep // 46 + 160 = 206px
+  const maxRadius = innerHubRadius + totalRings * ringStep // 50 + 180 = 230px
 
   // Sector angular width: each skill slice gets roughly 13 degrees
   const sliceWidthDeg = 13.5
@@ -443,9 +580,9 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
       </div>
 
       {/* 2. Main Radial Matrix Canvas */}
-      <div className="rounded-3xl border border-border bg-card p-4 sm:p-8 shadow-lg flex flex-col xl:flex-row items-center gap-8 justify-center">
+      <div className="rounded-3xl border border-border bg-card p-4 sm:p-8 shadow-lg flex flex-col lg:flex-row items-center gap-8 justify-center">
         {/* SVG Radial Wheel */}
-        <div className="relative w-full max-w-[680px] aspect-square flex items-center justify-center select-none overflow-visible">
+        <div className="relative w-full max-w-[800px] aspect-square flex items-center justify-center select-none overflow-visible">
           <svg
             viewBox={`0 0 ${size} ${size}`}
             className="w-full h-full drop-shadow-sm overflow-visible"
@@ -537,7 +674,7 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
               const isSelected = activeSkillId === skill.id
 
               // Label Position: Radial vector extended past outer radius
-              const labelRadius = maxRadius + 32
+              const labelRadius = maxRadius + 45
               const labelPos = polarToCartesian(center, center, labelRadius, skill.angleDeg)
 
               // Text alignment based on polar quadrant
@@ -612,7 +749,7 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
         </div>
 
         {/* Interactive Detail Inspector Panel */}
-        <div className="w-full xl:w-[380px] shrink-0 space-y-5">
+        <div className="w-full lg:w-[380px] shrink-0 space-y-5">
           <div className="rounded-2xl border border-border bg-muted/20 p-5 space-y-4 shadow-sm">
             <div className="flex items-center justify-between">
               <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-500">
@@ -688,7 +825,7 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
                 {productConfig.name} Production Context
               </span>
               <p className="text-muted-foreground leading-relaxed">
-                Applied rigorously across {productConfig.name}'s 5–6 month lifecycle to validate user mental models and eliminate operational friction.
+                {productProductionContext[currentProduct] || `Applied rigorously across ${productConfig.name}'s product architecture to validate user mental models and eliminate operational friction.`}
               </p>
             </div>
           </div>
