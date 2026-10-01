@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "product": "Mixpanel (Product Intelligence)",
+    "version": "v1.0",
+    "creator": "Mixpanel Team",
+    "updated": "2021-08-15",
+    "status": "Production"
+  },
+  "kpis": [
+    {
+      "key": "taskSuccess",
+      "label": "Task success rate",
+      "value": 92,
+      "unit": "%",
+      "baseline": 70,
+      "target": 95,
+      "higherIsBetter": true,
+      "source": "Usability testing, n=55"
+    },
+    {
+      "key": "sus",
+      "label": "SUS score",
+      "value": 88.5,
+      "unit": "",
+      "baseline": 76.5,
+      "target": 90,
+      "higherIsBetter": true,
+      "source": "Standardized SUS survey"
+    },
+    {
+      "key": "timeToInsight",
+      "label": "Avg. time to insight",
+      "value": 4.2,
+      "unit": "s",
+      "baseline": 30.0,
+      "target": 5.0,
+      "higherIsBetter": false,
+      "source": "Analytics querying time"
+    },
+    {
+      "key": "errorRate",
+      "label": "Error rate",
+      "value": 2.1,
+      "unit": "%",
+      "baseline": 15.4,
+      "target": 2.0,
+      "higherIsBetter": false,
+      "source": "Funnel creation errors"
+    },
+    {
+      "key": "participants",
+      "label": "Participants",
+      "value": 55,
+      "unit": "",
+      "source": "Cross-functional users"
+    },
+    {
+      "key": "issuesFixed",
+      "label": "Issues fixed",
+      "value": 18,
+      "unit": "",
+      "total": 20,
+      "source": "Mixpanel Product QA"
+    }
+  ],
+  "iterations": [
+    { "version": "V1", "sus": 76.5, "taskSuccess": 70, "errorRate": 15.4 },
+    { "version": "V2", "sus": 82.0, "taskSuccess": 85, "errorRate": 5.2 },
+    { "version": "V3", "sus": 88.5, "taskSuccess": 92, "errorRate": 2.1 }
+  ],
+  "tasks": [
+    { "task": "Create 5-step funnel", "success": 95, "target": 90 },
+    { "task": "Save and share dashboard", "success": 98, "target": 95 },
+    { "task": "Add breakdown property", "success": 91, "target": 90 },
+    { "task": "Find specific user timeline", "success": 89, "target": 90 }
+  ],
+  "funnel": [
+    { "step": "View Dashboard", "users": 1000 },
+    { "step": "Drill-down to Report", "users": 800 },
+    { "step": "Apply Segment Filter", "users": 550 },
+    { "step": "Save Custom Report", "users": 400 },
+    { "step": "Share with Team", "users": 250 }
+  ],
+  "journey": [
+    { "stage": "Discover", "emotion": 4.2, "notes": "Initial impression is clean but slightly overwhelming data." },
+    { "stage": "Query", "emotion": 4.8, "notes": "Visual query builder is highly intuitive compared to SQL." },
+    { "stage": "Analyze", "emotion": 4.9, "notes": "Instant chart rendering upon applying filters." },
+    { "stage": "Share", "emotion": 4.5, "notes": "Easy to add to dashboard and share link." }
+  ],
+  "opportunities": [
+    { "id": "O01", "name": "AI Assisted Querying", "value": 4.8, "effort": 4.2, "category": "Strategic" },
+    { "id": "O02", "name": "Anomaly Alerts Customization", "value": 4.5, "effort": 3.0, "category": "Quick win" },
+    { "id": "O03", "name": "Figma Integration for Embeds", "value": 4.1, "effort": 2.5, "category": "Experiment" }
+  ],
+  "health": [
+    { "area": "Data Visualization", "score": 9.5 },
+    { "area": "Query Speed", "score": 9.8 },
+    { "area": "Collaboration", "score": 8.9 },
+    { "area": "Data Governance", "score": 9.2 }
+  ],
+  "participants": {
+    "byMethod": [
+      { "method": "Usability Testing", "n": 25 },
+      { "method": "Beta Feedback", "n": 30 }
+    ],
+    "bySegment": [
+      { "segment": "Product Managers", "n": 25 },
+      { "segment": "Data Analysts", "n": 15 },
+      { "segment": "Marketers", "n": 15 }
+    ]
+  },
+  "findings": [
+    {
+      "id": "MX-U01",
+      "title": "Query builder dropdowns hide behind charts",
+      "screen": "MX12",
+      "severity": "High",
+      "status": "Fixed",
+      "recommendation": "Use React Portal for dropdowns",
+      "owner": "Frontend Team"
+    },
+    {
+      "id": "MX-U02",
+      "title": "Cohorts table too wide for laptop screens",
+      "screen": "MX03",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Implement sticky first column and horizontal scroll",
+      "owner": "Design"
+    }
+  ],
+  "beforeAfter": [
+    {
+      "screen": "Funnel Report",
+      "metric": "Creation Time",
+      "before": 45.0,
+      "after": 12.0,
+      "unit": "s",
+      "notes": "Replaced manual SQL with visual builder"
+    },
+    {
+      "screen": "Dashboard",
+      "metric": "Load Time",
+      "before": 8.5,
+      "after": 2.1,
+      "unit": "s",
+      "notes": "Implemented aggressive caching and progressive rendering"
+    }
+  ]
+}

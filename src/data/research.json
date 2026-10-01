@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "product": "Minimal UI Design System",
+    "version": "v1.0 (2021 Foundation Release)",
+    "creator": "Pritam (Lead UI/UX Designer)",
+    "updated": "2021-08-20",
+    "status": "Production Approved"
+  },
+  "kpis": [
+    {
+      "key": "taskSuccess",
+      "label": "Task success rate",
+      "value": 82,
+      "unit": "%",
+      "baseline": 58,
+      "target": 85,
+      "higherIsBetter": true,
+      "source": "Usability test, n=42 (2021 Benchmark)"
+    },
+    {
+      "key": "sus",
+      "label": "SUS score",
+      "value": 76,
+      "unit": "",
+      "baseline": 62,
+      "target": 80,
+      "higherIsBetter": true,
+      "source": "Standardized SUS survey, n=42"
+    },
+    {
+      "key": "timeOnTask",
+      "label": "Avg. time on task",
+      "value": 41,
+      "unit": "s",
+      "baseline": 74,
+      "target": 45,
+      "higherIsBetter": false,
+      "source": "Benchmark task execution, n=42"
+    },
+    {
+      "key": "errorRate",
+      "label": "Error rate",
+      "value": 6,
+      "unit": "%",
+      "baseline": 19,
+      "target": 5,
+      "higherIsBetter": false,
+      "source": "Unassisted task attempts, n=42"
+    },
+    {
+      "key": "participants",
+      "label": "Participants",
+      "value": 42,
+      "unit": "",
+      "source": "Interviews, surveys & live testing cohorts"
+    },
+    {
+      "key": "issuesFixed",
+      "label": "Issues fixed",
+      "value": 18,
+      "unit": "",
+      "total": 24,
+      "source": "2021 Release Sprint Log"
+    }
+  ],
+  "snapshots": {
+    "V1": {
+      "taskSuccess": 58,
+      "sus": 62,
+      "timeOnTask": 74,
+      "errorRate": 19,
+      "issuesFixed": 4
+    },
+    "V2": {
+      "taskSuccess": 71,
+      "sus": 70,
+      "timeOnTask": 52,
+      "errorRate": 11,
+      "issuesFixed": 12
+    },
+    "V3": {
+      "taskSuccess": 82,
+      "sus": 76,
+      "timeOnTask": 41,
+      "errorRate": 6,
+      "issuesFixed": 18
+    }
+  },
+  "iterations": [
+    { "version": "V1", "sus": 62, "taskSuccess": 58, "errorRate": 19 },
+    { "version": "V2", "sus": 70, "taskSuccess": 71, "errorRate": 11 },
+    { "version": "V3", "sus": 76, "taskSuccess": 82, "errorRate": 6 }
+  ],
+  "tasks": [
+    { "task": "Configure Analytics metric & filter", "success": 92, "target": 85 },
+    { "task": "Execute Quick Transfer in Banking", "success": 88, "target": 85 },
+    { "task": "Review & moderate Booking reservation", "success": 83, "target": 85 },
+    { "task": "Manage files across cloud storages", "success": 79, "target": 80 },
+    { "task": "Multi-tier E-commerce export report", "success": 58, "target": 80 }
+  ],
+  "funnel": [
+    { "step": "Initial Landing", "users": 1000 },
+    { "step": "Select Archetype", "users": 840 },
+    { "step": "Interact With Table/Card", "users": 680 },
+    { "step": "Execute Primary Action", "users": 520 },
+    { "step": "Complete Transaction/Export", "users": 410 }
+  ],
+  "journey": [
+    { "stage": "Discover", "emotion": 3.8, "notes": "Clean initial impression, emerald accent builds confidence" },
+    { "stage": "Onboard", "emotion": 2.2, "notes": "Initial density caused 20s hesitation without preset filters" },
+    { "stage": "Configure", "emotion": 3.4, "notes": "Collapsible sidebar and quick filters restore momentum" },
+    { "stage": "Execute Task", "emotion": 4.6, "notes": "Instantaneous tactile micro-feedback on sliders and cards" },
+    { "stage": "Revisit", "emotion": 4.2, "notes": "Muscle memory established, dark mode heavily utilized" }
+  ],
+  "opportunities": [
+    { "id": "O01", "name": "Guided Quick Transfer in Banking", "value": 5.0, "effort": 2.0, "category": "Quick win" },
+    { "id": "O02", "name": "Instant Date Range Presets in Booking", "value": 4.5, "effort": 1.8, "category": "Quick win" },
+    { "id": "O03", "name": "Unified Cloud File Bridge (GDrive/Dropbox)", "value": 4.8, "effort": 4.2, "category": "Strategic" },
+    { "id": "O04", "name": "Global Command Palette (⌘K) Across All Modules", "value": 4.2, "effort": 3.5, "category": "Strategic" },
+    { "id": "O05", "name": "Customizable KPI Widget Grid", "value": 3.2, "effort": 4.5, "category": "Experiment" },
+    { "id": "O06", "name": "Inline Sparkline Hover Tooltips", "value": 3.0, "effort": 1.5, "category": "Quick win" }
+  ],
+  "health": [
+    { "area": "Usability", "score": 8.2 },
+    { "area": "Accessibility", "score": 8.8 },
+    { "area": "Consistency", "score": 9.4 },
+    { "area": "Performance", "score": 8.9 },
+    { "area": "Clarity", "score": 8.5 },
+    { "area": "Satisfaction", "score": 8.7 }
+  ],
+  "participants": {
+    "byMethod": [
+      { "method": "In-Depth Interviews", "n": 10 },
+      { "method": "Quantitative Survey", "n": 20 },
+      { "method": "Moderated Usability Tests", "n": 12 }
+    ],
+    "bySegment": [
+      { "segment": "SaaS Operations & Founders", "n": 16 },
+      { "segment": "FinTech / Banking Analysts", "n": 14 },
+      { "segment": "E-Commerce Merchants & Admins", "n": 12 }
+    ]
+  },
+  "findings": [
+    {
+      "id": "U01",
+      "title": "Export button not discoverable on mobile viewports",
+      "screen": "D05",
+      "severity": "High",
+      "status": "Fixed",
+      "recommendation": "Elevate to sticky bottom bar or top header overflow menu",
+      "owner": "Pritam"
+    },
+    {
+      "id": "U02",
+      "title": "Empty state in File Manager gave no folder creation guidance",
+      "screen": "D06",
+      "severity": "Critical",
+      "status": "Fixed",
+      "recommendation": "Added guided drag-and-drop zone with starter folders",
+      "owner": "Pritam"
+    },
+    {
+      "id": "U03",
+      "title": "Quick transfer slider lacked explicit numeric confirmation",
+      "screen": "D03",
+      "severity": "High",
+      "status": "Fixed",
+      "recommendation": "Added instant dual input-sync field and slide-to-confirm modal",
+      "owner": "Pritam"
+    },
+    {
+      "id": "U04",
+      "title": "Booking customer list required 4 clicks to filter by check-in date",
+      "screen": "D04",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Implemented quick date-range presets in top bar",
+      "owner": "Pritam"
+    },
+    {
+      "id": "U05",
+      "title": "Contrast ratio in dark mode secondary text fell below 4.5:1",
+      "screen": "D01",
+      "severity": "Critical",
+      "status": "Fixed",
+      "recommendation": "Updated muted text token to OKLCH luminance >= 0.70",
+      "owner": "Pritam"
+    },
+    {
+      "id": "U06",
+      "title": "App storage donut chart labels overlapped at 375px width",
+      "screen": "D02",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Stacked legend below chart on viewports < 768px",
+      "owner": "Pritam"
+    },
+    {
+      "id": "U07",
+      "title": "Dense order tables lacked row hover feedback on desktop",
+      "screen": "D05",
+      "severity": "Low",
+      "status": "Fixed",
+      "recommendation": "Added subtle theme accent row highlight with cursor indicator",
+      "owner": "Pritam"
+    },
+    {
+      "id": "U08",
+      "title": "Multiple modal dialogs on low-spec tablets caused frame drops",
+      "screen": "D03",
+      "severity": "High",
+      "status": "Fixed",
+      "recommendation": "Optimized CSS transforms and removed heavy blur filters",
+      "owner": "Pritam"
+    }
+  ],
+  "beforeAfter": [
+    {
+      "screen": "D01 Analytics",
+      "metric": "Time on Task",
+      "before": 74,
+      "after": 41,
+      "unit": "s",
+      "notes": "Refactored metric cards with sparkline baselines and immediate period filter"
+    },
+    {
+      "screen": "D03 Banking",
+      "metric": "Transfer Completion Rate",
+      "before": 61,
+      "after": 88,
+      "unit": "%",
+      "notes": "Replaced multi-step form with quick slider + favorite avatar row"
+    },
+    {
+      "screen": "D04 Booking",
+      "metric": "Reservation Lookup Clicks",
+      "before": 6.8,
+      "after": 2.1,
+      "unit": "clicks",
+      "notes": "Introduced unified search & filter chips directly in the table header"
+    }
+  ]
+}

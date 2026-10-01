@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "product": "Frame Workspace",
+    "version": "1.0 Production",
+    "creator": "Frame Team",
+    "updated": "2026-10-01",
+    "status": "Approved"
+  },
+  "kpis": [
+    {
+      "key": "taskSuccess",
+      "label": "Task Success Rate",
+      "value": 92,
+      "unit": "%",
+      "baseline": 65,
+      "target": 90,
+      "higherIsBetter": true,
+      "source": "Usability Lab"
+    },
+    {
+      "key": "timeOnTask",
+      "label": "Avg Time on Task",
+      "value": 45,
+      "unit": "s",
+      "baseline": 120,
+      "target": 60,
+      "higherIsBetter": false,
+      "source": "Session Telemetry"
+    },
+    {
+      "key": "issuesFixed",
+      "label": "Critical Issues Fixed",
+      "value": 15,
+      "total": 15,
+      "source": "Jira Dashboard"
+    }
+  ],
+  "iterations": [
+    {
+      "version": "Alpha",
+      "sus": 65,
+      "taskSuccess": 68,
+      "errorRate": 15
+    },
+    {
+      "version": "Beta",
+      "sus": 82,
+      "taskSuccess": 85,
+      "errorRate": 6
+    },
+    {
+      "version": "Production",
+      "sus": 91,
+      "taskSuccess": 92,
+      "errorRate": 2
+    }
+  ],
+  "tasks": [
+    {
+      "task": "Create new note",
+      "success": 98,
+      "target": 95
+    },
+    {
+      "task": "Find document via CMD+K",
+      "success": 95,
+      "target": 90
+    },
+    {
+      "task": "Connect Slack integration",
+      "success": 88,
+      "target": 85
+    }
+  ],
+  "funnel": [
+    {
+      "step": "Landing",
+      "users": 15000
+    },
+    {
+      "step": "Sign Up",
+      "users": 4500
+    },
+    {
+      "step": "Workspace Created",
+      "users": 3800
+    },
+    {
+      "step": "Invited Team",
+      "users": 2100
+    }
+  ],
+  "journey": [
+    {
+      "stage": "Discovery",
+      "emotion": 3,
+      "notes": "Skeptical of all-in-one tools"
+    },
+    {
+      "stage": "Setup",
+      "emotion": 4,
+      "notes": "Impressed by instant integrations"
+    },
+    {
+      "stage": "Core Loop",
+      "emotion": 5,
+      "notes": "Fastest search they've used"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "O01",
+      "name": "AI Summaries",
+      "value": 9,
+      "effort": 5,
+      "category": "Growth"
+    },
+    {
+      "id": "O02",
+      "name": "Jira Sync",
+      "value": 8,
+      "effort": 8,
+      "category": "Enterprise"
+    }
+  ],
+  "health": [
+    {
+      "area": "Crash Free Rate",
+      "score": 99.9
+    },
+    {
+      "area": "Sync Reliability",
+      "score": 99.5
+    }
+  ],
+  "participants": {
+    "byMethod": [
+      { "method": "Moderated", "n": 15 },
+      { "method": "Unmoderated", "n": 45 }
+    ],
+    "bySegment": [
+      { "segment": "PMs", "n": 30 },
+      { "segment": "Engineers", "n": 30 }
+    ]
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "title": "CMD+K discoverability",
+      "screen": "FR04",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Add empty state hint",
+      "owner": "Design"
+    }
+  ],
+  "beforeAfter": [
+    {
+      "screen": "FR04",
+      "metric": "Search Time",
+      "before": 15,
+      "after": 1.2,
+      "unit": "s",
+      "notes": "Global index"
+    }
+  ]
+}

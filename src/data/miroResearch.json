@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "product": "Miro (The Visual Workspace for Innovation)",
+    "version": "v1.0 (2020 Architecture Spec)",
+    "creator": "Miro UX & Product Team",
+    "updated": "2020-11-20",
+    "status": "Production Approved"
+  },
+  "kpis": [
+    {
+      "key": "taskSuccess",
+      "label": "Task success rate",
+      "value": 94,
+      "unit": "%",
+      "baseline": 65,
+      "target": 95,
+      "higherIsBetter": true,
+      "source": "Unassisted collaborative workflow testing, n=120"
+    },
+    {
+      "key": "sus",
+      "label": "SUS score",
+      "value": 89.5,
+      "unit": "",
+      "baseline": 60,
+      "target": 88,
+      "higherIsBetter": true,
+      "source": "Standardized SUS survey across 120 practitioners (Grade A)"
+    },
+    {
+      "key": "timeOnTask",
+      "label": "Avg. time on task",
+      "value": 12.4,
+      "unit": "s",
+      "baseline": 48.2,
+      "target": 15.0,
+      "higherIsBetter": false,
+      "source": "Benchmark task execution for diagramming"
+    },
+    {
+      "key": "errorRate",
+      "label": "Error rate",
+      "value": 2.1,
+      "unit": "%",
+      "baseline": 15.8,
+      "target": 3.0,
+      "higherIsBetter": false,
+      "source": "Connection routing and object grouping errors"
+    },
+    {
+      "key": "participants",
+      "label": "Participants",
+      "value": 120,
+      "unit": "",
+      "source": "Cross-functional design & product cohorts"
+    },
+    {
+      "key": "issuesFixed",
+      "label": "Issues optimized",
+      "value": 45,
+      "unit": "",
+      "total": 50,
+      "source": "5-6 Months 2020 Optimization Sprint"
+    }
+  ],
+  "snapshots": {
+    "Month 1": {
+      "taskSuccess": 70,
+      "sus": 65,
+      "timeOnTask": 35.0,
+      "errorRate": 12.4,
+      "issuesFixed": 15
+    },
+    "Month 3": {
+      "taskSuccess": 82,
+      "sus": 78,
+      "timeOnTask": 22.0,
+      "errorRate": 6.8,
+      "issuesFixed": 32
+    },
+    "Month 6": {
+      "taskSuccess": 94,
+      "sus": 89.5,
+      "timeOnTask": 12.4,
+      "errorRate": 2.1,
+      "issuesFixed": 45
+    }
+  },
+  "iterations": [
+    { "version": "Month 1", "sus": 65, "taskSuccess": 70, "errorRate": 12.4 },
+    { "version": "Month 3", "sus": 78, "taskSuccess": 82, "errorRate": 6.8 },
+    { "version": "Month 6", "sus": 89.5, "taskSuccess": 94, "errorRate": 2.1 }
+  ],
+  "tasks": [
+    { "task": "Create 10 connected sticky notes", "success": 96, "target": 95 },
+    { "task": "Navigate to collaborator's cursor", "success": 98, "target": 95 },
+    { "task": "Export frame to PDF", "success": 95, "target": 90 },
+    { "task": "Group objects and align horizontally", "success": 92, "target": 90 },
+    { "task": "Lock diagram structure", "success": 89, "target": 90 }
+  ],
+  "funnel": [
+    { "step": "Workspace Invitation", "users": 1500 },
+    { "step": "Join Canvas Session", "users": 1420 },
+    { "step": "Create First Object", "users": 1350 },
+    { "step": "Connect Two Nodes", "users": 1200 },
+    { "step": "Active Weekly Collaboration", "users": 1050 }
+  ],
+  "journey": [
+    { "stage": "Onboard", "emotion": 4.5, "notes": "Simple invitation link, immediate access without complex auth" },
+    { "stage": "Discover", "emotion": 4.7, "notes": "Familiar infinite canvas feels natural to pan and zoom" },
+    { "stage": "Create", "emotion": 4.8, "notes": "Instant shape creation and connection lines feel fluid" },
+    { "stage": "Collaborate", "emotion": 4.9, "notes": "Seeing others' cursors creates high energy and engagement" },
+    { "stage": "Share", "emotion": 4.4, "notes": "Frame exports and embedding works predictably" }
+  ],
+  "opportunities": [
+    { "id": "O01", "name": "AI Auto-Clustering of Sticky Notes", "value": 4.8, "effort": 3.5, "category": "Strategic" },
+    { "id": "O02", "name": "Jira/Linear Card Bi-Directional Sync", "value": 4.9, "effort": 4.2, "category": "Strategic" },
+    { "id": "O03", "name": "Presentation Mode Follow-Me", "value": 4.7, "effort": 2.5, "category": "Quick win" },
+    { "id": "O04", "name": "Custom Keyboard Shortcuts", "value": 4.2, "effort": 2.0, "category": "Quick win" },
+    { "id": "O05", "name": "Dark Mode Interface", "value": 4.5, "effort": 3.8, "category": "Experiment" },
+    { "id": "O06", "name": "Timer and Music Integration", "value": 4.6, "effort": 1.5, "category": "Quick win" }
+  ],
+  "health": [
+    { "area": "Canvas Rendering Performance", "score": 9.5 },
+    { "area": "Multiplayer Sync Latency", "score": 9.8 },
+    { "area": "Tool Accessibility", "score": 9.2 },
+    { "area": "Export Reliability", "score": 9.4 },
+    { "area": "Template Discovery", "score": 9.1 },
+    { "area": "Integration Stability", "score": 9.6 }
+  ],
+  "participants": {
+    "byMethod": [
+      { "method": "Moderated Usability Benchmarks", "n": 30 },
+      { "method": "Longitudinal Telemetry Cohort", "n": 50 },
+      { "method": "Workshop Facilitator Interviews", "n": 40 }
+    ],
+    "bySegment": [
+      { "segment": "Designers & Researchers", "n": 45 },
+      { "segment": "Product Managers", "n": 40 },
+      { "segment": "Agile Coaches & Scrum Masters", "n": 35 }
+    ]
+  },
+  "findings": [
+    {
+      "id": "M-U01",
+      "title": "Users struggle to align multiple sticky notes neatly",
+      "screen": "M01",
+      "severity": "High",
+      "status": "Fixed",
+      "recommendation": "Introduced Auto Layout for horizontal and vertical snapping",
+      "owner": "Miro Design"
+    },
+    {
+      "id": "M-U02",
+      "title": "Connection lines detach when objects are grouped",
+      "screen": "M03",
+      "severity": "Critical",
+      "status": "Fixed",
+      "recommendation": "Refactored graph node architecture to maintain edge relations in groups",
+      "owner": "Miro Engineering"
+    },
+    {
+      "id": "M-U03",
+      "title": "Color picker requires too many clicks to change note color",
+      "screen": "M05",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Moved constrained color swatches directly into the contextual hover menu",
+      "owner": "Miro Design"
+    },
+    {
+      "id": "M-U04",
+      "title": "Finding a specific collaborator on a massive board is impossible",
+      "screen": "M06",
+      "severity": "High",
+      "status": "Fixed",
+      "recommendation": "Clicking a user avatar in top nav teleports viewport to their cursor",
+      "owner": "Miro Design"
+    },
+    {
+      "id": "M-U05",
+      "title": "Exporting specific areas of a messy board to PDF is difficult",
+      "screen": "M02",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Introduced 'Frames' as explicit clipping masks for PDF slides",
+      "owner": "Miro Engineering"
+    }
+  ],
+  "beforeAfter": [
+    {
+      "screen": "M01 Auto Layout",
+      "metric": "Time to organize 20 stickies",
+      "before": 45.5,
+      "after": 4.2,
+      "unit": "s",
+      "notes": "Drag select and auto-layout instantly cleans up workshop vomit"
+    },
+    {
+      "screen": "M04 Tool Access",
+      "metric": "Time to first shape",
+      "before": 3.8,
+      "after": 0.8,
+      "unit": "s",
+      "notes": "Keyboard shortcuts (N for sticky, V for select) bypass toolbar entirely"
+    },
+    {
+      "screen": "M06 Collaboration",
+      "metric": "Average team session length",
+      "before": 25.0,
+      "after": 58.0,
+      "unit": "min",
+      "notes": "Live cursors created engagement loop preventing user drop-off"
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "product": "Linear (The System for Product Development)",
+    "version": "v3.0 (Production Benchmark)",
+    "creator": "Linear Design & Engineering Architecture",
+    "updated": "2024-09-15",
+    "status": "Production Approved"
+  },
+  "kpis": [
+    {
+      "key": "taskSuccess",
+      "label": "Task success rate",
+      "value": 96,
+      "unit": "%",
+      "baseline": 68,
+      "target": 95,
+      "higherIsBetter": true,
+      "source": "Unassisted developer workflow testing, n=140"
+    },
+    {
+      "key": "sus",
+      "label": "SUS score",
+      "value": 91.4,
+      "unit": "",
+      "baseline": 64,
+      "target": 90,
+      "higherIsBetter": true,
+      "source": "Standardized SUS survey across 140 practitioners (Grade A+)"
+    },
+    {
+      "key": "timeOnTask",
+      "label": "Avg. time on task",
+      "value": 8.4,
+      "unit": "s",
+      "baseline": 44.2,
+      "target": 10.0,
+      "higherIsBetter": false,
+      "source": "Benchmark task execution across high-frequency actions"
+    },
+    {
+      "key": "errorRate",
+      "label": "Error rate",
+      "value": 1.2,
+      "unit": "%",
+      "baseline": 12.8,
+      "target": 2.0,
+      "higherIsBetter": false,
+      "source": "Form validation and shortcut error telemetry"
+    },
+    {
+      "key": "participants",
+      "label": "Participants",
+      "value": 140,
+      "unit": "",
+      "source": "Cross-functional engineering & product cohorts"
+    },
+    {
+      "key": "issuesFixed",
+      "label": "Issues optimized",
+      "value": 22,
+      "unit": "",
+      "total": 25,
+      "source": "Linear Method Production Benchmarks"
+    }
+  ],
+  "snapshots": {
+    "V1": {
+      "taskSuccess": 76,
+      "sus": 74,
+      "timeOnTask": 22.0,
+      "errorRate": 7.4,
+      "issuesFixed": 8
+    },
+    "V2": {
+      "taskSuccess": 88,
+      "sus": 84,
+      "timeOnTask": 13.0,
+      "errorRate": 3.8,
+      "issuesFixed": 16
+    },
+    "V3": {
+      "taskSuccess": 96,
+      "sus": 91.4,
+      "timeOnTask": 8.4,
+      "errorRate": 1.2,
+      "issuesFixed": 22
+    }
+  },
+  "iterations": [
+    { "version": "V1", "sus": 74, "taskSuccess": 76, "errorRate": 7.4 },
+    { "version": "V2", "sus": 84, "taskSuccess": 88, "errorRate": 3.8 },
+    { "version": "V3", "sus": 91.4, "taskSuccess": 96, "errorRate": 1.2 }
+  ],
+  "tasks": [
+    { "task": "Instant Issue Creation via 'C' shortcut", "success": 98, "target": 95 },
+    { "task": "Triage state switch via 'S' command", "success": 97, "target": 95 },
+    { "task": "Multi-issue batch filter & board grouping", "success": 94, "target": 90 },
+    { "task": "Git branch auto-linking & PR status sync", "success": 96, "target": 92 },
+    { "task": "Project milestone roadmapping & cycle plan", "success": 91, "target": 90 }
+  ],
+  "funnel": [
+    { "step": "Domain & Workspace Signup", "users": 1200 },
+    { "step": "Theme & Ergonomics Choice", "users": 1140 },
+    { "step": "GitHub / VCS Integration", "users": 1020 },
+    { "step": "Create First Issue ('C')", "users": 950 },
+    { "step": "Active Daily Keyboard Cycle", "users": 890 }
+  ],
+  "journey": [
+    { "stage": "Onboard", "emotion": 4.6, "notes": "Effortless 3-step setup, theme preview creates instant delight" },
+    { "stage": "Discover", "emotion": 4.8, "notes": "Sub-50ms instant response, zero spin wheel latency" },
+    { "stage": "Triage", "emotion": 4.7, "notes": "Keyboard shortcuts 'S', 'P', 'A' create fluid flow state" },
+    { "stage": "Execute", "emotion": 4.9, "notes": "Git PR auto-closing issue upon merge eliminates manual updates" },
+    { "stage": "Review", "emotion": 4.5, "notes": "Cycle insights and velocity graphs render with zero lag" }
+  ],
+  "opportunities": [
+    { "id": "O01", "name": "Instant AI Issue Deduplication & Auto-Grouping", "value": 4.9, "effort": 3.2, "category": "Strategic" },
+    { "id": "O02", "name": "Cross-Workspace Issue Bridging (External Teams)", "value": 4.7, "effort": 4.0, "category": "Strategic" },
+    { "id": "O03", "name": "Command Palette Offline SQLite Search", "value": 4.8, "effort": 2.1, "category": "Quick win" },
+    { "id": "O04", "name": "Figma Live Frame Embed in Issue Description", "value": 4.4, "effort": 1.8, "category": "Quick win" },
+    { "id": "O05", "name": "Custom Shortcut Remapping for Emacs/Vim Users", "value": 3.8, "effort": 2.5, "category": "Experiment" },
+    { "id": "O06", "name": "Cycle Burn-up Micro Sparklines in Board Header", "value": 3.5, "effort": 1.2, "category": "Quick win" }
+  ],
+  "health": [
+    { "area": "Velocity (Perceived Latency)", "score": 9.9 },
+    { "area": "Keyboard Ergonomics", "score": 9.8 },
+    { "area": "Visual Serenity & Polish", "score": 9.6 },
+    { "area": "Accessibility (WCAG 2.2)", "score": 9.4 },
+    { "area": "Git Sync Automation", "score": 9.7 },
+    { "area": "Information Density", "score": 9.3 }
+  ],
+  "participants": {
+    "byMethod": [
+      { "method": "Moderated Usability Benchmarks", "n": 36 },
+      { "method": "Longitudinal Telemetry Cohort", "n": 64 },
+      { "method": "Developer Experience Deep-Dives", "n": 40 }
+    ],
+    "bySegment": [
+      { "segment": "Staff & Senior Product Engineers", "n": 62 },
+      { "segment": "Design Leads & UX Architects", "n": 44 },
+      { "segment": "Engineering Directors & VPs", "n": 34 }
+    ]
+  },
+  "findings": [
+    {
+      "id": "L-U01",
+      "title": "Command Menu (⌘K) lacked explicit shortcut badge hints on initial modal render",
+      "screen": "L12",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Added subtle key glyphs beside command items",
+      "owner": "Linear Design"
+    },
+    {
+      "id": "L-U02",
+      "title": "GitHub PR auto-close trigger was ambiguous when PR linked multiple issues",
+      "screen": "L05",
+      "severity": "High",
+      "status": "Fixed",
+      "recommendation": "Added visual badge linking commits directly to target issue IDs",
+      "owner": "Linear Engineering"
+    },
+    {
+      "id": "L-U03",
+      "title": "Sub-50ms Quick Status switch (shortcut 'S') closed too quickly without visual confirmation",
+      "screen": "L08",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Introduced subtle 120ms spring highlight on updated status pill",
+      "owner": "Linear Design"
+    },
+    {
+      "id": "L-U04",
+      "title": "Cycle progress burndown on board header lacked zoom controls on smaller 13\" laptops",
+      "screen": "L09",
+      "severity": "Low",
+      "status": "Fixed",
+      "recommendation": "Made column widths dynamically collapsible via 'B' shortcut",
+      "owner": "Linear Design"
+    },
+    {
+      "id": "L-U05",
+      "title": "Dark mode high-contrast borders fell below 3:1 on low-brightness OLED panels",
+      "screen": "L04",
+      "severity": "Critical",
+      "status": "Fixed",
+      "recommendation": "Recalibrated border token from #1A1D24 to #222631",
+      "owner": "Design Systems"
+    },
+    {
+      "id": "L-U06",
+      "title": "Rapid Issue Creation modal ('C') occasionally discarded draft when clicking backdrop",
+      "screen": "L10",
+      "severity": "Critical",
+      "status": "Fixed",
+      "recommendation": "Implemented automatic local draft persistence in IndexedDB with undo toast",
+      "owner": "Linear Engineering"
+    },
+    {
+      "id": "L-U07",
+      "title": "Project milestone timeline overlapped when more than 8 simultaneous milestones existed",
+      "screen": "L11",
+      "severity": "Medium",
+      "status": "Fixed",
+      "recommendation": "Added multi-track lane virtualization with milestone grouping",
+      "owner": "Linear Design"
+    },
+    {
+      "id": "L-U08",
+      "title": "Integration directory cards lacked direct connection health status ping",
+      "screen": "L13",
+      "severity": "Low",
+      "status": "Fixed",
+      "recommendation": "Added live webhook status green indicator dot to active integrations",
+      "owner": "Linear Engineering"
+    }
+  ],
+  "beforeAfter": [
+    {
+      "screen": "L10 Issue Creation",
+      "metric": "Creation to Save Latency",
+      "before": 18.2,
+      "after": 2.4,
+      "unit": "s",
+      "notes": "Modal opens in <16ms via 'C' shortcut with optimistic background commit"
+    },
+    {
+      "screen": "L08 Status Switcher",
+      "metric": "State Transition Time",
+      "before": 4.8,
+      "after": 0.6,
+      "unit": "s",
+      "notes": "Replaced 3-click dropdown menu with single-key 'S' instant switcher"
+    },
+    {
+      "screen": "L07 Active Issues List",
+      "metric": "Triage Task Completion",
+      "before": 38.5,
+      "after": 9.2,
+      "unit": "s",
+      "notes": "Batch triage with arrow key navigation and multi-select shortcuts"
+    }
+  ]
+}
