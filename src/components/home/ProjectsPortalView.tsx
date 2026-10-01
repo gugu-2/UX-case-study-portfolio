@@ -274,7 +274,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
   })
 
   return (
-    <div className="space-y-10 animate-in fade-in-50 duration-300">
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.6}} className="space-y-10 animate-in fade-in-50 duration-300">
       {/* 1. Master Studio Hero Header: Balanced Full-Width Layout */}
       <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-sm">
         {/* Subtle decorative background gradient */}
