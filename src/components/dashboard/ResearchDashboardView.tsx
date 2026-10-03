@@ -60,15 +60,15 @@ export function ResearchDashboardView({
   return (
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* 1. Dashboard Top Header Bar */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl border border-border bg-card shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl border border-border bg-card shadow-[0px_0px_2px_rgba(145,158,171,0.20),0px_12px_24px_-4px_rgba(145,158,171,0.12)]">
         <div className="space-y-1">
           <div className="flex items-center gap-2.5 flex-wrap">
-            <h1 className="text-2xl font-black tracking-tight text-foreground">
+            <h1 className="figma-h2 text-[32px] leading-[42px] lg:text-[48px] lg:leading-[64px] font-extrabold tracking-tight text-foreground">
               {productConfig.name} UX Research & Telemetry Dashboard
             </h1>
             <Badge
               variant="outline"
-              className="font-bold min-h-[32px] px-4 py-2 rounded-full"
+              className="font-bold min-h-[30px] px-3 py-1 rounded-[6px]"
               style={{
                 borderColor: `${productConfig.brandColor}40`,
                 backgroundColor: `${productConfig.brandColor}15`,
@@ -78,20 +78,23 @@ export function ResearchDashboardView({
               <CheckCircle2 className="size-3 mr-1" /> Production Benchmark
             </Badge>
           </div>
-          <p className="text-xs text-muted-foreground">
+          <p className="figma-body2 text-xs sm:text-sm text-muted-foreground">
             Empirical usability benchmarks, heuristic evaluations, and iteration metrics for {productConfig.name}.
           </p>
         </div>
 
         {/* Action Controls: Figma CTA, Version Selector & Print Export */}
         <div className="flex items-center gap-2.5 flex-wrap">
-          {/* Main CTA: Real Master Figma Design File */}
+          {/* Main CTA: Real Master Figma Design File (Figma Large Button: 48px, 15px font, r: 8px) */}
           <a
             href={productConfig.figmaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 h-12 min-h-[48px] px-6 py-3 rounded-xl text-white font-bold text-sm shadow-xs hover:shadow transition-all group"
-            style={{ backgroundColor: productConfig.brandColor }}
+            className="inline-flex items-center gap-2 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-white font-bold text-[15px] leading-[26px] transition-all group active:scale-[0.98] hover:brightness-105"
+            style={{
+              backgroundColor: productConfig.brandColor,
+              boxShadow: `0 8px 16px ${productConfig.brandColor}3d`,
+            }}
             title={`Open real master Figma design file for ${productConfig.name}`}
           >
             <svg className="size-4 shrink-0" viewBox="0 0 38 57" fill="none">
@@ -105,15 +108,16 @@ export function ResearchDashboardView({
             <ExternalLink className="size-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform" />
           </a>
 
-          <div className="flex items-center gap-1.5 bg-muted/60 p-1.5 rounded-xl border border-border">
-            <span className="text-xs font-semibold text-muted-foreground ml-1.5 mr-0.5">
+          {/* Version Selector (Figma Medium Buttons: 36px, 14px font, r: 8px) */}
+          <div className="flex items-center gap-1 bg-muted/60 p-1 rounded-[10px] border border-border">
+            <span className="text-xs font-semibold text-muted-foreground ml-2 mr-1">
               Snapshot:
             </span>
             {(["V1", "V2", "V3"] as const).map((v) => (
               <button
                 key={v}
                 onClick={() => setSelectedVersion(v)}
-                className={`px-5 py-2.5 text-xs font-bold rounded-xl transition-colors min-h-[40px] ${
+                className={`h-9 min-h-[36px] px-3.5 py-[6px] text-sm font-bold rounded-[8px] transition-all cursor-pointer ${
                   selectedVersion === v
                     ? "bg-background text-foreground shadow-xs"
                     : "text-muted-foreground hover:text-foreground"
@@ -244,12 +248,12 @@ export function ResearchDashboardView({
       </div>
 
       {/* 7. Bottom Gateway to Documentation */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl border border-border bg-card shadow-xs">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-2xl border border-border bg-card shadow-[0px_0px_2px_rgba(145,158,171,0.20),0px_12px_24px_-4px_rgba(145,158,171,0.12)]">
         <div className="space-y-1">
-          <h3 className="text-base font-bold text-foreground">
+          <h3 className="figma-h4 text-[20px] lg:text-[24px] font-bold text-foreground">
             Ready to explore the complete {productConfig.name} UX Documentation & System?
           </h3>
-          <p className="text-xs text-muted-foreground">
+          <p className="figma-body2 text-xs sm:text-sm text-muted-foreground">
             Dive into information architecture, user flows, {productConfig.screensCount} annotated screens, design tokens, and developer handoff specs.
           </p>
         </div>
@@ -257,8 +261,8 @@ export function ResearchDashboardView({
           <Button
             size="lg"
             onClick={onOpenDocs}
-            className="w-full sm:w-auto font-bold text-sm text-white shadow-sm"
-            style={{ backgroundColor: productConfig.brandColor }}
+            className="w-full sm:w-auto h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] font-bold text-[15px] leading-[26px] text-white cursor-pointer active:scale-[0.98] hover:brightness-105 border-transparent"
+            style={{ backgroundColor: productConfig.brandColor, boxShadow: `0 8px 16px ${productConfig.brandColor}3d` }}
           >
             <BookOpen className="size-4 mr-2" />
             Open UX Documentation

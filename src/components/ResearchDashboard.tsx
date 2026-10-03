@@ -52,7 +52,7 @@ export const ResearchDashboard: React.FC = () => {
             <Activity className="h-3.5 w-3.5" />
             <span>Research Studio & Quantitative Telemetry (dashboard-01 Architecture)</span>
           </div>
-          <h1 className="mt-3 font-heading text-2xl font-bold tracking-tight text-white sm:text-3xl">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-white mt-3">
             Enterprise Human Insight & Performance Benchmark
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-slate-300">

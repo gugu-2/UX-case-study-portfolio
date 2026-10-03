@@ -285,16 +285,16 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Heading & Mission Statement */}
           <div className="lg:col-span-7 xl:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
+            <div className="inline-flex items-center gap-2 rounded-[8px] border border-primary/30 bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary">
               <FolderKanban className="size-3.5" />
               <span>Master UX Documentation & Architecture Platform</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground leading-[1.1]">
+            <h1 className="figma-h1 text-[40px] leading-[50px] sm:text-[52px] sm:leading-[64px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
               Unified Product Design Systems & Usability Studios
             </h1>
 
-            <p className="text-sm sm:text-base leading-relaxed text-muted-foreground max-w-2xl">
+            <p className="figma-body1 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-2xl">
               Explore complete, verified UX documentation, quantitative research telemetry dashboards, and interactive task flowcharts for world-class software products. Select any product below to enter its specialized workspace.
             </p>
           </div>
@@ -394,19 +394,19 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-1">
           <div>
-            <h2 className="text-xl font-black tracking-tight text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[48px] lg:leading-[64px] font-extrabold tracking-tight text-foreground">
               All 8 Product Design Systems & Documentations
             </h2>
-            <p className="text-xs text-muted-foreground mt-0.5">
+            <p className="figma-body2 text-sm text-muted-foreground mt-1">
               Reorganized by priority: Linear App (#1), EdgeTrade Terminal (#2), and Minimals UI (#3), complete with verified cover thumbnails and telemetry.
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex items-center gap-1.5 p-1 rounded-2xl border border-border bg-card/80 self-start sm:self-auto">
+          {/* Filter Buttons (Figma Medium Button: h-9 px-4 py-[6px] r-8 text-sm font-bold) */}
+          <div className="flex items-center gap-1.5 p-1 rounded-[10px] border border-border bg-card/80 self-start sm:self-auto">
             <button
               onClick={() => setFilterType("all")}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
                 filterType === "all"
                   ? "bg-foreground text-background shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -416,7 +416,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
             </button>
             <button
               onClick={() => setFilterType("studio")}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
                 filterType === "studio"
                   ? "bg-foreground text-background shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -426,7 +426,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
             </button>
             <button
               onClick={() => setFilterType("external")}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
                 filterType === "external"
                   ? "bg-foreground text-background shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -442,7 +442,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
           {displayedProjects.map((project, idx) => (
             <div
               key={project.id}
-              className="rounded-3xl border border-border bg-card overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group interactive-card"
+              className="rounded-3xl border border-border/80 bg-card overflow-hidden shadow-[0px_0px_2px_rgba(145,158,171,0.20),0px_12px_24px_-4px_rgba(145,158,171,0.12)] dark:shadow-[0px_0px_2px_rgba(0,0,0,0.20),0px_12px_24px_-4px_rgba(0,0,0,0.24)] hover:shadow-[0px_16px_32px_-4px_rgba(145,158,171,0.20)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Header Strip with Color Accent & Logo */}
@@ -461,7 +461,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="text-lg font-black tracking-tight text-foreground">
+                        <h3 className="figma-h4 text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] font-bold tracking-tight text-foreground">
                           {project.title}
                         </h3>
                         <Badge
@@ -575,9 +575,10 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                 {project.type === "studio" && project.studioProductId ? (
                   <div className="flex flex-col sm:flex-row items-center gap-3">
                     <Button
+                      size="lg"
                       onClick={() => onSelectProject(project.studioProductId!, "dashboard")}
-                      className="w-full sm:flex-1 h-12 min-h-[48px] px-6 py-3 rounded-xl font-bold text-xs text-white shadow-xs cursor-pointer active:scale-[0.98] transition-all hover:brightness-105"
-                      style={{ backgroundColor: project.brandColor }}
+                      className="w-full sm:flex-1 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold text-white cursor-pointer active:scale-[0.98] transition-all hover:brightness-105 border-transparent"
+                      style={{ backgroundColor: project.brandColor, boxShadow: `0 8px 16px ${project.brandColor}3d` }}
                     >
                       <LayoutDashboard className="size-4 mr-2" />
                       Open Dashboard
@@ -585,8 +586,9 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
 
                     <Button
                       variant="outline"
+                      size="lg"
                       onClick={() => onSelectProject(project.studioProductId!, "docs")}
-                      className="w-full sm:flex-1 h-12 min-h-[48px] px-6 py-3 rounded-xl font-bold text-xs border-border hover:bg-muted text-foreground cursor-pointer active:scale-[0.98] transition-all"
+                      className="w-full sm:flex-1 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold border-border/80 hover:bg-muted text-foreground cursor-pointer active:scale-[0.98] transition-all"
                     >
                       <BookOpen className="size-4 mr-2" />
                       Documentation
@@ -597,8 +599,8 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                     href={project.externalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 h-12 min-h-[48px] px-6 py-3 rounded-xl font-bold text-xs text-white shadow-xs transition-all hover:brightness-105 active:scale-[0.98]"
-                    style={{ backgroundColor: project.brandColor }}
+                    className="w-full flex items-center justify-center gap-2 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold text-white transition-all hover:brightness-105 active:scale-[0.98]"
+                    style={{ backgroundColor: project.brandColor, boxShadow: `0 8px 16px ${project.brandColor}3d` }}
                   >
                     <span>Visit Live UX Documentation</span>
                     <ExternalLink className="size-4" />
@@ -631,7 +633,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                 {/* Bio & Pedigree */}
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2.5 flex-wrap">
-                    <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+                    <h2 className="figma-h2 text-[32px] leading-[42px] sm:text-[40px] sm:leading-[52px] lg:text-[48px] lg:leading-[64px] font-extrabold tracking-tight text-foreground">
                       About Pritam
                     </h2>
                     <Badge variant="outline" className="font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full border-primary/30 bg-primary/10 text-primary">
@@ -643,20 +645,20 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                     </span>
                   </div>
 
-                  <p className="text-sm sm:text-base font-semibold text-foreground/90 max-w-2xl leading-snug">
+                  <p className="figma-body1 text-sm sm:text-base font-semibold text-foreground/90 max-w-2xl leading-snug">
                     "14+ yrs Senior Product Designer & Developer at Airbnb, GitHub, and BBC – built and shipped polished websites and digital products used by millions globally"
                   </p>
 
                   {/* Pedigree Tags */}
                   <div className="flex items-center gap-2 pt-1 flex-wrap">
                     <span className="text-xs text-muted-foreground font-medium">Shipped at:</span>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-muted text-[11px] font-bold text-foreground border border-border">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[8px] bg-muted text-[11px] font-bold text-foreground border border-border">
                       <span className="text-rose-500">●</span> Airbnb
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-muted text-[11px] font-bold text-foreground border border-border">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[8px] bg-muted text-[11px] font-bold text-foreground border border-border">
                       <span className="text-foreground">●</span> GitHub
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-muted text-[11px] font-bold text-foreground border border-border">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-[8px] bg-muted text-[11px] font-bold text-foreground border border-border">
                       <span className="text-amber-500">●</span> BBC
                     </span>
                   </div>
@@ -688,10 +690,10 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                  <h3 className="text-base sm:text-lg font-black text-foreground tracking-tight">
+                  <h3 className="figma-h3 text-[22px] leading-[32px] sm:text-[28px] sm:leading-[38px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">
                     Official Portfolios, Design Systems & Code Repositories
                   </h3>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="figma-body2 text-xs text-muted-foreground">
                     Direct access to all websites, design case studies, and engineering repositories created by Pritam.
                   </p>
                 </div>
@@ -720,7 +722,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                       </Badge>
                     </div>
                     <div>
-                      <h4 className="text-base font-black text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
+                      <h4 className="figma-h4 text-[18px] leading-[26px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
                         Personal Website
                         <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </h4>
@@ -757,7 +759,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                       </Badge>
                     </div>
                     <div>
-                      <h4 className="text-base font-black text-foreground group-hover:text-[#0057FF] transition-colors flex items-center gap-1.5">
+                      <h4 className="figma-h4 text-[18px] leading-[26px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground group-hover:text-[#0057FF] transition-colors flex items-center gap-1.5">
                         Behance Portfolio
                         <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </h4>
@@ -794,7 +796,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                       </Badge>
                     </div>
                     <div>
-                      <h4 className="text-base font-black text-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors flex items-center gap-1.5">
+                      <h4 className="figma-h4 text-[18px] leading-[26px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors flex items-center gap-1.5">
                         GitHub Profile
                         <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </h4>
@@ -831,7 +833,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                       </Badge>
                     </div>
                     <div>
-                      <h4 className="text-base font-black text-foreground group-hover:text-[#0A66C2] transition-colors flex items-center gap-1.5">
+                      <h4 className="figma-h4 text-[18px] leading-[26px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground group-hover:text-[#0A66C2] transition-colors flex items-center gap-1.5">
                         LinkedIn Profile
                         <ExternalLink className="size-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </h4>

@@ -34,14 +34,14 @@ export function ScreenGallery({ onSelectScreen, screens = screensData }: ScreenG
 
         <div className="flex items-center gap-3 flex-wrap">
           {/* Priority Filter */}
-          <div className="flex items-center gap-1.5 bg-muted/60 p-1.5 rounded-xl border border-border">
+          <div className="flex items-center gap-1 bg-muted/60 p-1 rounded-[10px] border border-border">
             {["All", "P0", "P1"].map((p) => (
               <button
                 key={p}
                 onClick={() => setSelectedPriority(p)}
-                className={`px-4.5 py-2.5 text-xs font-semibold rounded-xl transition-colors min-h-[40px] ${
+                className={`h-9 min-h-[36px] px-3.5 py-[6px] text-sm font-bold rounded-[8px] transition-all cursor-pointer ${
                   selectedPriority === p
-                    ? "bg-background text-foreground shadow-xs font-bold"
+                    ? "bg-background text-foreground shadow-xs font-black"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -51,14 +51,14 @@ export function ScreenGallery({ onSelectScreen, screens = screensData }: ScreenG
           </div>
 
           {/* Platform Filter */}
-          <div className="flex items-center gap-1.5 bg-muted/60 p-1.5 rounded-xl border border-border">
+          <div className="flex items-center gap-1 bg-muted/60 p-1 rounded-[10px] border border-border">
             {["All", "Desktop", "Mobile"].map((plat) => (
               <button
                 key={plat}
                 onClick={() => setSelectedPlatform(plat)}
-                className={`px-4.5 py-2.5 text-xs font-semibold rounded-xl transition-colors min-h-[40px] ${
+                className={`h-9 min-h-[36px] px-3.5 py-[6px] text-sm font-bold rounded-[8px] transition-all cursor-pointer ${
                   selectedPlatform === plat
-                    ? "bg-background text-foreground shadow-xs font-bold"
+                    ? "bg-background text-foreground shadow-xs font-black"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -75,7 +75,7 @@ export function ScreenGallery({ onSelectScreen, screens = screensData }: ScreenG
           <div
             key={screen.id}
             onClick={() => onSelectScreen(screen.id)}
-            className="group rounded-xl border border-border bg-card overflow-hidden shadow-xs hover:shadow-md hover:border-primary/50 transition-all duration-200 cursor-pointer flex flex-col justify-between"
+            className="group rounded-2xl border border-border/80 bg-card overflow-hidden shadow-[0px_0px_2px_rgba(145,158,171,0.20),0px_12px_24px_-4px_rgba(145,158,171,0.12)] hover:border-primary/50 hover:shadow-[0px_16px_32px_-4px_rgba(145,158,171,0.20)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer flex flex-col justify-between"
           >
             {/* Thumbnail with Hover Zoom */}
             <div className="relative aspect-video w-full overflow-hidden bg-muted/50 border-b border-border">

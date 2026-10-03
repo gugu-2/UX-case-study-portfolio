@@ -65,13 +65,13 @@ export function ScreenExplainer({
       <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-4">
           <div className="flex items-center gap-3 flex-wrap">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-primary font-bold text-primary-foreground text-sm shadow-xs">
+            <span className="flex size-9 items-center justify-center rounded-[8px] bg-primary font-bold text-primary-foreground text-sm shadow-xs">
               {screen.id}
             </span>
-            <h1 className="text-2xl font-bold tracking-tight text-foreground">
+            <h1 className="figma-h2 text-[32px] leading-[42px] lg:text-[48px] lg:leading-[64px] font-extrabold tracking-tight text-foreground">
               {screen.name}
             </h1>
-            <Badge variant="outline" className="font-medium">
+            <Badge variant="outline" className="font-bold">
               {screen.platform}
             </Badge>
             <Badge
@@ -86,23 +86,23 @@ export function ScreenExplainer({
             </Badge>
             <Badge
               variant="outline"
-              className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold"
+              className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold"
             >
               <CheckCircle2 className="mr-1 size-3" />
               {screen.status}
             </Badge>
           </div>
 
-          {/* Quick Navigator among the 6 screens */}
+          {/* Quick Navigator among screens */}
           {onNavigateScreen && (
             <div className="flex items-center gap-1.5 overflow-x-auto">
               {["D01", "D02", "D03", "D04", "D05", "D06"].map((id) => (
                 <button
                   key={id}
                   onClick={() => onNavigateScreen(id)}
-                  className={`px-4.5 py-2.5 text-xs font-semibold rounded-xl min-h-[40px] transition-colors ${
+                  className={`h-9 min-h-[36px] px-3.5 py-[6px] text-sm font-bold rounded-[8px] transition-all cursor-pointer ${
                     screen.id === id
-                      ? "bg-primary text-primary-foreground shadow-xs"
+                      ? "bg-primary text-primary-foreground shadow-[0_8px_16px_rgba(0,171,85,0.24)]"
                       : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                   }`}
                 >
@@ -143,9 +143,9 @@ export function ScreenExplainer({
             <button
               key={st.key}
               onClick={() => setActiveState(st.key)}
-              className={`px-4.5 py-2.5 text-xs font-medium rounded-xl min-h-[40px] transition-all ${
+              className={`h-9 min-h-[36px] px-3.5 py-[6px] text-sm font-bold rounded-[8px] transition-all cursor-pointer ${
                 activeState === st.key
-                  ? "bg-background text-foreground shadow-xs border border-border font-semibold"
+                  ? "bg-background text-foreground shadow-xs border border-border"
                   : "text-muted-foreground hover:text-foreground hover:bg-background/50"
               }`}
             >
@@ -158,9 +158,9 @@ export function ScreenExplainer({
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
-            size="sm"
+            size="default"
             onClick={() => setShowPins(!showPins)}
-            className="h-11 min-h-[44px] px-4.5 text-xs font-semibold rounded-xl"
+            className="h-9 min-h-[36px] px-3.5 text-sm font-bold rounded-[8px]"
           >
             {showPins ? (
               <>
@@ -176,7 +176,7 @@ export function ScreenExplainer({
 
           <Dialog open={isZoomOpen} onOpenChange={setIsZoomOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" size="sm" className="h-11 min-h-[44px] px-4.5 text-xs font-semibold rounded-xl">
+              <Button variant="outline" size="default" className="h-9 min-h-[36px] px-3.5 text-sm font-bold rounded-[8px]">
                 <ZoomIn className="mr-1.5 size-3.5" /> Zoom High-Res
               </Button>
             </DialogTrigger>
@@ -265,8 +265,8 @@ export function ScreenExplainer({
         {/* Right: Pin Explanations (Synchronized Hover & Focus) */}
         <div className="lg:col-span-5 space-y-3">
           <div className="flex items-center justify-between border-b border-border pb-2">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
-              <Tag className="size-3.5" /> Pin Annotations ({screen.hotspots.length})
+            <h2 className="figma-h4 text-[20px] lg:text-[24px] font-bold text-foreground flex items-center gap-2">
+              <Tag className="size-4" /> Pin Annotations ({screen.hotspots.length})
             </h2>
             <span className="text-xs text-muted-foreground">
               Hover row to locate on image
@@ -303,7 +303,7 @@ export function ScreenExplainer({
                       >
                         {pin.n}
                       </span>
-                      <h3 className="text-sm font-bold text-foreground">
+                      <h3 className="figma-subtitle1 text-base font-bold text-foreground">
                         {pin.element}
                       </h3>
                     </div>
@@ -317,7 +317,7 @@ export function ScreenExplainer({
                             e.stopPropagation()
                             if (onNavigateToFinding) onNavigateToFinding(ev)
                           }}
-                          className="px-2.5 py-1 text-xs font-mono font-bold rounded-lg bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors border border-border min-h-[28px]"
+                          className="px-2.5 py-1 text-xs font-mono font-bold rounded-[8px] bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors border border-border min-h-[28px]"
                           title={`Click to view research finding ${ev}`}
                         >
                           [{ev}]

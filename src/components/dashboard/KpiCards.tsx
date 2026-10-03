@@ -177,7 +177,7 @@ export function KpiCards({ kpis }: KpiCardsProps) {
 
               {/* Row 3: Huge Big Number */}
               <div className="mt-3 sm:mt-4 flex items-baseline">
-                <span className="text-3xl sm:text-4xl font-black tracking-tight text-foreground">
+                <span className="figma-h2 text-[32px] sm:text-[38px] lg:text-[44px] leading-tight font-extrabold tracking-tight text-foreground">
                   {formattedValue}
                 </span>
                 {kpi.total && (
