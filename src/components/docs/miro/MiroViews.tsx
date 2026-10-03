@@ -32,13 +32,13 @@ export function MiroVisionView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-foreground border-b border-border pb-2">1.1 Visual Collaboration Overview</h2>
+        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">1.1 Visual Collaboration Overview</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Miro is an online collaborative whiteboard platform that enables distributed teams to work effectively together. It translates the experience of a physical whiteboard into an infinite, multiplayer digital canvas.
         </p>
       </div>
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-foreground border-b border-border pb-2">1.2 Spatial Principles</h2>
+        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">1.2 Spatial Principles</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 border border-border rounded-xl bg-card">
             <h3 className="font-bold text-sm text-foreground">1. Absolute Freedom</h3>
@@ -79,7 +79,7 @@ export const MiroProcessView: React.FC = () => {
             <Workflow className="size-3.5" />
             <span>27 — Master UX Process</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             The Miro Facilitation Process
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -92,7 +92,7 @@ export const MiroProcessView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Workflow className="size-4 text-yellow-600" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">27.1 End-to-End Workshop Lifecycle</h2>
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">27.1 End-to-End Workshop Lifecycle</h2>
             <p className="text-xs text-muted-foreground mt-0.5">The 7-stage lifecycle of remote collaboration.</p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export const MiroArchitectureView: React.FC = () => {
             <Layers className="size-3.5" />
             <span>05 — Information Architecture</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">Miro Z-Index Architecture</h1>
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">Miro Z-Index Architecture</h1>
           <p className="text-sm leading-relaxed text-muted-foreground">The spatial indexing hierarchy of the infinite canvas and its relationship to the dashboard.</p>
         </div>
       </div>
@@ -144,7 +144,7 @@ export const MiroArchitectureView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Layers className="size-4 text-yellow-600" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">5.1 Canvas Layer Topology</h2>
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">5.1 Canvas Layer Topology</h2>
             <p className="text-xs text-muted-foreground mt-0.5">The z-index layers that make up the WebGL canvas separating content from UI.</p>
           </div>
         </div>
@@ -193,7 +193,7 @@ export function MiroUserFlowsView() {
             <GitFork className="size-3.5" />
             <span>06 — User & Task Flows</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">Miro Action Task Flows</h1>
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">Miro Action Task Flows</h1>
           <p className="text-sm leading-relaxed text-muted-foreground">Algorithmic mapping of core facilitation and diagramming tasks.</p>
         </div>
       </div>
@@ -203,7 +203,7 @@ export function MiroUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <CheckSquare className="size-4 text-yellow-600" />
             <div>
-              <h2 className="text-lg font-bold text-foreground">6.1 Workshop Creation Flow</h2>
+              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.1 Workshop Creation Flow</h2>
               <p className="text-xs text-muted-foreground mt-0.5">Creating and sharing a structured workshop board.</p>
             </div>
           </div>
@@ -214,7 +214,7 @@ export function MiroUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <ListTree className="size-4 text-yellow-600" />
             <div>
-              <h2 className="text-lg font-bold text-foreground">6.2 AI Clustering Task Flow</h2>
+              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.2 AI Clustering Task Flow</h2>
               <p className="text-xs text-muted-foreground mt-0.5">Automating synthesis of qualitative sticky note data.</p>
             </div>
           </div>
@@ -225,7 +225,7 @@ export function MiroUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <GitFork className="size-4 text-yellow-600" />
             <div>
-              <h2 className="text-lg font-bold text-foreground">6.3 Smart Diagramming Decision Tree</h2>
+              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.3 Smart Diagramming Decision Tree</h2>
               <p className="text-xs text-muted-foreground mt-0.5">How the system anticipates connection intent.</p>
             </div>
           </div>
@@ -241,7 +241,7 @@ export function MiroTokensView() {
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
         <div className="max-w-3xl space-y-2">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">Miro Design System & Tokens</h1>
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">Miro Design System & Tokens</h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Miro uses a playful yet highly legible design system. The core UI chrome is kept minimal and neutral to let the vibrant colors of user-generated content (like sticky notes) pop on the canvas.
           </p>
@@ -250,7 +250,7 @@ export function MiroTokensView() {
 
       <div className="space-y-8">
         <div className="p-6 rounded-2xl border border-border bg-card space-y-4">
-          <h3 className="text-lg font-bold text-foreground">Vibrant Sticky Palette</h3>
+          <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">Vibrant Sticky Palette</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-4 rounded-xl bg-muted border border-border flex flex-col gap-2">
               <div className="w-full h-12 bg-[#FFF9B1] rounded-md"></div>
@@ -279,7 +279,7 @@ export function MiroArtifactMapView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-foreground border-b border-border pb-2">28.1 Miro Ecosystem Artifact Topology</h2>
+        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">28.1 Miro Ecosystem Artifact Topology</h2>
         <MermaidDiagram chart={`
           graph TD
             MiroFigma[Miro Figma UI Kit] --> Components[React UI Components]
@@ -298,7 +298,7 @@ export function MiroProblemOpportunityView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-foreground border-b border-border pb-2">3.1 Core Problem</h2>
+        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">3.1 Core Problem</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Remote teams struggle to replicate the unstructured, chaotic nature of in-person brainstorming sessions, leading to rigid workflows.
         </p>
@@ -311,7 +311,7 @@ export function MiroAccessibilityView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-foreground border-b border-border pb-2">10.1 Canvas Screen Reader Limits</h2>
+        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">10.1 Canvas Screen Reader Limits</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Infinite canvas applications fundamentally break standard DOM accessibility trees because objects are rendered via WebGL or absolute positioning. We maintain a hidden DOM tree overlay to allow screen readers to parse sticky note contents sequentially.
         </p>
@@ -324,7 +324,7 @@ export function MiroHandoffView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-foreground border-b border-border pb-2">11.1 Canvas WebGL Render Protocol</h2>
+        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">11.1 Canvas WebGL Render Protocol</h2>
         <div className="p-4 bg-muted text-muted-foreground font-mono text-xs rounded-xl overflow-x-auto border border-border">
           <pre>
 {`interface CanvasNode {

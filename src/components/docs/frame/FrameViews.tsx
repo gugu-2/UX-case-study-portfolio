@@ -32,13 +32,13 @@ export function FrameVisionView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-foreground border-b border-border pb-2">1.1 Unified Workspace Concept</h2>
+        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">1.1 Unified Workspace Concept</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Frame is a connected OS for teams that unifies documents, tasks, and whiteboards into a single multiplayer workspace. It eliminates context switching by allowing users to seamlessly transition between writing a spec and assigning a task without leaving the canvas.
         </p>
       </div>
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-foreground border-b border-border pb-2">1.2 Core Integration Principles</h2>
+        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">1.2 Core Integration Principles</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 border border-border rounded-xl bg-card">
             <h3 className="font-bold text-sm text-foreground">1. Block-Based Architecture</h3>
@@ -79,7 +79,7 @@ export const FrameProcessView: React.FC = () => {
             <Workflow className="size-3.5" />
             <span>27 — Master UX Process</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             The Frame Connected Workflow Process
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -92,7 +92,7 @@ export const FrameProcessView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Workflow className="size-4 text-foreground" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">27.1 End-to-End Workspace Lifecycle Flowchart</h2>
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">27.1 End-to-End Workspace Lifecycle Flowchart</h2>
             <p className="text-xs text-muted-foreground mt-0.5">The 7-stage lifecycle from migration to daily task execution.</p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export const FrameArchitectureView: React.FC = () => {
             <Layers className="size-3.5" />
             <span>05 — Information Architecture</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">Frame Information Architecture</h1>
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">Frame Information Architecture</h1>
           <p className="text-sm leading-relaxed text-muted-foreground">The structural blueprint mapping spaces, content modalities, and the underlying knowledge graph.</p>
         </div>
       </div>
@@ -144,7 +144,7 @@ export const FrameArchitectureView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Layers className="size-4 text-foreground" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">5.1 Unified Modality Sitemap</h2>
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">5.1 Unified Modality Sitemap</h2>
             <p className="text-xs text-muted-foreground mt-0.5">Showing how block embeds connect isolated documents.</p>
           </div>
         </div>
@@ -194,7 +194,7 @@ export function FrameUserFlowsView() {
             <GitFork className="size-3.5" />
             <span>06 — User & Task Flows</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">Frame Action Task Flows</h1>
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">Frame Action Task Flows</h1>
           <p className="text-sm leading-relaxed text-muted-foreground">Algorithmic mapping of core unified workflow tasks across docs, tasks, and search.</p>
         </div>
       </div>
@@ -204,7 +204,7 @@ export function FrameUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <CheckSquare className="size-4 text-foreground" />
             <div>
-              <h2 className="text-lg font-bold text-foreground">6.1 Contextual Task Generation Flow</h2>
+              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.1 Contextual Task Generation Flow</h2>
               <p className="text-xs text-muted-foreground mt-0.5">Creating tasks directly from within a markdown document.</p>
             </div>
           </div>
@@ -215,7 +215,7 @@ export function FrameUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <ListTree className="size-4 text-foreground" />
             <div>
-              <h2 className="text-lg font-bold text-foreground">6.2 Whiteboard to Kanban Task Flow</h2>
+              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.2 Whiteboard to Kanban Task Flow</h2>
               <p className="text-xs text-muted-foreground mt-0.5">Bridging unstructured brainstorming and structured execution.</p>
             </div>
           </div>
@@ -226,7 +226,7 @@ export function FrameUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <GitFork className="size-4 text-foreground" />
             <div>
-              <h2 className="text-lg font-bold text-foreground">6.3 Omni-Search (Cmd+K) Decision Tree</h2>
+              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.3 Omni-Search (Cmd+K) Decision Tree</h2>
               <p className="text-xs text-muted-foreground mt-0.5">How the system resolves deep-linked search queries.</p>
             </div>
           </div>
@@ -242,7 +242,7 @@ export function FrameTokensView() {
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
         <div className="max-w-3xl space-y-2">
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">Frame Design System & Tokens</h1>
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">Frame Design System & Tokens</h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Frame utilizes a high-contrast, minimalist design language that focuses on content over chrome. The color palette relies heavily on stark blacks and whites for structure, with muted accent colors used strictly for semantic state (e.g., green for 'Done' tasks, amber for 'In Progress').
           </p>
@@ -251,7 +251,7 @@ export function FrameTokensView() {
 
       <div className="space-y-8">
         <div className="p-6 rounded-2xl border border-border bg-card space-y-4">
-          <h3 className="text-lg font-bold text-foreground">Semantic Task Tokens</h3>
+          <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">Semantic Task Tokens</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-4 rounded-xl bg-muted border border-border flex flex-col gap-2">
               <div className="w-full h-12 bg-zinc-500 rounded-md"></div>
