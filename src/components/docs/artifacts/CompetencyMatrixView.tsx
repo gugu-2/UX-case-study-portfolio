@@ -515,7 +515,7 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
               <Compass className="size-3.5" />
               <span>UX Competencies & Skills Architecture</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground uppercase">
+            <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground uppercase">
               UX Skills & Competency Matrix
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -555,7 +555,7 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
               <div className="flex items-center gap-1">
                 <button
                   onClick={() => setViewMode("product")}
-                  className={`px-3 py-1.5 rounded-xl text-xs transition-all cursor-pointer ${
+                  className={`figma-btn-md h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] text-xs transition-all cursor-pointer ${
                     viewMode === "product"
                       ? "bg-card text-foreground font-black shadow-xs"
                       : "text-muted-foreground hover:text-foreground"
@@ -565,7 +565,7 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
                 </button>
                 <button
                   onClick={() => setViewMode("reference")}
-                  className={`px-3 py-1.5 rounded-xl text-xs transition-all cursor-pointer ${
+                  className={`figma-btn-md h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] text-xs transition-all cursor-pointer ${
                     viewMode === "reference"
                       ? "bg-card text-foreground font-black shadow-xs"
                       : "text-muted-foreground hover:text-foreground"
@@ -857,7 +857,7 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
       <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border pb-4">
           <div>
-            <h2 className="text-lg font-black text-foreground uppercase tracking-tight">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground uppercase tracking-tight">
               18 UX Competencies Directory & Scoring Rubric
             </h2>
             <p className="text-xs text-muted-foreground">

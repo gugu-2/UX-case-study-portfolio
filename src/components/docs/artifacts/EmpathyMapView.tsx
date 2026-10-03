@@ -269,7 +269,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           <Heart className="size-3.5" />
           <span>Research Synthesis Artifact</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground">
+        <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
           Empathy Map
         </h1>
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -283,7 +283,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
               <button
                 key={p.personaName}
                 onClick={() => setSelectedPersonaIndex(idx)}
-                className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                className={`figma-btn-md h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer flex items-center gap-2 ${
                   selectedPersonaIndex === idx
                     ? "bg-foreground text-background shadow-xs"
                     : "bg-muted text-muted-foreground hover:text-foreground border border-border"
@@ -338,7 +338,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           <div className="md:col-span-2 flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto">
             <div className="space-y-1">
               <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">What does user</span>
-              <h3 className="text-xl sm:text-2xl font-black text-amber-500 dark:text-amber-400 tracking-tight flex items-center justify-center gap-2">
+              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-amber-500 dark:text-amber-400 tracking-tight flex items-center justify-center gap-2">
                 <Heart className="size-5" /> Think & feel
               </h3>
             </div>
@@ -355,7 +355,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           <div className="flex flex-col items-start space-y-4 md:pr-14">
             <div className="space-y-1">
               <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">What does user</span>
-              <h3 className="text-xl sm:text-2xl font-black text-amber-500 dark:text-amber-400 tracking-tight flex items-center gap-2">
+              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-amber-500 dark:text-amber-400 tracking-tight flex items-center gap-2">
                 <Ear className="size-5" /> Hear
               </h3>
             </div>
@@ -372,7 +372,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           <div className="flex flex-col items-start md:items-end md:text-right space-y-4 md:pl-14">
             <div className="space-y-1">
               <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">What does user</span>
-              <h3 className="text-xl sm:text-2xl font-black text-amber-500 dark:text-amber-400 tracking-tight flex items-center gap-2 md:flex-row-reverse">
+              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-amber-500 dark:text-amber-400 tracking-tight flex items-center gap-2 md:flex-row-reverse">
                 <Eye className="size-5" /> See
               </h3>
             </div>
@@ -389,7 +389,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           <div className="md:col-span-2 flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto pt-6">
             <div className="space-y-1">
               <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">What does user</span>
-              <h3 className="text-xl sm:text-2xl font-black text-amber-500 dark:text-amber-400 tracking-tight flex items-center justify-center gap-2">
+              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-amber-500 dark:text-amber-400 tracking-tight flex items-center justify-center gap-2">
                 <MessageSquare className="size-5" /> Say and Do
               </h3>
             </div>
@@ -413,7 +413,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
               <Quote className="size-5" />
             </div>
             <div>
-              <h3 className="text-2xl font-black text-foreground tracking-tight">Gain</h3>
+              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">Gain</h3>
               <p className="text-xs text-muted-foreground">User needs, value accelerators, and desires</p>
             </div>
           </div>
@@ -435,7 +435,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
               <Quote className="size-5" />
             </div>
             <div>
-              <h3 className="text-2xl font-black text-foreground tracking-tight">Pain</h3>
+              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">Pain</h3>
               <p className="text-xs text-muted-foreground">Frictions, anxieties, and operational roadblocks</p>
             </div>
           </div>

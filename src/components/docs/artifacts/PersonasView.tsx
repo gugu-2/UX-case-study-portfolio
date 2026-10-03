@@ -287,7 +287,7 @@ export function PersonasView({ currentProduct = "linear" }: PersonasViewProps) {
             <span>02.3 — Archetypal User Personas</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             {productConfig.name} User Personas & Behavioral Archetypes
           </h1>
 
@@ -314,7 +314,7 @@ export function PersonasView({ currentProduct = "linear" }: PersonasViewProps) {
                 />
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="text-xl font-bold text-foreground">{persona.name}</h3>
+                    <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground">{persona.name}</h3>
                     <Badge variant="outline" className="font-mono text-xs">
                       Persona 0{idx + 1}
                     </Badge>

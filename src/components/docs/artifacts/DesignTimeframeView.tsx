@@ -975,7 +975,7 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
               <Calendar className="size-3.5" />
               <span>Verified Delivery Lifecycle (2020 – 2022)</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground">
+            <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
               {viewMode === "individual"
                 ? `${activeProfile.productName} Timeline`
                 : "Master Portfolio Chronology (2020–2022)"}
@@ -991,7 +991,7 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
           <div className="flex items-center gap-2 bg-muted/40 p-1.5 rounded-2xl border border-border/70 self-start lg:self-auto shrink-0 shadow-2xs">
             <button
               onClick={() => setViewMode("individual")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`figma-btn-md h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
                 viewMode === "individual"
                   ? "bg-foreground text-background shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -1004,7 +1004,7 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
             </button>
             <button
               onClick={() => setViewMode("concurrent")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              className={`figma-btn-md h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
                 viewMode === "concurrent"
                   ? "bg-foreground text-background shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -1031,7 +1031,7 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
                   onClick={() => {
                     setSelectedProductId(pid)
                   }}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap shadow-2xs ${
+                  className={`figma-btn-md h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] text-xs font-bold transition-all cursor-pointer whitespace-nowrap shadow-2xs ${
                     selectedProductId === pid
                       ? "bg-foreground text-background shadow-sm font-black scale-102"
                       : "border border-border bg-card text-muted-foreground hover:text-foreground hover:bg-muted/40"

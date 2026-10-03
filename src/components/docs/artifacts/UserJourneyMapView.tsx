@@ -483,7 +483,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
             <span className="text-red-500 text-base">📍</span>
             <span>Define</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-foreground uppercase">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground uppercase">
             USER JOURNEY MAP
           </h1>
           <p className="text-xs text-muted-foreground max-w-xl pt-1">
@@ -511,7 +511,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
           <div className="flex items-center bg-muted p-1 rounded-xl border border-border text-xs font-bold">
             <button
               onClick={() => setDataMode("product")}
-              className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+              className={`figma-btn-md h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] transition-all cursor-pointer ${
                 dataMode === "product"
                   ? "bg-card text-foreground font-black shadow-xs"
                   : "text-muted-foreground hover:text-foreground"
@@ -521,7 +521,7 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
             </button>
             <button
               onClick={() => setDataMode("reference")}
-              className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+              className={`figma-btn-md h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] transition-all cursor-pointer ${
                 dataMode === "reference"
                   ? "bg-card text-foreground font-black shadow-xs"
                   : "text-muted-foreground hover:text-foreground"
