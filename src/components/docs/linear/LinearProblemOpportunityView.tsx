@@ -107,7 +107,7 @@ export const LinearProblemOpportunityView: React.FC = () => {
             <AlertTriangle className="size-3.5" />
             <span>03 — Problem & Opportunity Matrix</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             The Problem Space: Legacy Sluggishness vs High-Velocity Flow
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -121,7 +121,7 @@ export const LinearProblemOpportunityView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Target className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">3.1 Root Problem Statement</h2>
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">3.1 Root Problem Statement</h2>
         </div>
         <blockquote className="text-sm sm:text-base font-semibold text-foreground/90 border-l-4 border-[#5E6AD2] pl-4 py-2 bg-[#5E6AD2]/5 rounded-r-xl">
           "Software creators lose up to 45 minutes of productive engineering time every day wrestling with sluggish issue tracking interfaces, waiting on slow page reloads, and manually updating ticket statuses that should be automatically derived from Git commits."
@@ -133,7 +133,7 @@ export const LinearProblemOpportunityView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <ShieldAlert className="size-4 text-red-500" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               3.2 The 5-Layer Problem Hierarchy
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -168,7 +168,7 @@ export const LinearProblemOpportunityView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Lightbulb className="size-4 text-amber-500" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               3.3 Strategic Opportunity Matrix
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">

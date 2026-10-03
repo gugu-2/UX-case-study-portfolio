@@ -207,7 +207,7 @@ export const LinearVisionView: React.FC = () => {
             <Compass className="size-3.5" />
             <span>01 — Product & UX Vision (The Linear Method)</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             The Purpose-Built System for Modern Product Teams
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -221,7 +221,7 @@ export const LinearVisionView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-6">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Sparkles className="size-4 text-[#5E6AD2]" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
             1.1 Comprehensive Product Overview
           </h2>
         </div>
@@ -263,7 +263,7 @@ export const LinearVisionView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-6">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Zap className="size-4 text-[#5E6AD2]" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
             1.2 The 6 Linear UX Design Principles
           </h2>
         </div>
@@ -296,7 +296,7 @@ export const LinearVisionView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Layers className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               1.3 Linear Product Ecosystem & Architecture Map
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -317,7 +317,7 @@ export const LinearVisionView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Terminal className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               2.3 Core User Personas
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -383,7 +383,7 @@ export const LinearVisionView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Workflow className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               2.5 Daily Developer User Journey Map
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -404,7 +404,7 @@ export const LinearVisionView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Cpu className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               2.6 Frontstage & Backstage Experience Map
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">

@@ -66,7 +66,7 @@ export const LinearArchitectureView: React.FC = () => {
             <Layers className="size-3.5" />
             <span>05 — Information Architecture</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Dual Cadence Hierarchy & Universal Command Graph
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -81,7 +81,7 @@ export const LinearArchitectureView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <FolderTree className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               5.1 Ecosystem Information Architecture Diagram
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -102,7 +102,7 @@ export const LinearArchitectureView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Command className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               5.2 Global Command Menu (⌘K) Navigation Topology
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -122,7 +122,7 @@ export const LinearArchitectureView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Filter className="size-4 text-[#5E6AD2]" />
-          <h2 className="text-lg font-bold text-foreground">5.3 Multidimensional View Dimension Matrix</h2>
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">5.3 Multidimensional View Dimension Matrix</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">

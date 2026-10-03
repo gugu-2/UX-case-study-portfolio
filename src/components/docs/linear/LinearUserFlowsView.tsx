@@ -79,7 +79,7 @@ export const LinearUserFlowsView: React.FC = () => {
             <GitFork className="size-3.5" />
             <span>06 — User & Task Flows</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             High-Velocity Task Execution & Git State Synchronization
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -93,7 +93,7 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Terminal className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               6.1 Flow 1: Rapid Issue Creation via 'C' Shortcut
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -114,7 +114,7 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <CheckSquare className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               6.2 Flow 2: Quick Status Switcher ('S' Shortcut) & Self-Assignment
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -135,7 +135,7 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <GitBranch className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               6.3 Flow 3: Git Branch Linking & Pull Request Auto-Close
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -156,7 +156,7 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Table className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               6.4 Complete 14-Screen Master Inventory
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -207,7 +207,7 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Layers className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               6.5 Comprehensive 17 Screen-State Matrix
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">

@@ -107,7 +107,7 @@ export const LinearArtifactMapView: React.FC = () => {
             <Layers className="size-3.5" />
             <span>28 — The Ideal UX Artifact Map</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             End-to-End Artifact Topology & Figma Traceability
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -121,7 +121,7 @@ export const LinearArtifactMapView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Workflow className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               28.1 Linear Ecosystem Artifact Topology
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -143,7 +143,7 @@ export const LinearArtifactMapView: React.FC = () => {
           <div className="flex items-center gap-2">
             <FileCheck className="size-4 text-[#5E6AD2]" />
             <div>
-              <h2 className="text-lg font-bold text-foreground">
+              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
                 28.2 Figma-to-Code Traceability Matrix
               </h2>
               <p className="text-xs text-muted-foreground mt-0.5">
@@ -156,7 +156,7 @@ export const LinearArtifactMapView: React.FC = () => {
             href="https://www.figma.com/design/KbEEvOwGnxSPis5uzH5Fq0/Linear-UI?node-id=2202-2"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 h-11 min-h-[44px] px-5 py-2.5 rounded-xl border border-border bg-muted/40 hover:bg-muted text-xs font-bold text-foreground transition group"
+            className="figma-btn-md inline-flex items-center gap-2 h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] border border-border bg-muted/40 hover:bg-muted text-sm font-bold text-foreground transition group"
           >
             <span>Open Linear Master Figma</span>
             <ExternalLink className="size-3 text-muted-foreground group-hover:text-foreground" />

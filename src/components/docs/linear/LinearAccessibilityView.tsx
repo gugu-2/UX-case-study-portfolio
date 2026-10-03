@@ -80,7 +80,7 @@ export const LinearAccessibilityView: React.FC = () => {
             <Accessibility className="size-3.5" />
             <span>10 — Accessibility & Keyboard Ergonomics</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             WCAG 2.2 AA Compliance & Universal Keyboard Flow
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -94,7 +94,7 @@ export const LinearAccessibilityView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Eye className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               10.1 Contrast Ratio Verification (Obsidian Dark Mode)
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
@@ -139,7 +139,7 @@ export const LinearAccessibilityView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Keyboard className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               10.2 Architectural Focus Mechanisms
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
