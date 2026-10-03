@@ -42,7 +42,7 @@ export const TokensShowcase: React.FC = () => {
             <Palette className="size-3.5" />
             <span>08 — Design System, Tokens & Interaction States</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Interaction State Machine, Tokens & 8pt Cadence
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -58,7 +58,7 @@ export const TokensShowcase: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Activity className="size-4 text-primary" />
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               8.1 Interaction State Model (Deterministic State Machine)
             </h2>
           </div>
@@ -175,7 +175,7 @@ export const TokensShowcase: React.FC = () => {
       <div className="space-y-6">
         <div className="flex items-center gap-2">
           <Palette className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
             Color Primitives & Contrast Ratios
           </h2>
         </div>
@@ -237,7 +237,7 @@ export const TokensShowcase: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Type className="size-4 text-primary" />
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               Typography Optical Hierarchy (Roboto Type Scale)
             </h2>
           </div>
@@ -287,7 +287,7 @@ export const TokensShowcase: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Ruler className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
             8pt Linear Spatial Cadence
           </h2>
         </div>

@@ -125,10 +125,10 @@ export function AppSidebar({
 
         {/* Product Quick-Switch Tabs */}
         {setCurrentProduct && (
-          <div className="flex items-center gap-1 bg-muted/40 p-1 rounded-xl border border-sidebar-border text-[11px]">
+          <div className="flex items-center gap-1 bg-muted/40 p-1 rounded-[8px] border border-sidebar-border text-[11px]">
             <button
               onClick={() => setCurrentProduct("minimal")}
-              className={`flex-1 py-1.5 px-2 rounded-lg font-bold text-center transition-all cursor-pointer ${
+              className={`flex-1 py-1.5 px-2 rounded-[6px] font-bold text-center transition-all cursor-pointer ${
                 currentProduct === "minimal"
                   ? "bg-background text-foreground shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -138,7 +138,7 @@ export function AppSidebar({
             </button>
             <button
               onClick={() => setCurrentProduct("linear")}
-              className={`flex-1 py-1.5 px-2 rounded-lg font-bold text-center transition-all cursor-pointer ${
+              className={`flex-1 py-1.5 px-2 rounded-[6px] font-bold text-center transition-all cursor-pointer ${
                 currentProduct === "linear"
                   ? "bg-background text-foreground shadow-xs font-black text-[#5E6AD2]"
                   : "text-muted-foreground hover:text-foreground"
@@ -153,10 +153,10 @@ export function AppSidebar({
       <SidebarContent className="px-2 py-3 space-y-4">
         {/* Navigation Mode Quick Switch (All Projects | Dashboard | Docs) */}
         <div className="px-2">
-          <div className="flex items-center gap-1 bg-sidebar-accent/60 p-1 rounded-xl border border-sidebar-border text-[11px]">
+          <div className="flex items-center gap-1 bg-sidebar-accent/60 p-1 rounded-[8px] border border-sidebar-border text-[11px]">
             <button
               onClick={() => setCurrentView("home")}
-              className={`flex-1 py-1.5 px-1.5 rounded-lg font-bold text-center transition-all cursor-pointer ${
+              className={`flex-1 py-1.5 px-1.5 rounded-[6px] font-bold text-center transition-all cursor-pointer ${
                 currentView === "home"
                   ? "bg-background text-foreground shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -167,7 +167,7 @@ export function AppSidebar({
             </button>
             <button
               onClick={() => setCurrentView("dashboard")}
-              className={`flex-1 py-1.5 px-1.5 rounded-lg font-bold text-center transition-all cursor-pointer ${
+              className={`flex-1 py-1.5 px-1.5 rounded-[6px] font-bold text-center transition-all cursor-pointer ${
                 currentView === "dashboard"
                   ? "bg-background text-foreground shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -177,7 +177,7 @@ export function AppSidebar({
             </button>
             <button
               onClick={() => setCurrentView("docs")}
-              className={`flex-1 py-1.5 px-1.5 rounded-lg font-bold text-center transition-all cursor-pointer ${
+              className={`flex-1 py-1.5 px-1.5 rounded-[6px] font-bold text-center transition-all cursor-pointer ${
                 currentView === "docs"
                   ? "bg-background text-foreground shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"

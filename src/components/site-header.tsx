@@ -49,16 +49,16 @@ export function SiteHeader({
     <header className="flex h-16 shrink-0 items-center justify-between border-b border-border bg-background/95 backdrop-blur-sm px-4 lg:px-6 sticky top-0 z-30 transition-colors">
       {/* Left: Sidebar Trigger & Product Brand Selector */}
       <div className="flex items-center gap-3">
-        <SidebarTrigger className="-ml-1 size-9 rounded-xl" />
+        <SidebarTrigger className="-ml-1 size-9 rounded-[8px]" />
         <Separator orientation="vertical" className="h-4 hidden sm:block" />
 
         {/* Global Product Switcher Dropdown */}
         {setCurrentProduct ? (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl border border-border bg-card/60 hover:bg-muted/60 transition group text-left cursor-pointer">
+              <button className="flex items-center gap-2.5 px-3 py-1.5 rounded-[8px] border border-border bg-card/60 hover:bg-muted/60 transition group text-left cursor-pointer">
                 <div
-                  className="flex size-7 items-center justify-center rounded-lg font-black text-white text-xs shadow-xs transition-colors shrink-0"
+                  className="flex size-7 items-center justify-center rounded-[6px] font-black text-white text-xs shadow-xs transition-colors shrink-0"
                   style={{ backgroundColor: productConfig.brandColor }}
                 >
                   {productConfig.brandLogoText}
@@ -161,10 +161,10 @@ export function SiteHeader({
       </div>
 
       {/* Center: The Three Primary Top Links (All Projects | Dashboard | Documentation) */}
-      <div className="flex items-center gap-1.5 bg-muted/60 p-1.5 rounded-2xl border border-border">
+      <div className="flex items-center gap-1.5 bg-muted/60 p-1 rounded-[10px] border border-border">
         <button
           onClick={() => setCurrentView("home")}
-          className={`flex items-center gap-2 px-4.5 py-2.5 text-xs font-bold rounded-xl transition-all min-h-[40px] cursor-pointer ${
+          className={`flex items-center gap-2 h-9 min-h-[36px] px-3.5 py-[6px] text-sm font-bold rounded-[8px] transition-all cursor-pointer ${
             currentView === "home"
               ? "bg-background text-foreground shadow-xs font-black"
               : "text-muted-foreground hover:text-foreground"
@@ -177,7 +177,7 @@ export function SiteHeader({
 
         <button
           onClick={() => setCurrentView("dashboard")}
-          className={`flex items-center gap-2 px-4.5 py-2.5 text-xs font-bold rounded-xl transition-all min-h-[40px] cursor-pointer ${
+          className={`flex items-center gap-2 h-9 min-h-[36px] px-3.5 py-[6px] text-sm font-bold rounded-[8px] transition-all cursor-pointer ${
             currentView === "dashboard"
               ? "bg-background text-foreground shadow-xs font-black"
               : "text-muted-foreground hover:text-foreground"
@@ -189,7 +189,7 @@ export function SiteHeader({
 
         <button
           onClick={() => setCurrentView("docs")}
-          className={`flex items-center gap-2 px-4.5 py-2.5 text-xs font-bold rounded-xl transition-all min-h-[40px] cursor-pointer ${
+          className={`flex items-center gap-2 h-9 min-h-[36px] px-3.5 py-[6px] text-sm font-bold rounded-[8px] transition-all cursor-pointer ${
             currentView === "docs"
               ? "bg-background text-foreground shadow-xs font-black"
               : "text-muted-foreground hover:text-foreground"
@@ -205,12 +205,12 @@ export function SiteHeader({
         {/* Search Bar */}
         <button
           onClick={onOpenSearch}
-          className="flex items-center gap-2 rounded-xl border border-border bg-muted/40 px-4 py-2.5 text-xs text-muted-foreground hover:text-foreground hover:border-border/80 transition min-h-[40px]"
+          className="flex items-center gap-2 rounded-[8px] border border-border bg-muted/40 px-3.5 py-[6px] text-sm text-muted-foreground hover:text-foreground hover:border-border/80 transition h-9 min-h-[36px] cursor-pointer"
           title="Open search (⌘K)"
         >
           <Search className="size-4" />
           <span className="hidden md:inline">Search docs...</span>
-          <kbd className="hidden sm:inline rounded-lg bg-muted px-2 py-0.5 text-xs font-mono border border-border/50">
+          <kbd className="hidden sm:inline rounded-[4px] bg-muted px-1.5 py-0.5 text-xs font-mono border border-border/50">
             ⌘K
           </kbd>
         </button>
@@ -220,7 +220,7 @@ export function SiteHeader({
           href={productConfig.figmaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-border bg-muted/40 hover:bg-muted px-4.5 py-2.5 text-xs font-semibold text-foreground transition group min-h-[40px]"
+          className="hidden sm:inline-flex items-center gap-2 rounded-[8px] border border-border bg-muted/40 hover:bg-muted px-3.5 py-[6px] text-sm font-bold text-foreground transition group h-9 min-h-[36px] cursor-pointer"
           title={`Open ${productConfig.name} real master Figma design file in a new tab`}
         >
           <svg className="size-3.5 shrink-0" viewBox="0 0 38 57" fill="none">
@@ -236,7 +236,7 @@ export function SiteHeader({
 
         {/* Dynamic Product Version Badge */}
         <span
-          className="hidden lg:inline-flex items-center rounded-full border px-4 py-2 text-xs font-semibold min-h-[32px]"
+          className="hidden lg:inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold min-h-[30px]"
           style={{
             borderColor: `${productConfig.brandColor}40`,
             backgroundColor: `${productConfig.brandColor}15`,
@@ -249,7 +249,7 @@ export function SiteHeader({
         {/* Theme Toggle */}
         <button
           onClick={() => setIsDark(!isDark)}
-          className="flex size-9 sm:size-10 items-center justify-center rounded-xl border border-border text-foreground hover:bg-muted transition"
+          className="flex size-9 items-center justify-center rounded-[8px] border border-border text-foreground hover:bg-muted transition cursor-pointer"
           title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
           {isDark ? (
