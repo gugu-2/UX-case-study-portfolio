@@ -229,10 +229,10 @@ export const ResearchInsightView: React.FC = () => {
             <Users className="size-3.5" />
             <span>02 — Research & Human Insight (Cohort n=42)</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             User Personas, Journey Maps & End-to-End Experience Topology
           </h1>
-          <p className="text-sm leading-relaxed text-muted-foreground">
+          <p className="figma-body1 text-sm sm:text-base leading-relaxed text-muted-foreground">
             Empirical field research conducted across 42 enterprise operators uncovered the behavioral friction points
             that drove the foundational 2021 Minimal UI architecture. Here we document our archetypal personas,
             8-stage journey progression, and multi-tier experience topology.
@@ -245,7 +245,7 @@ export const ResearchInsightView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Target className="size-4 text-primary" />
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
               2.3 Core Persona Templates (Quantitative & Strategic Archetypes)
             </h2>
           </div>
@@ -268,7 +268,7 @@ export const ResearchInsightView: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="text-base font-bold text-foreground">{persona.name}</h3>
+                      <h3 className="figma-h4 text-[20px] lg:text-[24px] font-bold text-foreground">{persona.name}</h3>
                       <Badge variant="secondary" className="text-[11px] font-mono">
                         Persona 0{idx + 1}
                       </Badge>
@@ -351,7 +351,7 @@ export const ResearchInsightView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Compass className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
             2.5 End-to-End User Journey Map (8-Stage Flowchart & Progression Table)
           </h2>
         </div>
@@ -363,7 +363,7 @@ export const ResearchInsightView: React.FC = () => {
         />
 
         <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-          <h3 className="text-sm font-bold text-foreground">
+          <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground">
             Stage-by-Stage Journey Analysis Matrix
           </h3>
           <div className="overflow-x-auto">
@@ -399,7 +399,7 @@ export const ResearchInsightView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Shield className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
             2.6 Holistic Experience Map (Frontstage, Channels & Backstage Architecture)
           </h2>
         </div>
@@ -411,7 +411,7 @@ export const ResearchInsightView: React.FC = () => {
         />
 
         <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-          <h3 className="text-sm font-bold text-foreground">
+          <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground">
             Cross-Layer Architecture Mapping Matrix
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">

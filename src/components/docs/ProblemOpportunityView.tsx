@@ -121,10 +121,10 @@ export const ProblemOpportunityView: React.FC = () => {
             <AlertTriangle className="size-3.5" />
             <span>03 — Problem Space & Opportunity Matrix</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             5-Layer Problem Hierarchy & Strategic Opportunity Matrix
           </h1>
-          <p className="text-sm leading-relaxed text-muted-foreground">
+          <p className="figma-body1 text-sm sm:text-base leading-relaxed text-muted-foreground">
             Clear problem definition precedes elegant architectural solutions.
             Minimal UI systematically dissects enterprise friction across 5 operational layers and prioritizes high-impact
             architectural levers through an empirical opportunity framework.
@@ -136,7 +136,7 @@ export const ProblemOpportunityView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Target className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
             3.1 Formal UX Problem Statement
           </h2>
         </div>
@@ -155,7 +155,7 @@ export const ProblemOpportunityView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Layers className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
             3.2 The 5-Layer Problem Hierarchy (From Root Cause to Interaction Fault)
           </h2>
         </div>
@@ -214,7 +214,7 @@ export const ProblemOpportunityView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Lightbulb className="size-4 text-primary" />
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
               3.3 Strategic Opportunity Matrix (Value vs. Effort Prioritization)
             </h2>
           </div>
@@ -226,7 +226,7 @@ export const ProblemOpportunityView: React.FC = () => {
         <div className="space-y-4">
           {opportunities.map((group) => (
             <div key={group.category} className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-primary">
+              <h3 className="figma-h4 text-[20px] lg:text-[24px] font-bold text-foreground">
                 {group.category}
               </h3>
               <div className="overflow-x-auto">
@@ -265,7 +265,7 @@ export const ProblemOpportunityView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <HelpCircle className="size-4 text-primary" />
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
               3.4 Core Architectural Assumption Map
             </h2>
           </div>

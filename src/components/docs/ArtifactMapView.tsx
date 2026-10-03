@@ -136,7 +136,7 @@ export const ArtifactMapView: React.FC = () => {
             <Map className="size-3.5" />
             <span>28 — The Ideal UX Artifact Map (Full Ecosystem Topology)</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Master UX Artifact Topology & Deliverable Traceability
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -152,7 +152,7 @@ export const ArtifactMapView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Layers className="size-4 text-primary" />
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               Master UX Artifact Topology Map
             </h2>
           </div>
@@ -173,7 +173,7 @@ export const ArtifactMapView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <FileText className="size-4 text-primary" />
-            <h3 className="text-base font-bold text-foreground">
+            <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">
               Artifact Ecosystem Matrix & Responsibility Mapping
             </h3>
           </div>

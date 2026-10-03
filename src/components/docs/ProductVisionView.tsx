@@ -87,10 +87,10 @@ export const ProductVisionView: React.FC = () => {
             <Compass className="size-3.5" />
             <span>01 — Product & UX Vision (Pritam 2021 Foundation)</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Product Purpose, UX Principles & Ecosystem Architecture
           </h1>
-          <p className="text-sm leading-relaxed text-muted-foreground">
+          <p className="figma-body1 text-sm sm:text-base leading-relaxed text-muted-foreground">
             Minimal UI was conceived as an intentional antidote to modern enterprise software bloat.
             It delivers a clean, high-density dashboard language engineered to support high-velocity operations with zero sensory fatigue.
           </p>
@@ -101,7 +101,7 @@ export const ProductVisionView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-6">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Sparkles className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
             1.1 Comprehensive Product Overview
           </h2>
         </div>
@@ -109,7 +109,7 @@ export const ProductVisionView: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
           <div className="space-y-2 p-4 rounded-xl border border-border bg-muted/20">
             <span className="font-bold uppercase tracking-wider text-primary text-[11px]">Product Name & Lineage</span>
-            <h3 className="text-sm font-bold text-foreground">Minimal UI — Client & Admin Dashboard Architecture</h3>
+            <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground">Minimal UI — Client & Admin Dashboard Architecture</h3>
             <p className="text-muted-foreground leading-relaxed">
               Original foundational design system created from scratch in 2021 by <strong>Pritam</strong> (Principal UI/UX Architect with 14+ years experience).
             </p>
@@ -117,7 +117,7 @@ export const ProductVisionView: React.FC = () => {
 
           <div className="space-y-2 p-4 rounded-xl border border-border bg-muted/20">
             <span className="font-bold uppercase tracking-wider text-primary text-[11px]">One-Line Definition</span>
-            <h3 className="text-sm font-bold text-foreground">High-Density, Zero-Fatigue Operational Cockpit</h3>
+            <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground">High-Density, Zero-Fatigue Operational Cockpit</h3>
             <p className="text-muted-foreground leading-relaxed">
               A production-grade multi-platform design framework unifying 6 complex operational archetypes into a single cohesive, accessible experience.
             </p>
@@ -157,7 +157,7 @@ export const ProductVisionView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-6">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Compass className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
             1.2 UX Vision & Sensory Experience Qualities
           </h2>
         </div>
@@ -204,7 +204,7 @@ export const ProductVisionView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="size-4 text-primary" />
-            <h2 className="text-lg font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
               1.3 The 6 Foundational UX Principles
             </h2>
           </div>
@@ -241,7 +241,7 @@ export const ProductVisionView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Layers className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
             1.4 Product Ecosystem Map (Topology of Surfaces & Infrastructure)
           </h2>
         </div>
