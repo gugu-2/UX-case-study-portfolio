@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800;900&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -10,8 +11,9 @@
 
 @layer base {
   :root {
-    --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-heading: 'Roboto', sans-serif;
+    --font-sans: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Public Sans', sans-serif;
+    --font-display: 'Barlow', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
 
@@ -21,16 +23,95 @@
     @apply bg-background text-foreground;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
     font-family: var(--font-heading);
+    font-size: 2.5rem; /* 40px mobile */
+    line-height: 3.125rem; /* 50px mobile */
+    font-weight: 800; /* ExtraBold */
+    letter-spacing: -0.01em;
   }
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 4rem; /* 64px desktop */
+      line-height: 5rem; /* 80px desktop */
+    }
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem; /* 32px mobile */
+    line-height: 2.625rem; /* 42px mobile */
+    font-weight: 800; /* ExtraBold */
+    letter-spacing: -0.01em;
+  }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 3rem; /* 48px desktop */
+      line-height: 4rem; /* 64px desktop */
+    }
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem; /* 24px mobile */
+    line-height: 2.25rem; /* 36px mobile */
+    font-weight: 700; /* Bold */
+    letter-spacing: 0;
+  }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 2rem; /* 32px desktop */
+      line-height: 3rem; /* 48px desktop */
+    }
+  }
+
+  h4 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem; /* 20px mobile */
+    line-height: 1.875rem; /* 30px mobile */
+    font-weight: 700; /* Bold */
+  }
+  @media (min-width: 1024px) {
+    h4 {
+      font-size: 1.5rem; /* 24px desktop */
+      line-height: 2.25rem; /* 36px desktop */
+    }
+  }
+
+  h5 {
+    font-family: var(--font-heading);
+    font-size: 1.125rem; /* 18px mobile */
+    line-height: 1.6875rem; /* 27px mobile */
+    font-weight: 700; /* Bold */
+  }
+  @media (min-width: 1024px) {
+    h5 {
+      font-size: 1.25rem; /* 20px desktop */
+      line-height: 1.875rem; /* 30px desktop */
+    }
+  }
+
+  h6 {
+    font-family: var(--font-heading);
+    font-size: 1.0625rem; /* 17px mobile */
+    line-height: 1.625rem; /* 26px mobile */
+    font-weight: 700; /* Bold */
+  }
+  @media (min-width: 1024px) {
+    h6 {
+      font-size: 1.125rem; /* 18px desktop */
+      line-height: 1.75rem; /* 28px desktop */
+    }
+  }
+
   button, [role="button"], input[type="button"], input[type="submit"] {
-    border-radius: max(8px, var(--radius-md));
+    border-radius: 8px; /* Figma cornerRadius: 8 */
+    font-family: var(--font-sans);
+    font-weight: 700; /* Figma Buttons: Bold 700 */
   }
   [data-slot="badge"] {
-    min-height: 32px;
-    padding: 8px 16px;
-    border-radius: 9999px;
+    border-radius: 6px; /* Figma Chip cornerRadius: 6 */
+    font-weight: 700;
   }
   * {
     @apply border-border outline-ring/50;
@@ -38,6 +119,210 @@
   html {
     @apply font-sans;
   }
+}
+
+/* ============================================================
+   EXPLICIT FIGMA DESIGN SYSTEM TYPOGRAPHY UTILITIES
+   Tokens straight from design-system-full-export-figma.json
+   ============================================================ */
+.figma-h1 {
+  font-family: var(--font-heading) !important;
+  font-size: 2.5rem !important; /* 40px Mobile */
+  line-height: 3.125rem !important; /* 50px Mobile */
+  font-weight: 800 !important; /* ExtraBold */
+  letter-spacing: -0.02em !important;
+}
+@media (min-width: 1024px) {
+  .figma-h1 {
+    font-size: 4rem !important; /* 64px Desktop */
+    line-height: 5rem !important; /* 80px Desktop */
+  }
+}
+
+.figma-h2 {
+  font-family: var(--font-heading) !important;
+  font-size: 2rem !important; /* 32px Mobile */
+  line-height: 2.625rem !important; /* 42px Mobile */
+  font-weight: 800 !important; /* ExtraBold */
+  letter-spacing: -0.015em !important;
+}
+@media (min-width: 1024px) {
+  .figma-h2 {
+    font-size: 3rem !important; /* 48px Desktop */
+    line-height: 4rem !important; /* 64px Desktop */
+  }
+}
+
+.figma-h3 {
+  font-family: var(--font-heading) !important;
+  font-size: 1.5rem !important; /* 24px Mobile */
+  line-height: 2.25rem !important; /* 36px Mobile */
+  font-weight: 700 !important; /* Bold */
+  letter-spacing: -0.01em !important;
+}
+@media (min-width: 1024px) {
+  .figma-h3 {
+    font-size: 2rem !important; /* 32px Desktop */
+    line-height: 3rem !important; /* 48px Desktop */
+  }
+}
+
+.figma-h4 {
+  font-family: var(--font-heading) !important;
+  font-size: 1.25rem !important; /* 20px Mobile */
+  line-height: 1.875rem !important; /* 30px Mobile */
+  font-weight: 700 !important; /* Bold */
+  letter-spacing: 0 !important;
+}
+@media (min-width: 1024px) {
+  .figma-h4 {
+    font-size: 1.5rem !important; /* 24px Desktop */
+    line-height: 2.25rem !important; /* 36px Desktop */
+  }
+}
+
+.figma-h5 {
+  font-family: var(--font-heading) !important;
+  font-size: 1.125rem !important; /* 18px Mobile */
+  line-height: 1.6875rem !important; /* 27px Mobile */
+  font-weight: 700 !important; /* Bold */
+}
+@media (min-width: 1024px) {
+  .figma-h5 {
+    font-size: 1.25rem !important; /* 20px Desktop */
+    line-height: 1.875rem !important; /* 30px Desktop */
+  }
+}
+
+.figma-h6 {
+  font-family: var(--font-heading) !important;
+  font-size: 1.0625rem !important; /* 17px Mobile */
+  line-height: 1.625rem !important; /* 26px Mobile */
+  font-weight: 700 !important; /* Bold */
+}
+@media (min-width: 1024px) {
+  .figma-h6 {
+    font-size: 1.125rem !important; /* 18px Desktop */
+    line-height: 1.75rem !important; /* 28px Desktop */
+  }
+}
+
+.figma-subtitle1 {
+  font-size: 1rem !important; /* 16px */
+  line-height: 1.5rem !important; /* 24px */
+  font-weight: 600 !important; /* SemiBold */
+}
+
+.figma-subtitle2 {
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.375rem !important; /* 22px */
+  font-weight: 600 !important; /* SemiBold */
+}
+
+.figma-body1 {
+  font-size: 1rem !important; /* 16px */
+  line-height: 1.5rem !important; /* 24px */
+  font-weight: 400 !important; /* Regular */
+}
+
+.figma-body2 {
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.375rem !important; /* 22px */
+  font-weight: 400 !important; /* Regular */
+}
+
+.figma-caption {
+  font-size: 0.75rem !important; /* 12px */
+  line-height: 1.125rem !important; /* 18px */
+  font-weight: 400 !important; /* Regular */
+}
+
+.figma-overline {
+  font-size: 0.75rem !important; /* 12px */
+  line-height: 1.125rem !important; /* 18px */
+  font-weight: 700 !important; /* Bold */
+  text-transform: uppercase !important;
+}
+
+/* Barlow Docs Titles from Figma */
+.figma-display-xl {
+  font-family: var(--font-display) !important;
+  font-size: 15rem !important; /* 240px */
+  line-height: 15rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 4px !important;
+}
+.figma-display-l {
+  font-family: var(--font-display) !important;
+  font-size: 7.5rem !important; /* 120px */
+  line-height: 7.5rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+}
+.figma-display-m {
+  font-family: var(--font-display) !important;
+  font-size: 5rem !important; /* 80px */
+  line-height: 7.5rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+}
+.figma-display-s {
+  font-family: var(--font-display) !important;
+  font-size: 3rem !important; /* 48px */
+  line-height: 4rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+}
+.figma-display-xs {
+  font-family: var(--font-display) !important;
+  font-size: 2rem !important; /* 32px */
+  line-height: 3rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+}
+
+/* ============================================================
+   EXPLICIT FIGMA BUTTON UTILITIES & ENFORCEMENT
+   Tokens from exported_components/Buttons.json
+   Large: 48px height, 15px/26px font, 11px 22px pad, 8px r
+   Medium: 36px height, 14px/24px font, 6px 16px pad, 8px r
+   Small: 30px height, 13px/22px font, 4px 10px pad, 8px r
+   ============================================================ */
+.figma-btn-lg {
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 11px 22px !important;
+  font-size: 15px !important;
+  line-height: 26px !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.figma-btn-md {
+  height: 36px !important;
+  min-height: 36px !important;
+  padding: 6px 16px !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.figma-btn-sm {
+  height: 30px !important;
+  min-height: 30px !important;
+  padding: 4px 10px !important;
+  font-size: 13px !important;
+  line-height: 22px !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+/* Ensure button corners adhere strictly to Figma 8px token unless specifically circular icon buttons */
+button:not(.rounded-full):not([class*="rounded-full"]),
+[role="button"]:not(.rounded-full):not([class*="rounded-full"]) {
+  border-radius: 8px !important;
+  font-weight: 700;
 }
 
 /* Custom sleek scrollbar */
@@ -57,30 +342,28 @@
 }
 
 @theme inline {
-  --font-heading: 'Roboto', sans-serif;
-  --font-sans: 'Roboto', sans-serif;
+  --font-heading: 'Public Sans', sans-serif;
+  --font-sans: 'Public Sans', sans-serif;
 
-  /* Typography Scale Directives:
-     - Small size text (xs, sm, descriptions, subtext, captions): increased ~30%
-     - Medium size text (base, lg, xl, body, section headers, badges): increased +20%
-     - Big display headers (2xl, 3xl, 4xl): elevated to maintain clear visual hierarchy
-  */
-  --text-xs: 0.975rem;
-  --text-xs--line-height: 1.45rem;
-  --text-sm: 1.1375rem;
-  --text-sm--line-height: 1.65rem;
-  --text-base: 1.2rem;
-  --text-base--line-height: 1.75rem;
-  --text-lg: 1.35rem;
-  --text-lg--line-height: 1.9rem;
-  --text-xl: 1.5rem;
-  --text-xl--line-height: 2.1rem;
-  --text-2xl: 1.75rem;
-  --text-2xl--line-height: 2.25rem;
-  --text-3xl: 2.15rem;
-  --text-3xl--line-height: 2.6rem;
-  --text-4xl: 2.6rem;
-  --text-4xl--line-height: 3rem;
+  /* Exact Figma Typography Scale */
+  --text-xs: 0.75rem;               /* 12px Caption / Overline */
+  --text-xs--line-height: 1.125rem;  /* 18px */
+  --text-sm: 0.875rem;              /* 14px Body2 / Subtitle2 */
+  --text-sm--line-height: 1.375rem;  /* 22px */
+  --text-base: 1rem;                /* 16px Body1 / Subtitle1 */
+  --text-base--line-height: 1.5rem;  /* 24px */
+  --text-lg: 1.125rem;              /* 18px H6 */
+  --text-lg--line-height: 1.75rem;   /* 28px */
+  --text-xl: 1.25rem;               /* 20px H5 */
+  --text-xl--line-height: 1.875rem;  /* 30px */
+  --text-2xl: 1.5rem;               /* 24px H4 */
+  --text-2xl--line-height: 2.25rem;  /* 36px */
+  --text-3xl: 2rem;                 /* 32px H3 */
+  --text-3xl--line-height: 3rem;     /* 48px */
+  --text-4xl: 3rem;                 /* 48px H2 */
+  --text-4xl--line-height: 4rem;     /* 64px */
+  --text-5xl: 4rem;                 /* 64px H1 */
+  --text-5xl--line-height: 5rem;     /* 80px */
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -123,72 +406,146 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.3);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.3);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.3);
-  --primary: oklch(0.214 0.009 43.1);
-  --primary-foreground: oklch(0.986 0.002 67.8);
-  --secondary: oklch(0.96 0.002 17.2);
-  --secondary-foreground: oklch(0.214 0.009 43.1);
-  --muted: oklch(0.96 0.002 17.2);
-  --muted-foreground: oklch(0.547 0.021 43.1);
-  --accent: oklch(0.214 0.009 43.1);
-  --accent-foreground: oklch(0.986 0.002 67.8);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0.005 34.3);
-  --input: oklch(0.922 0.005 34.3);
-  --ring: oklch(0.714 0.014 41.2);
-  --chart-1: oklch(0.837 0.128 66.29);
-  --chart-2: oklch(0.705 0.213 47.604);
-  --chart-3: oklch(0.646 0.222 41.116);
-  --chart-4: oklch(0.553 0.195 38.402);
-  --chart-5: oklch(0.47 0.157 37.304);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.986 0.002 67.8);
-  --sidebar-foreground: oklch(0.147 0.004 49.3);
-  --sidebar-primary: oklch(0.214 0.009 43.1);
-  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-accent: oklch(0.96 0.002 17.2);
-  --sidebar-accent-foreground: oklch(0.214 0.009 43.1);
-  --sidebar-border: oklch(0.922 0.005 34.3);
-  --sidebar-ring: oklch(0.714 0.014 41.2);
+  /* ============================================================
+     MINIMALS UI — FIGMA DESIGN SYSTEM TOKENS
+     Source: design-system-full-export-figma.json
+     ============================================================ */
+  --primary-lighter: #c8facd;
+  --primary-light:   #5be584;
+  --primary-main:    #00ab55;
+  --primary-dark:    #007b55;
+  --primary-darker:  #005249;
+  --primary-contrast:#ffffff;
+
+  --secondary-lighter: #d6e4ff;
+  --secondary-light:   #84a9ff;
+  --secondary-main:    #3366ff;
+  --secondary-dark:    #1939b7;
+  --secondary-darker:  #091a7a;
+
+  --info-lighter: #cafdf5;
+  --info-light:   #61f3f3;
+  --info-main:    #00b8d9;
+  --info-dark:    #006c9c;
+
+  --success-lighter: #d8fbde;
+  --success-light:   #86e8ab;
+  --success-main:    #36b37e;
+  --success-dark:    #1b806a;
+
+  --warning-lighter: #fff5cc;
+  --warning-light:   #ffd666;
+  --warning-main:    #ffab00;
+  --warning-dark:    #b76e00;
+
+  --error-lighter: #ffe9d5;
+  --error-light:   #ffac82;
+  --error-main:    #ff5630;
+  --error-dark:    #b71d18;
+
+  --grey-100: #f9fafb;
+  --grey-200: #f4f6f8;
+  --grey-300: #dfe3e8;
+  --grey-400: #c4cdd5;
+  --grey-500: #919eab;
+  --grey-600: #637381;
+  --grey-700: #454f5b;
+  --grey-800: #212b36;
+  --grey-900: #161c24;
+
+  /* Transparent Alphas */
+  --tp-primary-8:   rgba(0, 171, 85, 0.08);
+  --tp-primary-12:  rgba(0, 171, 85, 0.12);
+  --tp-primary-16:  rgba(0, 171, 85, 0.16);
+  --tp-primary-24:  rgba(0, 171, 85, 0.24);
+  --tp-primary-32:  rgba(0, 171, 85, 0.32);
+
+  /* Shadows from Figma Export */
+  --shadow-card:     0px 0px 2px rgba(145, 158, 171, 0.20), 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
+  --shadow-dialog:   -40px 40px 80px -8px rgba(145, 158, 171, 0.24);
+  --shadow-dropdown: -20px 20px 40px -4px rgba(145, 158, 171, 0.24), 0px 0px 2px rgba(145, 158, 171, 0.24);
+  --shadow-z1:       0px 1px 2px rgba(145, 158, 171, 0.16);
+  --shadow-z4:       0px 4px 8px rgba(145, 158, 171, 0.16);
+  --shadow-z8:       0px 8px 16px rgba(145, 158, 171, 0.16);
+  --shadow-z12:      0px 12px 24px -4px rgba(145, 158, 171, 0.16);
+  --shadow-primary:  0px 8px 16px rgba(0, 171, 85, 0.24);
+
+  /* Light Semantic Mapping */
+  --background: #ffffff;
+  --foreground: #212b36;
+  --card: #ffffff;
+  --card-foreground: #212b36;
+  --popover: #ffffff;
+  --popover-foreground: #212b36;
+  --primary: #00ab55;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f6f8;
+  --secondary-foreground: #212b36;
+  --muted: #f4f6f8;
+  --muted-foreground: #637381;
+  --accent: rgba(0, 171, 85, 0.08);
+  --accent-foreground: #007b55;
+  --destructive: #ff5630;
+  --destructive-foreground: #ffffff;
+  --border: rgba(145, 158, 171, 0.20);
+  --input: rgba(145, 158, 171, 0.24);
+  --ring: #00ab55;
+  --radius: 0.75rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #212b36;
+  --sidebar-primary: #00ab55;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(0, 171, 85, 0.08);
+  --sidebar-accent-foreground: #007b55;
+  --sidebar-border: rgba(145, 158, 171, 0.16);
+  --sidebar-ring: #00ab55;
+
+  --chart-1: #00ab55;
+  --chart-2: #3366ff;
+  --chart-3: #00b8d9;
+  --chart-4: #ffab00;
+  --chart-5: #ff5630;
 }
 
 .dark {
-  --background: oklch(0.147 0.004 49.3);
-  --foreground: oklch(0.986 0.002 67.8);
-  --card: oklch(0.214 0.009 43.1);
-  --card-foreground: oklch(0.986 0.002 67.8);
-  --popover: oklch(0.214 0.009 43.1);
-  --popover-foreground: oklch(0.986 0.002 67.8);
-  --primary: oklch(0.922 0.005 34.3);
-  --primary-foreground: oklch(0.214 0.009 43.1);
-  --secondary: oklch(0.268 0.011 36.5);
-  --secondary-foreground: oklch(0.986 0.002 67.8);
-  --muted: oklch(0.268 0.011 36.5);
-  --muted-foreground: oklch(0.714 0.014 41.2);
-  --accent: oklch(0.922 0.005 34.3);
-  --accent-foreground: oklch(0.214 0.009 43.1);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.547 0.021 43.1);
-  --chart-1: oklch(0.837 0.128 66.29);
-  --chart-2: oklch(0.705 0.213 47.604);
-  --chart-3: oklch(0.646 0.222 41.116);
-  --chart-4: oklch(0.553 0.195 38.402);
-  --chart-5: oklch(0.47 0.157 37.304);
-  --sidebar: oklch(0.214 0.009 43.1);
-  --sidebar-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-accent: oklch(0.268 0.011 36.5);
-  --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.547 0.021 43.1);
+  /* Dark Semantic Mapping */
+  --background: #161c24;
+  --foreground: #ffffff;
+  --card: #212b36;
+  --card-foreground: #ffffff;
+  --popover: #212b36;
+  --popover-foreground: #ffffff;
+  --primary: #00ab55;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(145, 158, 171, 0.12);
+  --secondary-foreground: #ffffff;
+  --muted: rgba(145, 158, 171, 0.12);
+  --muted-foreground: #919eab;
+  --accent: rgba(0, 171, 85, 0.16);
+  --accent-foreground: #5be584;
+  --destructive: #ff5630;
+  --destructive-foreground: #ffffff;
+  --border: rgba(145, 158, 171, 0.16);
+  --input: rgba(145, 158, 171, 0.20);
+  --ring: #00ab55;
+
+  --shadow-card: 0px 0px 2px rgba(0, 0, 0, 0.20), 0px 12px 24px -4px rgba(0, 0, 0, 0.24);
+
+  --sidebar: #161c24;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00ab55;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(0, 171, 85, 0.16);
+  --sidebar-accent-foreground: #5be584;
+  --sidebar-border: rgba(145, 158, 171, 0.16);
+  --sidebar-ring: #00ab55;
+
+  --chart-1: #00ab55;
+  --chart-2: #3366ff;
+  --chart-3: #00b8d9;
+  --chart-4: #ffab00;
+  --chart-5: #ff5630;
 }
 
 /* Micro-animations & Interactive Transitions */
