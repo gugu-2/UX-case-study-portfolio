@@ -26,7 +26,7 @@ export const MobileErgonomicsView: React.FC = () => {
             <Smartphone className="size-3.5" />
             <span>Mobile UX Kit & Touch Ergonomics</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Thumb-Zone Architecture & 48px Touch Ergonomics
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -48,9 +48,9 @@ export const MobileErgonomicsView: React.FC = () => {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         {/* Left: Interactive Phone Mockup with Thumb Zones (5 cols) */}
         <div className="rounded-2xl border border-border bg-card p-6 shadow-xs lg:col-span-5 flex flex-col items-center">
-          <h3 className="text-base font-bold text-foreground mb-4">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight mb-4 text-center">
             375px Natural Thumb-Sweep Ergonomic Mapping
-          </h3>
+          </h2>
 
           {/* Interactive Zone Filter Buttons */}
           <div className="flex items-center gap-1.5 mb-6 bg-muted/60 p-1 rounded-xl border border-border">
@@ -58,7 +58,7 @@ export const MobileErgonomicsView: React.FC = () => {
               <button
                 key={zone}
                 onClick={() => setActiveZone(zone)}
-                className={`rounded-lg px-2.5 py-1 text-xs font-bold capitalize transition ${
+                className={`figma-btn-sm h-[30px] min-h-[30px] rounded-[8px] px-3 py-1 text-xs font-bold capitalize transition cursor-pointer ${
                   activeZone === zone
                     ? 'bg-primary text-primary-foreground shadow-xs'
                     : 'text-muted-foreground hover:text-foreground'
@@ -132,9 +132,9 @@ export const MobileErgonomicsView: React.FC = () => {
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
             <div className="flex items-center gap-2 border-b border-border pb-3">
               <Hand className="size-4 text-primary" />
-              <h3 className="text-base font-bold text-foreground">
+              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
                 48px Immutable Touch Target Bounds
-              </h3>
+              </h2>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Every interactive element rendered on viewport widths &lt; 768px strictly adheres to WCAG 2.2 Target Size Level AA requirements. Even when visual icon glyphs measure 18px–20px, their hit-testing bounding boxes expand seamlessly to at least 48×48px.

@@ -64,7 +64,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
             <span>Created by Pritam • 14+ Years Lead UI/UX Systems Architect</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-foreground leading-[1.1]">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground leading-[1.1]">
             Minimal UI Design System
           </h1>
 
@@ -77,7 +77,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Button
               onClick={() => setActiveTab('research')}
-              className="font-bold text-xs bg-primary text-primary-foreground shadow-sm"
+              className="figma-btn-lg h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold bg-primary text-primary-foreground shadow-sm"
               size="lg"
             >
               <span>Explore Research Dashboard</span>
@@ -87,7 +87,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
             <Button
               variant="outline"
               onClick={() => setActiveTab('showcase')}
-              className="font-bold text-xs"
+              className="figma-btn-lg h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold"
               size="lg"
             >
               <Layers className="size-4 mr-1 text-primary" />
@@ -97,7 +97,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
             <Button
               variant="outline"
               onClick={() => setActiveTab('tokens')}
-              className="font-bold text-xs"
+              className="figma-btn-lg h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold"
               size="lg"
             >
               <Palette className="size-4 mr-1 text-primary" />
@@ -111,7 +111,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               The 6 Core Operational Dashboards
             </h2>
             <p className="text-xs text-muted-foreground">
@@ -175,7 +175,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Target className="size-4 text-primary" />
-          <h2 className="text-xl font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
             The 5 Immutable UX Principles of Minimal UI
           </h2>
         </div>

@@ -96,7 +96,7 @@ export const ArchitectureView: React.FC = () => {
             <Layers className="size-3.5" />
             <span>05 — System Information Architecture & Spatial Grid</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Ecosystem Sitemap, Dual Navigation & Content Models
           </h1>
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -111,7 +111,7 @@ export const ArchitectureView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Layers className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
             5.1 Ecosystem Sitemap & Structural Taxonomy
           </h2>
         </div>
@@ -126,7 +126,7 @@ export const ArchitectureView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Columns3 className="size-4 text-primary" />
-          <h2 className="text-lg font-bold text-foreground">
+          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
             5.2 Viewport Navigation Architecture & Resolution Routing
           </h2>
         </div>
@@ -440,9 +440,9 @@ export const ArchitectureView: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
           <div className="flex items-center gap-2.5">
             <LayoutGrid className="size-4 text-primary" />
-            <h3 className="text-base font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               5.3 Content Architecture, Taxonomy & Metadata Schemas
-            </h3>
+            </h2>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
             Normalized Schema
@@ -505,9 +505,9 @@ export const ArchitectureView: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
           <div className="flex items-center gap-2.5">
             <LayoutGrid className="size-4 text-primary" />
-            <h3 className="text-base font-bold text-foreground">
+            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
               Universal 16-State Component Architecture
-            </h3>
+            </h2>
           </div>
           <Badge className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30 font-bold text-xs">
             100% Coverage Certified
