@@ -258,7 +258,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
   return (
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner matching layout */}
-      <div className="text-center max-w-3xl mx-auto space-y-3 pt-2">
+      <div className="text-center mx-auto space-y-3 pt-2">
         <div className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1 text-xs font-bold"
           style={{
             borderColor: `${productConfig.brandColor}40`,
@@ -269,10 +269,10 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           <Heart className="size-3.5" />
           <span>Research Synthesis Artifact</span>
         </div>
-        <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+        <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
           Empathy Map
-        </h1>
-        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+        </h3>
+        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mx-auto">
           An empathy map is a collaborative visualization used to articulate what we know about a particular type of user. It helps to synthesize research data to assist our team in understanding how people make decisions and navigate systemic friction points.
         </p>
 
@@ -335,12 +335,12 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
         {/* 4 Quadrants Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-28 relative z-10 py-6">
           {/* TOP QUADRANT: What does he Think & feel */}
-          <div className="md:col-span-2 flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto">
+          <div className="md:col-span-2 flex flex-col items-center text-center space-y-4 mx-auto">
             <div className="space-y-1">
               <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">What does user</span>
-              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-amber-500 dark:text-amber-400 tracking-tight flex items-center justify-center gap-2">
+              <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-amber-500 dark:text-amber-400 tracking-tight flex items-center justify-center gap-2">
                 <Heart className="size-5" /> Think & feel
-              </h3>
+              </h6>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full text-left">
               {currentPersona.thinkAndFeel.map((thought, idx) => (
@@ -355,9 +355,9 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           <div className="flex flex-col items-start space-y-4 md:pr-14">
             <div className="space-y-1">
               <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">What does user</span>
-              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-amber-500 dark:text-amber-400 tracking-tight flex items-center gap-2">
+              <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-amber-500 dark:text-amber-400 tracking-tight flex items-center gap-2">
                 <Ear className="size-5" /> Hear
-              </h3>
+              </h6>
             </div>
             <div className="space-y-2.5 w-full">
               {currentPersona.hear.map((item, idx) => (
@@ -372,9 +372,9 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           <div className="flex flex-col items-start md:items-end md:text-right space-y-4 md:pl-14">
             <div className="space-y-1">
               <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">What does user</span>
-              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-amber-500 dark:text-amber-400 tracking-tight flex items-center gap-2 md:flex-row-reverse">
+              <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-amber-500 dark:text-amber-400 tracking-tight flex items-center gap-2 md:flex-row-reverse">
                 <Eye className="size-5" /> See
-              </h3>
+              </h6>
             </div>
             <div className="space-y-2.5 w-full">
               {currentPersona.see.map((item, idx) => (
@@ -386,12 +386,12 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
           </div>
 
           {/* BOTTOM QUADRANT: What does he Say and Do */}
-          <div className="md:col-span-2 flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto pt-6">
+          <div className="md:col-span-2 flex flex-col items-center text-center space-y-4 mx-auto pt-6">
             <div className="space-y-1">
               <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">What does user</span>
-              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-amber-500 dark:text-amber-400 tracking-tight flex items-center justify-center gap-2">
+              <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-amber-500 dark:text-amber-400 tracking-tight flex items-center justify-center gap-2">
                 <MessageSquare className="size-5" /> Say and Do
-              </h3>
+              </h6>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full text-left">
               {currentPersona.sayAndDo.map((item, idx) => (
@@ -413,7 +413,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
               <Quote className="size-5" />
             </div>
             <div>
-              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">Gain</h3>
+              <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-foreground tracking-tight">Gain</h6>
               <p className="text-xs text-muted-foreground">User needs, value accelerators, and desires</p>
             </div>
           </div>
@@ -435,7 +435,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
               <Quote className="size-5" />
             </div>
             <div>
-              <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">Pain</h3>
+              <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-foreground tracking-tight">Pain</h6>
               <p className="text-xs text-muted-foreground">Frictions, anxieties, and operational roadblocks</p>
             </div>
           </div>
@@ -453,3 +453,7 @@ export function EmpathyMapView({ currentProduct = "linear" }: EmpathyMapViewProp
     </div>
   )
 }
+
+
+
+

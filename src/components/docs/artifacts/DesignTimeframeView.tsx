@@ -941,7 +941,7 @@ const concurrentTracks: ConcurrentProjectTrack[] = [
 
 export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimeframeViewProps) {
   // Allow toggling between individual project timelines AND the full concurrent portfolio chronology
-  const [viewMode, setViewMode] = useState<"individual" | "concurrent">("individual")
+  // const [viewMode, setViewMode] = useState("individual")
   const [selectedProductId, setSelectedProductId] = useState<string>(currentProduct)
   const [activeMilestoneId, setActiveMilestoneId] = useState<string>("")
 
@@ -975,51 +975,22 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
               <Calendar className="size-3.5" />
               <span>Verified Delivery Lifecycle (2020 – 2022)</span>
             </div>
-            <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
-              {viewMode === "individual"
+            <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+              {true
                 ? `${activeProfile.productName} Timeline`
                 : "Master Portfolio Chronology (2020–2022)"}
-            </h1>
+            </h3>
             <p className="text-sm sm:text-base text-muted-foreground font-medium">
-              {viewMode === "individual"
+              {true
                 ? `Bespoke delivery roadmap & milestone geometry — ${activeProfile.durationBadge}`
                 : "Multi-threaded engineering roadmap showing concurrent project collisions with Minimals UI"}
             </p>
           </div>
 
-          {/* Master View Mode Switcher Pills */}
-          <div className="flex items-center gap-2 bg-muted/40 p-1.5 rounded-2xl border border-border/70 self-start lg:self-auto shrink-0 shadow-2xs">
-            <button
-              onClick={() => setViewMode("individual")}
-              className={`figma-btn-md h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
-                viewMode === "individual"
-                  ? "bg-foreground text-background shadow-xs font-black"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <span className="flex items-center gap-1.5">
-                <Compass className="size-3.5" />
-                Individual Timeline
-              </span>
-            </button>
-            <button
-              onClick={() => setViewMode("concurrent")}
-              className={`figma-btn-md h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
-                viewMode === "concurrent"
-                  ? "bg-foreground text-background shadow-xs font-black"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              <span className="flex items-center gap-1.5">
-                <TrendingUp className="size-3.5 text-emerald-500" />
-                Concurrent Roadmap (All 8)
-              </span>
-            </button>
           </div>
-        </div>
 
         {/* Product Selector Pills (When in Individual View) */}
-        {viewMode === "individual" && (
+        {true && (
           <div className="pt-4 border-t border-border/70 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Select Product:
@@ -1049,13 +1020,13 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
         <div className="p-4 rounded-2xl border border-border/60 bg-muted/20 space-y-1.5">
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             <strong className="text-foreground">
-              {viewMode === "individual" ? activeProfile.productName : "Multi-Threaded Delivery Architecture"}:
+              {true ? activeProfile.productName : "Multi-Threaded Delivery Architecture"}:
             </strong>{" "}
-            {viewMode === "individual" ? activeProfile.summary : (
+            {true ? activeProfile.summary : (
               "Minimals UI ran continuously for nearly an entire year (Oct 2020 – Sep 2021) as the foundational enterprise design system backbone. During this active tenure, Mixpanel (Jan–Apr 2021), Frame.so (May–Jun 2021), EdgeTrade (Apr–Jun 2021), and Miro (Aug–Sep 2021) were concurrently delivered as focused rapid sprints."
             )}
           </p>
-          {viewMode === "individual" && activeProfile.concurrentNote && (
+          {true && activeProfile.concurrentNote && (
             <p className="text-xs text-primary font-semibold flex items-center gap-1.5 pt-1">
               <Sparkles className="size-3.5 shrink-0" />
               <span>{activeProfile.concurrentNote}</span>
@@ -1065,7 +1036,7 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
       </div>
 
       {/* 2. VIEW MODE A: BESPOKE INDIVIDUAL TIMELINE (100% UNIQUE GEOMETRY PER PROJECT) */}
-      {viewMode === "individual" && (
+      {true && (
         <div className="rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-lg space-y-8">
           <div className="flex items-center justify-between">
             <div>
@@ -1274,7 +1245,7 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
       )}
 
       {/* 3. VIEW MODE B: CONCURRENT MASTER PORTFOLIO ROADMAP (2020 – 2022) */}
-      {viewMode === "concurrent" && (
+      {false && (
         <div className="rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-lg space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-6">
             <div>
@@ -1289,7 +1260,7 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
               <h2 className="text-2xl font-black text-foreground mt-2">
                 Concurrent Delivery Topology & Minimals UI Design Collisions
               </h2>
-              <p className="text-xs text-muted-foreground mt-1 max-w-3xl leading-relaxed">
+              <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
                 Empirical visualization proving how <strong>Minimals UI</strong> served as the continuous 11-month design system backbone from late 2020 to late 2021, while Linear, Mixpanel, Frame.so, and Miro were developed concurrently in parallel sprints.
               </p>
             </div>
@@ -1394,3 +1365,7 @@ export function DesignTimeframeView({ currentProduct = "linear" }: DesignTimefra
     </div>
   )
 }
+
+
+
+

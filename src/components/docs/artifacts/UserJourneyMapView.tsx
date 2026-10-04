@@ -483,9 +483,9 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
             <span className="text-red-500 text-base">📍</span>
             <span>Define</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground uppercase">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground uppercase">
             USER JOURNEY MAP
-          </h1>
+          </h3>
           <p className="text-xs text-muted-foreground max-w-xl pt-1">
             End-to-end emotional trajectory and touchpoint analysis across the 5 lifecycle phases: Entice, Enter, Engage, Exit, and Extend.
           </p>
@@ -868,3 +868,5 @@ export function UserJourneyMapView({ currentProduct = "linear" }: UserJourneyMap
     </div>
   )
 }
+
+

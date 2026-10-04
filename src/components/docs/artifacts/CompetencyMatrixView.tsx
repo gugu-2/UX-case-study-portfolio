@@ -458,21 +458,23 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
 
   const selectedSkill = skills.find((s) => s.id === activeSkillId) || skills[0]
 
-  // SVG Geometry Settings matching the user reference image
-  const size = 900
-  const center = size / 2
-  const innerHubRadius = 50
-  const ringStep = 36
-  const totalRings = 5 // Levels 1 through 5
-  const maxRadius = innerHubRadius + totalRings * ringStep // 50 + 180 = 230px
+  const [selectedCategory, setSelectedCategory] = useState<string>("All")
 
-  // Sector angular width: each skill slice gets roughly 13 degrees
+  const categories = ["All", "Strategy", "Research", "Interaction", "Visual", "Execution"] as const
+
+  // SVG Geometry Settings optimized for crystal-clear readability and large typography
+  const size = 1040
+  const center = size / 2
+  const innerHubRadius = 60
+  const ringStep = 48
+  const totalRings = 5 // Levels 1 through 5
+  const maxRadius = innerHubRadius + totalRings * ringStep // 60 + 240 = 300px
+
+  // Sector angular width: each skill slice gets roughly 13.5 degrees
   const sliceWidthDeg = 13.5
 
   // Helper function to calculate arc paths in polar coordinates
   const polarToCartesian = (cx: number, cy: number, r: number, angleDeg: number) => {
-    // In SVG, 0 deg is positive X (right), positive angles go clockwise if y increases down
-    // Standard math angle: 0 is right, 90 is top (cy - r * sin)
     const rad = (angleDeg * Math.PI) / 180
     return {
       x: cx + r * Math.cos(rad),
@@ -488,20 +490,26 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
     const p4 = polarToCartesian(center, center, rInner, endAngle)
 
     const largeArc = Math.abs(endAngle - startAngle) > 180 ? 1 : 0
-    // sweep flag: standard math is counter-clockwise (sweep = 0 in SVG where Y is inverted)
     const sweep = 0
 
     return `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y} A ${rOuter} ${rOuter} 0 ${largeArc} ${sweep} ${p3.x} ${p3.y} L ${p4.x} ${p4.y} A ${rInner} ${rInner} 0 ${largeArc} ${1 - sweep} ${p1.x} ${p1.y} Z`
   }
 
-  // Color generator matching user reference image:
-  // Level 1-2: Warm Peach / Amber (#FED7AA, #FDBA74)
-  // Level 3-4: Soft Pink / Rose (#FECDD3, #FDA4AF)
-  // Level 5: Soft Sky Blue (#BAE6FD, #7DD3FC)
+  // Pure default Emerald brand color system (Zero pink / peach)
   const getLevelColor = (levelIndex: number) => {
-    if (levelIndex === 1 || levelIndex === 2) return "#FED7AA" // Warm peach
-    if (levelIndex === 3 || levelIndex === 4) return "#FECDD3" // Soft coral pink
-    return "#BAE6FD" // Sky blue
+    switch (levelIndex) {
+      case 1:
+        return "#A7F3D0" // Emerald 200 (Mint Light)
+      case 2:
+        return "#6EE7B7" // Emerald 300 (Emerald Soft)
+      case 3:
+        return "#34D399" // Emerald 400 (Competent)
+      case 4:
+        return "#10B981" // Emerald 500 (Proficient Emerald)
+      case 5:
+      default:
+        return "#047857" // Emerald 700 (Deep Lead Teal)
+    }
   }
 
   return (
@@ -511,15 +519,15 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Title & Methodology */}
           <div className="lg:col-span-7 space-y-3">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-sky-500">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
               <Compass className="size-3.5" />
               <span>UX Competencies & Skills Architecture</span>
             </div>
-            <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground uppercase">
+            <h3 className="figma-h3 text-[32px] leading-[42px] lg:text-[48px] lg:leading-[60px] font-extrabold tracking-tight text-foreground uppercase">
               UX Skills & Competency Matrix
-            </h1>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Radial polar competency matrix mapping the 18 core disciplines of user experience across 5 progressive mastery tiers: Novice (L1), Advanced Beginner (L2), Competent (L3), Proficient (L4), and Expert / Lead (L5). Demonstrates empirical team capability allocation across discovery, systems, and product delivery.
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Radial polar competency matrix mapping the 18 core disciplines of user experience across 5 progressive mastery tiers: Novice (L1), Advanced Beginner (L2), Competent (L3), Proficient (L4), and Expert / Lead (L5). Calibrated for empirical cross-functional execution across discovery, systems, and product engineering.
             </p>
           </div>
 
@@ -530,20 +538,20 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
                 <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">
                   Disciplines
                 </span>
-                <span className="text-lg font-black text-foreground">18 Skills</span>
+                <span className="text-xl font-black text-foreground">18 Skills</span>
               </div>
               <div className="p-3 rounded-2xl border border-border bg-muted/20 text-center">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">
                   Mastery Tiers
                 </span>
-                <span className="text-lg font-black text-primary">5 Levels</span>
+                <span className="text-xl font-black text-primary">5 Levels</span>
               </div>
               <div className="p-3 rounded-2xl border border-border bg-muted/20 text-center">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">
                   Lead Tiers
                 </span>
-                <span className="text-lg font-black text-emerald-600 dark:text-emerald-400">
-                  {skills.filter((s) => s.level >= 4).length} Mastery
+                <span className="text-xl font-black text-emerald-600 dark:text-emerald-400">
+                  {skills.filter((s) => s.level >= 4).length} Lead
                 </span>
               </div>
             </div>
@@ -555,9 +563,9 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
               <div className="flex items-center gap-1">
                 <button
                   onClick={() => setViewMode("product")}
-                  className={`figma-btn-md h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] text-xs transition-all cursor-pointer ${
+                  className={`h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] text-xs font-bold transition-all cursor-pointer ${
                     viewMode === "product"
-                      ? "bg-card text-foreground font-black shadow-xs"
+                      ? "bg-card text-foreground shadow-xs"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -565,9 +573,9 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
                 </button>
                 <button
                   onClick={() => setViewMode("reference")}
-                  className={`figma-btn-md h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] text-xs transition-all cursor-pointer ${
+                  className={`h-9 min-h-[36px] px-3.5 py-[6px] rounded-[8px] text-xs font-bold transition-all cursor-pointer ${
                     viewMode === "reference"
-                      ? "bg-card text-foreground font-black shadow-xs"
+                      ? "bg-card text-foreground shadow-xs"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -579,188 +587,282 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
         </div>
       </div>
 
-      {/* 2. Main Radial Matrix Canvas */}
-      <div className="rounded-3xl border border-border bg-card p-4 sm:p-8 shadow-lg flex flex-col lg:flex-row items-center gap-8 justify-center">
-        {/* SVG Radial Wheel */}
-        <div className="relative w-full max-w-[800px] aspect-square flex items-center justify-center select-none overflow-visible">
-          <svg
-            viewBox={`0 0 ${size} ${size}`}
-            className="w-full h-full drop-shadow-sm overflow-visible"
-          >
-            {/* Background Concentric Rings (Levels 1 to 5) */}
-            {/* Note: In image, quadrant 4 (bottom-right: from 270 deg to 360/0 deg) is cut open! */}
-            {[1, 2, 3, 4, 5].map((lvl) => {
-              const r = innerHubRadius + lvl * ringStep
-              const isSolid = lvl === 3 || lvl === 5
-              // Draw arc from 270 deg counter-clockwise to 0 deg (or math 270 to 360/0)
-              // In our system, skills are placed from 0 deg CCW to 270 deg!
-              const pStart = polarToCartesian(center, center, r, 0)
-              const pEnd = polarToCartesian(center, center, r, 270)
-              // Large arc flag = 1 since angle is 270 degrees
-              return (
-                <path
-                  key={`ring-${lvl}`}
-                  d={`M ${pStart.x} ${pStart.y} A ${r} ${r} 0 1 0 ${pEnd.x} ${pEnd.y}`}
-                  fill="none"
-                  stroke="currentColor"
-                  className="text-border/70"
-                  strokeWidth="1.2"
-                  strokeDasharray={isSolid ? "none" : "3,3"}
+      {/* 2. Interactive Discipline Filter Tabs */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+        <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider shrink-0 mr-1">
+          Filter Discipline:
+        </span>
+        {categories.map((cat) => {
+          const count = cat === "All" ? skills.length : skills.filter((s) => s.category === cat).length
+          const isSelected = selectedCategory === cat
+          return (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`h-9 min-h-[36px] px-3.5 py-[6px] rounded-full text-xs font-bold transition-all shrink-0 cursor-pointer flex items-center gap-1.5 border ${
+                isSelected
+                  ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                  : "bg-card text-muted-foreground hover:text-foreground border-border hover:bg-muted/50"
+              }`}
+            >
+              <span>{cat}</span>
+              <span
+                className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                  isSelected ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
+                }`}
+              >
+                {count}
+              </span>
+            </button>
+          )
+        })}
+      </div>
+
+      {/* 3. Main Radial Matrix Canvas & Dedicated Inspector Grid */}
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+        {/* Left Column: Enlarged Radial Matrix Canvas */}
+        <div className="xl:col-span-8 rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-lg flex flex-col items-center justify-center relative overflow-hidden">
+          <div className="relative w-full max-w-[880px] aspect-square flex items-center justify-center select-none overflow-visible">
+            <svg
+              viewBox={`0 0 ${size} ${size}`}
+              className="w-full h-full drop-shadow-sm overflow-visible"
+            >
+              {/* Background Concentric Rings (Levels 1 to 5) */}
+              {[1, 2, 3, 4, 5].map((lvl) => {
+                const r = innerHubRadius + lvl * ringStep
+                const isSolid = lvl === 3 || lvl === 5
+                const pStart = polarToCartesian(center, center, r, 0)
+                const pEnd = polarToCartesian(center, center, r, 270)
+                return (
+                  <path
+                    key={`ring-${lvl}`}
+                    d={`M ${pStart.x} ${pStart.y} A ${r} ${r} 0 1 0 ${pEnd.x} ${pEnd.y}`}
+                    fill="none"
+                    stroke="currentColor"
+                    className="text-border/70"
+                    strokeWidth="1.4"
+                    strokeDasharray={isSolid ? "none" : "4,4"}
+                  />
+                )
+              })}
+
+              {/* Radial Line Dividers at boundary 0 deg and 270 deg */}
+              <line
+                x1={center}
+                y1={center}
+                x2={center + maxRadius + 30}
+                y2={center}
+                stroke="currentColor"
+                className="text-border/90"
+                strokeWidth="1.5"
+              />
+              <line
+                x1={center}
+                y1={center}
+                x2={center}
+                y2={center + maxRadius + 30}
+                stroke="currentColor"
+                className="text-border/90"
+                strokeWidth="1.5"
+              />
+
+              {/* Center Dark Hub */}
+              <circle
+                cx={center}
+                cy={center}
+                r={innerHubRadius}
+                className="fill-zinc-800 dark:fill-zinc-900 stroke-border shadow-inner"
+                strokeWidth="2.5"
+              />
+              <text
+                x={center}
+                y={center - 4}
+                textAnchor="middle"
+                className="fill-white font-mono text-[11px] font-bold uppercase tracking-wider select-none pointer-events-none"
+              >
+                UX CORE
+              </text>
+              <text
+                x={center}
+                y={center + 12}
+                textAnchor="middle"
+                className="fill-emerald-400 font-mono text-[10px] font-extrabold select-none pointer-events-none"
+              >
+                18 SKILLS
+              </text>
+
+              {/* Bottom-Right Quadrant: Strategic Executive UX Model Card */}
+              <g transform={`translate(${center + 45}, ${center + 50})`}>
+                <rect
+                  x="-10"
+                  y="-16"
+                  width="290"
+                  height="160"
+                  rx="16"
+                  className="fill-muted/40 stroke-border/70 shadow-sm"
+                  strokeWidth="1"
                 />
-              )
-            })}
-
-            {/* Radial Line Dividers at boundary 0 deg and 270 deg */}
-            <line
-              x1={center}
-              y1={center}
-              x2={center + maxRadius + 30}
-              y2={center}
-              stroke="currentColor"
-              className="text-border/90"
-              strokeWidth="1.2"
-            />
-            <line
-              x1={center}
-              y1={center}
-              x2={center}
-              y2={center + maxRadius + 30}
-              stroke="currentColor"
-              className="text-border/90"
-              strokeWidth="1.2"
-            />
-
-            {/* Center Dark Charcoal Hub */}
-            <circle
-              cx={center}
-              cy={center}
-              r={innerHubRadius}
-              className="fill-zinc-800 dark:fill-zinc-900 stroke-border"
-              strokeWidth="2"
-            />
-
-            {/* Bottom-Right Quadrant Text Banner: "Filled Matrix Example" (matching user image) */}
-            <g transform={`translate(${center + 45}, ${center + 85})`}>
-              <text
-                x="0"
-                y="0"
-                className="fill-muted-foreground/35 font-black text-4xl sm:text-5xl tracking-tight select-none"
-                style={{ fontFamily: "inherit" }}
-              >
-                Filled
-              </text>
-              <text
-                x="0"
-                y="48"
-                className="fill-muted-foreground/35 font-black text-4xl sm:text-5xl tracking-tight select-none"
-                style={{ fontFamily: "inherit" }}
-              >
-                Matrix
-              </text>
-              <text
-                x="0"
-                y="96"
-                className="fill-muted-foreground/35 font-black text-4xl sm:text-5xl tracking-tight select-none"
-                style={{ fontFamily: "inherit" }}
-              >
-                Example
-              </text>
-            </g>
-
-            {/* Render 18 Radial Competency Slices with Filled Levels */}
-            {skills.map((skill) => {
-              const startAngle = skill.angleDeg + sliceWidthDeg / 2
-              const endAngle = skill.angleDeg - sliceWidthDeg / 2
-              const isSelected = activeSkillId === skill.id
-
-              // Label Position: Radial vector extended past outer radius
-              const labelRadius = maxRadius + 45
-              const labelPos = polarToCartesian(center, center, labelRadius, skill.angleDeg)
-
-              // Text alignment based on polar quadrant
-              let textAnchor: "start" | "end" | "middle" = "middle"
-              if (skill.angleDeg > 15 && skill.angleDeg < 80) textAnchor = "start"
-              else if (skill.angleDeg > 100 && skill.angleDeg < 260) textAnchor = "end"
-              else if (skill.angleDeg >= 80 && skill.angleDeg <= 100) textAnchor = "middle"
-
-              return (
-                <g
-                  key={skill.id}
-                  className="cursor-pointer group"
-                  onClick={() => setActiveSkillId(skill.id)}
+                <text
+                  x="10"
+                  y="14"
+                  className="fill-primary font-mono text-[12px] font-bold tracking-widest uppercase select-none"
                 >
-                  {/* Radial Divider Rays */}
-                  {(() => {
-                    const rayInner = polarToCartesian(center, center, innerHubRadius, startAngle)
-                    const rayOuter = polarToCartesian(center, center, maxRadius, startAngle)
-                    return (
-                      <line
-                        x1={rayInner.x}
-                        y1={rayInner.y}
-                        x2={rayOuter.x}
-                        y2={rayOuter.y}
-                        stroke="currentColor"
-                        className="text-border/50"
-                        strokeWidth="0.8"
-                      />
-                    )
-                  })()}
+                  EXECUTIVE UX FRAMEWORK
+                </text>
+                <text
+                  x="10"
+                  y="46"
+                  className="fill-foreground font-black text-[24px] tracking-tight select-none"
+                >
+                  Strategic Competency
+                </text>
+                <text
+                  x="10"
+                  y="74"
+                  className="fill-foreground/90 font-extrabold text-[19px] tracking-tight select-none"
+                >
+                  Mastery Architecture
+                </text>
+                <text
+                  x="10"
+                  y="104"
+                  className="fill-muted-foreground font-medium text-[13px] select-none"
+                >
+                  18 Evaluated Disciplines • 5 Tiers
+                </text>
+                <text
+                  x="10"
+                  y="126"
+                  className="fill-muted-foreground/80 font-mono text-[11px] select-none"
+                >
+                  Pritam Maji • Production System
+                </text>
+              </g>
 
-                  {/* Level Segments 1 through 5 */}
-                  {[1, 2, 3, 4, 5].map((lvl) => {
-                    const rInner = innerHubRadius + (lvl - 1) * ringStep
-                    const rOuter = innerHubRadius + lvl * ringStep
-                    const isFilled = lvl <= skill.level
-                    const pathD = getSegmentPath(rInner, rOuter, startAngle, endAngle)
-                    const fillColor = isFilled ? getLevelColor(lvl) : "transparent"
+              {/* Render 18 Radial Competency Slices with Filled Levels */}
+              {skills.map((skill) => {
+                const startAngle = skill.angleDeg + sliceWidthDeg / 2
+                const endAngle = skill.angleDeg - sliceWidthDeg / 2
+                const isSelected = activeSkillId === skill.id
+                const isCatMatched = selectedCategory === "All" || skill.category === selectedCategory
 
-                    return (
-                      <path
-                        key={`cell-${skill.id}-${lvl}`}
-                        d={pathD}
-                        fill={fillColor}
-                        className={`transition-all duration-200 ${
-                          isSelected
-                            ? "stroke-foreground stroke-[1.5] filter brightness-105"
-                            : "stroke-border/40 hover:stroke-foreground/60 stroke-[0.8]"
-                        }`}
-                      />
-                    )
-                  })}
+                // Label Position: Radial vector extended past outer radius
+                const labelRadius = maxRadius + 38
+                const labelPos = polarToCartesian(center, center, labelRadius, skill.angleDeg)
 
-                  {/* Outer Label text */}
-                  <text
-                    x={labelPos.x}
-                    y={labelPos.y}
-                    textAnchor={textAnchor}
-                    dominantBaseline="central"
-                    className={`text-[11px] font-bold tracking-tight transition-colors select-none ${
-                      isSelected
-                        ? "fill-foreground font-black text-[12px] underline"
-                        : "fill-foreground/80 hover:fill-foreground"
-                    }`}
+                // Precise text alignment based on polar angle
+                let textAnchor: "start" | "end" | "middle" = "middle"
+                let dx = 0
+                let dy = 0
+                if (skill.angleDeg > 15 && skill.angleDeg < 80) {
+                  textAnchor = "start"
+                  dx = 10
+                } else if (skill.angleDeg > 100 && skill.angleDeg < 260) {
+                  textAnchor = "end"
+                  dx = -10
+                } else if (skill.angleDeg >= 80 && skill.angleDeg <= 100) {
+                  textAnchor = "middle"
+                  dy = -12
+                } else if (skill.angleDeg >= 260 && skill.angleDeg <= 280) {
+                  textAnchor = "middle"
+                  dy = 16
+                }
+
+                return (
+                  <g
+                    key={skill.id}
+                    className="cursor-pointer group transition-opacity duration-200"
+                    style={{ opacity: isCatMatched ? 1 : 0.25 }}
+                    onClick={() => setActiveSkillId(skill.id)}
                   >
-                    {skill.name}
-                  </text>
-                </g>
-              )
-            })}
-          </svg>
+                    {/* Radial Divider Rays */}
+                    {(() => {
+                      const rayInner = polarToCartesian(center, center, innerHubRadius, startAngle)
+                      const rayOuter = polarToCartesian(center, center, maxRadius, startAngle)
+                      return (
+                        <line
+                          x1={rayInner.x}
+                          y1={rayInner.y}
+                          x2={rayOuter.x}
+                          y2={rayOuter.y}
+                          stroke="currentColor"
+                          className="text-border/60"
+                          strokeWidth="1"
+                        />
+                      )
+                    })()}
+
+                    {/* Level Segments 1 through 5 */}
+                    {[1, 2, 3, 4, 5].map((lvl) => {
+                      const rInner = innerHubRadius + (lvl - 1) * ringStep
+                      const rOuter = innerHubRadius + lvl * ringStep
+                      const isFilled = lvl <= skill.level
+                      const pathD = getSegmentPath(rInner, rOuter, startAngle, endAngle)
+                      const fillColor = isFilled ? getLevelColor(lvl) : "transparent"
+
+                      return (
+                        <path
+                          key={`cell-${skill.id}-${lvl}`}
+                          d={pathD}
+                          fill={fillColor}
+                          className={`transition-all duration-200 ${
+                            isSelected
+                              ? "stroke-foreground stroke-[2] filter brightness-110"
+                              : "stroke-border/50 hover:stroke-foreground/70 stroke-[1]"
+                          }`}
+                        />
+                      )
+                    })}
+
+                    {/* Visual Pip on the circle edge */}
+                    <circle
+                      cx={polarToCartesian(center, center, maxRadius + 6, skill.angleDeg).x}
+                      cy={polarToCartesian(center, center, maxRadius + 6, skill.angleDeg).y}
+                      r={isSelected ? 4 : 2.5}
+                      className={isSelected ? "fill-primary" : "fill-border"}
+                    />
+
+                    {/* Outer Readable Label text (Greatly enlarged to 17px/18px) */}
+                    <text
+                      x={labelPos.x + dx}
+                      y={labelPos.y + dy}
+                      textAnchor={textAnchor}
+                      dominantBaseline="central"
+                      className={`text-[17px] font-bold tracking-tight transition-all select-none ${
+                        isSelected
+                          ? "fill-primary font-black text-[19px] underline underline-offset-4"
+                          : "fill-foreground/90 hover:fill-foreground"
+                      }`}
+                    >
+                      {skill.name}
+                      <tspan
+                        dx="6"
+                        className={`text-[14px] font-mono font-bold ${
+                          isSelected ? "fill-primary" : "fill-emerald-600 dark:text-emerald-400 fill-opacity-80"
+                        }`}
+                      >
+                        (L{skill.level})
+                      </tspan>
+                    </text>
+                  </g>
+                )
+              })}
+            </svg>
+          </div>
         </div>
 
-        {/* Interactive Detail Inspector Panel */}
-        <div className="w-full lg:w-[380px] shrink-0 space-y-5">
-          <div className="rounded-2xl border border-border bg-muted/20 p-5 space-y-4 shadow-sm">
+        {/* Right Column: Active Competency Inspector & Legend */}
+        <div className="xl:col-span-4 space-y-6 sticky top-6">
+          <div className="rounded-3xl border border-border bg-card p-6 space-y-5 shadow-sm">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-500">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-primary">
                 ACTIVE COMPETENCY
               </span>
               <Badge
                 variant="outline"
-                className="text-xs font-bold px-2.5 py-0.5 rounded-full"
+                className="text-xs font-bold px-3 py-1 rounded-full text-white"
                 style={{
                   backgroundColor: getLevelColor(selectedSkill.level),
-                  color: "#18181B",
                   borderColor: "transparent",
                 }}
               >
@@ -769,19 +871,24 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
             </div>
 
             <div>
-              <h3 className="text-xl font-black text-foreground">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground font-mono">
+                  {selectedSkill.category} Discipline
+                </span>
+              </div>
+              <h4 className="text-2xl font-black text-foreground">
                 {selectedSkill.name}
-              </h3>
-              <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+              </h4>
+              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
                 {selectedSkill.description}
               </p>
             </div>
 
             {/* Level Tier Gauge */}
-            <div className="space-y-1.5 pt-2 border-t border-border">
+            <div className="space-y-2 pt-3 border-t border-border">
               <div className="flex justify-between text-xs font-bold text-foreground">
-                <span>Proficiency Tier</span>
-                <span className="text-sky-600 dark:text-sky-400 font-mono">
+                <span>Proficiency Status</span>
+                <span className="text-primary font-mono">
                   {selectedSkill.level === 5
                     ? "Expert / Lead"
                     : selectedSkill.level === 4
@@ -793,7 +900,7 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
                     : "Foundational"}
                 </span>
               </div>
-              <div className="grid grid-cols-5 gap-1.5 h-2">
+              <div className="grid grid-cols-5 gap-1.5 h-2.5">
                 {[1, 2, 3, 4, 5].map((lvl) => (
                   <div
                     key={lvl}
@@ -810,18 +917,18 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
             </div>
 
             {/* Core Deliverables */}
-            <div className="space-y-1.5 pt-2 border-t border-border">
+            <div className="space-y-1.5 pt-3 border-t border-border">
               <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider block">
                 Primary Deliverables
               </span>
-              <p className="text-xs font-semibold text-foreground/90">
+              <p className="text-xs font-semibold text-foreground/90 font-mono">
                 {selectedSkill.deliverables}
               </p>
             </div>
 
-            {/* Project Context */}
-            <div className="p-3 rounded-xl bg-card border border-border text-xs space-y-1">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">
+            {/* Production Context */}
+            <div className="p-4 rounded-2xl bg-muted/30 border border-border text-xs space-y-1.5">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block font-mono">
                 {productConfig.name} Production Context
               </span>
               <p className="text-muted-foreground leading-relaxed">
@@ -830,36 +937,118 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
             </div>
           </div>
 
-          {/* Color Legend Matching the Reference Image */}
-          <div className="p-4 rounded-2xl border border-border bg-card space-y-2.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground block">
+          {/* Color Hierarchy Legend (Emerald scale, Zero Pink) */}
+          <div className="p-5 rounded-3xl border border-border bg-card space-y-3 shadow-sm">
+            <span className="text-xs font-bold uppercase tracking-wider text-foreground block">
               Matrix Color Hierarchy
             </span>
-            <div className="grid grid-cols-3 gap-2 text-xs">
-              <div className="flex items-center gap-2">
-                <div className="size-3 rounded-md bg-[#FED7AA] border border-border/50 shrink-0" />
-                <span className="text-muted-foreground text-[11px]">Level 1–2 (Peach)</span>
+            <div className="space-y-2.5 text-xs">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="size-3.5 rounded-md bg-[#A7F3D0] border border-border/50 shrink-0" />
+                  <span className="text-foreground font-semibold">Level 1–2 (Mint Light)</span>
+                </div>
+                <span className="text-muted-foreground font-mono text-[11px]">Novice / Beginner</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="size-3 rounded-md bg-[#FECDD3] border border-border/50 shrink-0" />
-                <span className="text-muted-foreground text-[11px]">Level 3–4 (Rose)</span>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="size-3.5 rounded-md bg-[#34D399] border border-border/50 shrink-0" />
+                  <span className="text-foreground font-semibold">Level 3 (Competent Emerald)</span>
+                </div>
+                <span className="text-muted-foreground font-mono text-[11px]">Practitioner</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="size-3 rounded-md bg-[#BAE6FD] border border-border/50 shrink-0" />
-                <span className="text-muted-foreground text-[11px]">Level 5 (Sky Blue)</span>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="size-3.5 rounded-md bg-[#10B981] border border-border/50 shrink-0" />
+                  <span className="text-foreground font-semibold">Level 4 (Proficient Emerald)</span>
+                </div>
+                <span className="text-muted-foreground font-mono text-[11px]">Senior Specialist</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="size-3.5 rounded-md bg-[#047857] border border-border/50 shrink-0" />
+                  <span className="text-foreground font-semibold">Level 5 (Deep Lead Teal)</span>
+                </div>
+                <span className="text-muted-foreground font-mono text-[11px]">Staff / Lead Expert</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 3. Comprehensive Competency Grid Table */}
+      {/* 4. Categorized Competency Cards Grid */}
+      <div className="space-y-4">
+        <div className="border-b border-border pb-3">
+          <h4 className="figma-h4 text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] font-bold text-foreground tracking-tight">
+            Competency Breakdown by UX Disciplines
+          </h4>
+          <p className="text-xs text-muted-foreground mt-0.5">
+            Explore evaluated proficiencies grouped by strategic product lifecycle domains.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {(["Strategy", "Research", "Interaction", "Visual", "Execution"] as const).map((cat) => {
+            const catSkills = skills.filter((s) => s.category === cat)
+            return (
+              <div
+                key={cat}
+                className="p-5 rounded-2xl border border-border bg-card shadow-xs space-y-4 hover:border-primary/40 transition-colors"
+              >
+                <div className="flex items-center justify-between border-b border-border pb-3">
+                  <span className="font-bold text-sm text-foreground flex items-center gap-2">
+                    <Layers className="size-4 text-primary" />
+                    {cat}
+                  </span>
+                  <Badge variant="outline" className="text-[11px] font-mono">
+                    {catSkills.length} Skills
+                  </Badge>
+                </div>
+
+                <div className="space-y-3">
+                  {catSkills.map((s) => (
+                    <div
+                      key={s.id}
+                      onClick={() => setActiveSkillId(s.id)}
+                      className={`p-2.5 rounded-xl border transition-all cursor-pointer ${
+                        activeSkillId === s.id
+                          ? "bg-muted/60 border-primary shadow-xs"
+                          : "bg-muted/20 border-border/60 hover:bg-muted/40"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between text-xs mb-1.5">
+                        <span className="font-bold text-foreground truncate mr-2">{s.name}</span>
+                        <span className="font-mono font-bold text-[11px] shrink-0" style={{ color: getLevelColor(s.level) }}>
+                          L{s.level} / 5
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-5 gap-1 h-1.5">
+                        {[1, 2, 3, 4, 5].map((lvl) => (
+                          <div
+                            key={lvl}
+                            className="h-full rounded-full transition-all"
+                            style={{
+                              backgroundColor: lvl <= s.level ? getLevelColor(lvl) : "var(--border)",
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* 5. Comprehensive Competency Grid Table */}
       <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border pb-4">
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground uppercase tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground uppercase tracking-tight">
               18 UX Competencies Directory & Scoring Rubric
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground">
               Complete inventory of evaluated disciplines, deliverables, and demonstrated proficiency levels.
             </p>
@@ -902,8 +1091,8 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
                     <span
                       className="px-2 py-0.5 rounded-full text-[10px] font-bold"
                       style={{
-                        backgroundColor: `${getLevelColor(s.level)}40`,
-                        color: s.level === 5 ? "#0284C7" : s.level >= 3 ? "#E11D48" : "#D97706",
+                        backgroundColor: `${getLevelColor(s.level)}30`,
+                        color: s.level === 5 ? "#047857" : s.level >= 3 ? "#059669" : "#6EE7B7",
                       }}
                     >
                       {s.level === 5 ? "Expert / Lead" : s.level === 4 ? "Proficient" : s.level === 3 ? "Competent" : "Beginner"}
@@ -919,3 +1108,9 @@ export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMa
     </div>
   )
 }
+
+
+
+
+
+

@@ -274,7 +274,7 @@ export function PersonasView({ currentProduct = "linear" }: PersonasViewProps) {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm">
-        <div className="max-w-3xl space-y-3">
+        <div className="space-y-3">
           <div
             className="inline-flex items-center gap-2 rounded-full border px-3.5 py-1 text-xs font-bold"
             style={{
@@ -287,9 +287,9 @@ export function PersonasView({ currentProduct = "linear" }: PersonasViewProps) {
             <span>02.3 — Archetypal User Personas</span>
           </div>
 
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             {productConfig.name} User Personas & Behavioral Archetypes
-          </h1>
+          </h3>
 
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             Empirically validated user archetypes synthesizing qualitative field interviews and quantitative telemetry. Detailing primary goals, cognitive motivations, friction points, and accessibility requirements.
@@ -314,7 +314,7 @@ export function PersonasView({ currentProduct = "linear" }: PersonasViewProps) {
                 />
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground">{persona.name}</h3>
+                    <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-foreground">{persona.name}</h6>
                     <Badge variant="outline" className="font-mono text-xs">
                       Persona 0{idx + 1}
                     </Badge>
@@ -406,3 +406,7 @@ export function PersonasView({ currentProduct = "linear" }: PersonasViewProps) {
     </div>
   )
 }
+
+
+
+
