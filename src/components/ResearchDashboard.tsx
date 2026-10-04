@@ -47,14 +47,14 @@ export const ResearchDashboard: React.FC = () => {
     <div className="space-y-8">
       {/* Header Banner */}
       <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-r from-slate-900 via-[#0e1626] to-[#0a1f18] p-6 sm:p-8 shadow-xl">
-        <div className="relative z-10 max-w-3xl">
+        <div className="relative z-10 ">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
             <Activity className="h-3.5 w-3.5" />
             <span>Research Studio & Quantitative Telemetry (dashboard-01 Architecture)</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-white mt-3">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold tracking-tight text-white mt-3">
             Enterprise Human Insight & Performance Benchmark
-          </h1>
+          </h5>
           <p className="mt-2 text-sm leading-relaxed text-slate-300">
             Rigorous quantitative findings and user experience telemetry recorded across 148 enterprise practitioners
             operating in high-velocity FinTech, E-Commerce, and SaaS environments over a 12-week operational cycle.
@@ -432,3 +432,6 @@ export const ResearchDashboard: React.FC = () => {
     </div>
   )
 }
+
+
+

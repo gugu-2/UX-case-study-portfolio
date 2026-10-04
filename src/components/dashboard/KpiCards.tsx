@@ -99,92 +99,60 @@ export function KpiCards({ kpis }: KpiCardsProps) {
           return (
             <div
               key={kpi.key}
-              className="rounded-2xl border border-border/80 bg-card p-6 sm:p-7 shadow-[0_0_2px_0_rgba(145,158,171,0.2),0_12px_24px_-4px_rgba(145,158,171,0.12)] hover:border-primary/40 transition-all duration-200 flex flex-col justify-between"
+              className="rounded-2xl border border-border/80 bg-card p-6 shadow-[0_12px_24px_-4px_rgba(145,158,171,0.12),0_0_2px_0_rgba(145,158,171,0.20)] hover:border-primary/40 transition-all duration-200 flex flex-row items-center justify-between gap-4"
             >
-              {/* Row 1: Top Title + Info Tooltip */}
-              <div className="flex items-center justify-between gap-2">
-                <span className="text-sm sm:text-base font-bold text-foreground tracking-tight truncate">
+              {/* Left Column: Title, Trend, Big Number */}
+              <div className="flex flex-col items-start min-w-0 flex-1">
+                <span className="font-semibold text-sm leading-[22px] text-foreground truncate w-full" style={{ fontFamily: 'Public Sans, sans-serif' }}>
                   {config.title}
                 </span>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button
-                      className="text-muted-foreground/50 hover:text-foreground transition-colors p-0.5"
-                      title="Inspect metric telemetry"
-                    >
-                      <Info className="size-4" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="top" className="text-xs max-w-xs p-3">
-                    <p className="font-bold text-foreground mb-1">{config.title}</p>
-                    <p className="text-muted-foreground">{kpi.source}</p>
-                    {kpi.baseline !== undefined && (
-                      <div className="mt-2 pt-2 border-t border-border flex justify-between gap-3 text-xs">
-                        <span>
-                          Baseline: <strong>{kpi.baseline}{kpi.unit}</strong>
-                        </span>
-                        <span>
-                          Target:{" "}
-                          <strong className="text-emerald-600 dark:text-emerald-400">
-                            {kpi.target}{kpi.unit}
-                          </strong>
-                        </span>
-                      </div>
-                    )}
-                  </TooltipContent>
-                </Tooltip>
-              </div>
 
-              {/* Row 2: Middle Level (Trend Pill on Left + Mini 7-Bar Sparkline on Right) */}
-              <div className="flex items-center justify-between mt-4 mb-2">
-                {/* Left: Trend Arrow inside soft circle + bold percentage text */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 pt-4 pb-2">
                   <div
-                    className={`size-7 rounded-full flex items-center justify-center shrink-0 ${
+                    className={`p-1 rounded-full flex items-center justify-center shrink-0 ${
                       isPositive
                         ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
                         : "bg-rose-500/15 text-rose-500 dark:text-rose-400"
                     }`}
                   >
                     {isPositive ? (
-                      <ArrowUpRight className="size-4 stroke-[2.5]" />
+                      <ArrowUpRight className="size-3.5 stroke-[2.5]" />
                     ) : (
-                      <ArrowDownRight className="size-4 stroke-[2.5]" />
+                      <ArrowDownRight className="size-3.5 stroke-[2.5]" />
                     )}
                   </div>
-                  <span className="text-sm sm:text-base font-bold text-foreground tracking-tight">
+                  <span className="font-semibold text-sm leading-[22px] text-foreground" style={{ fontFamily: 'Public Sans, sans-serif' }}>
                     {percentText}
                   </span>
                 </div>
 
-                {/* Right: Signature Minimal 7-Bar Vertical Sparkline */}
-                <div
-                  className="flex items-end gap-1 sm:gap-1.5 h-7 sm:h-8"
-                  aria-hidden="true"
-                >
-                  {config.bars.map((heightPercent, idx) => (
-                    <div
-                      key={idx}
-                      className="w-1 sm:w-1.5 rounded-full transition-all duration-300"
-                      style={{
-                        height: `${heightPercent}%`,
-                        backgroundColor: config.color,
-                      }}
-                    />
-                  ))}
+                <div className="flex items-baseline">
+                  <span className="text-[32px] leading-[48px] font-normal text-foreground truncate">
+                    {formattedValue}
+                  </span>
+                  {kpi.total && (
+                    <span className="text-xl font-normal text-muted-foreground ml-1.5 truncate">
+                      / {kpi.total}
+                    </span>
+                  )}
                 </div>
               </div>
 
-              {/* Row 3: Huge Big Number */}
-              <div className="mt-3 sm:mt-4 flex items-baseline">
-                <span className="figma-h2 text-[32px] sm:text-[38px] lg:text-[44px] leading-tight font-extrabold tracking-tight text-foreground">
-                  {formattedValue}
-                </span>
-                {kpi.total && (
-                  <span className="text-xl sm:text-2xl font-bold text-muted-foreground ml-1.5">
-                    / {kpi.total}
-                  </span>
-                )}
+              {/* Right Column: Mini 7-Bar Sparkline */}
+              <div
+                className="flex items-end gap-1 shrink-0 h-[48px]"
+                aria-hidden="true"
+              >
+                {config.bars.map((heightPercent, idx) => (
+                  <div
+                    key={idx}
+                    className="w-1.5 rounded-full transition-all duration-300"
+                    style={{
+                      height: `${heightPercent}%`,
+                      backgroundColor: config.color,
+                    }}
+                  />
+                ))}
               </div>
             </div>
           )
@@ -193,3 +161,4 @@ export function KpiCards({ kpis }: KpiCardsProps) {
     </TooltipProvider>
   )
 }
+

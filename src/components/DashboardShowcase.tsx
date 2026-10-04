@@ -89,7 +89,7 @@ export const DashboardShowcase: React.FC<DashboardShowcaseProps> = ({
           <h2 className="text-xl sm:text-2xl font-black text-foreground">
             {currentDashboard.title}
           </h2>
-          <p className="max-w-2xl text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             {currentDashboard.description}
           </p>
         </div>
@@ -196,7 +196,7 @@ export const DashboardShowcase: React.FC<DashboardShowcaseProps> = ({
                 ? 'w-full'
                 : activeViewMode === 'mobile'
                 ? 'w-[375px] rounded-2xl shadow-xl'
-                : 'w-full max-w-5xl rounded-lg shadow-sm'
+                : 'w-full rounded-lg shadow-sm'
             }`}
           >
             <img
@@ -316,3 +316,4 @@ export const DashboardShowcase: React.FC<DashboardShowcaseProps> = ({
     </div>
   )
 }
+

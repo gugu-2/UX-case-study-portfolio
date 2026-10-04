@@ -63,9 +63,9 @@ export function ResearchDashboardView({
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-2xl border border-border bg-card shadow-[0px_0px_2px_rgba(145,158,171,0.20),0px_12px_24px_-4px_rgba(145,158,171,0.12)]">
         <div className="space-y-1">
           <div className="flex items-center gap-2.5 flex-wrap">
-            <h1 className="figma-h2 text-[32px] leading-[42px] lg:text-[48px] lg:leading-[64px] font-extrabold tracking-tight text-foreground">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold tracking-tight text-foreground">
               {productConfig.name} UX Research & Telemetry Dashboard
-            </h1>
+            </h5>
             <Badge
               variant="outline"
               className="font-bold min-h-[30px] px-3 py-1 rounded-[6px]"
@@ -84,13 +84,13 @@ export function ResearchDashboardView({
         </div>
 
         {/* Action Controls: Figma CTA, Version Selector & Print Export */}
-        <div className="flex items-center gap-2.5 flex-wrap">
+        <div className="flex flex-col items-start md:items-end gap-2.5 shrink-0">
           {/* Main CTA: Real Master Figma Design File (Figma Large Button: 48px, 15px font, r: 8px) */}
           <a
             href={productConfig.figmaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-white font-bold text-[15px] leading-[26px] transition-all group active:scale-[0.98] hover:brightness-105"
+            className="inline-flex items-center gap-2 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-white font-bold text-[15px] leading-[26px] transition-all group active:scale-[0.98] hover:brightness-105 shadow-sm"
             style={{
               backgroundColor: productConfig.brandColor,
               boxShadow: `0 8px 16px ${productConfig.brandColor}3d`,
@@ -104,7 +104,7 @@ export function ResearchDashboardView({
               <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
               <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
             </svg>
-            <span>Open Master Figma File</span>
+            <span>Figma file</span>
             <ExternalLink className="size-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform" />
           </a>
 
@@ -272,3 +272,4 @@ export function ResearchDashboardView({
     </div>
   )
 }
+
