@@ -37,7 +37,8 @@ interface UnifiedProjectCard {
   tagline: string
   description: string
   brandColor: string
-  brandLogoText: string
+  brandLogoText?: string
+  brandIcon?: React.ReactNode
   coverImage: string
   badgeText: string
   type: ProjectType
@@ -53,7 +54,7 @@ interface UnifiedProjectCard {
 }
 
 export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps) {
-  const [filterType, setFilterType] = useState<"all" | "studio" | "external">("all")
+  const [filterType, setFilterType] = useState<"all" | "mobile" | "desktop" | "web">("all")
 
   // Reorganized unified project list where #1 is Linear App, #2 is EdgeTrade App, and #3 is Minimals UI
   const allProjects: UnifiedProjectCard[] = [
@@ -247,7 +248,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       tagline: "Behavioral Design & Habit Loop Microcopy",
       description: "Comprehensive behavioral UX writing, tone-of-voice frameworks, habit-loop motivational copy, and onboarding conversion case study published on Behance.",
       brandColor: "#F97316",
-      brandLogoText: "Fit",
+      brandIcon: <Activity className="size-5 text-white" />,
       coverImage: "/thumbnails/fitness-app.jpeg",
       badgeText: "Behance Case",
       type: "external",
@@ -267,15 +268,17 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
     },
   ]
 
-  const displayedProjects = allProjects.filter((p) => {
-    if (filterType === "studio") return p.type === "studio"
-    if (filterType === "external") return p.type === "external"
+    const displayedProjects = allProjects.filter((p) => {
+    if (filterType === "mobile") return p.id === "soar" || p.id === "fitness-ux-writing"
+    if (filterType === "desktop") return p.id === "linear" || p.id === "edgetrade" || p.id === "frame"
+    if (filterType === "web") return p.id === "minimal" || p.id === "mixpanel" || p.id === "miro"
     return true
   })
 
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.6}} className="space-y-10 animate-in fade-in-50 duration-300">
-      {/* 1. Master Studio Hero Header: Balanced Full-Width Layout */}
+      {/* 1. Master Studio Hero Header: Hidden for now */}
+      {false && (
       <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-sm">
         {/* Subtle decorative background gradient */}
         <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
@@ -290,11 +293,11 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
               <span>Master UX Documentation & Architecture Platform</span>
             </div>
 
-            <h1 className="figma-h1 text-[40px] leading-[50px] sm:text-[52px] sm:leading-[64px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+            <h3 className="figma-h3 text-[40px] leading-[50px] sm:text-[52px] sm:leading-[64px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
               Unified Product Design Systems & Usability Studios
-            </h1>
+            </h3>
 
-            <p className="figma-body1 text-base sm:text-lg leading-relaxed text-muted-foreground max-w-2xl">
+            <p className="figma-body1 text-base sm:text-lg leading-relaxed text-muted-foreground ">
               Explore complete, verified UX documentation, quantitative research telemetry dashboards, and interactive task flowcharts for world-class software products. Select any product below to enter its specialized workspace.
             </p>
           </div>
@@ -389,51 +392,31 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
           </div>
         </div>
       </div>
+      )}
 
       {/* 2. Projects Showcase with Filter Tabs */}
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-1">
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[36px] sm:text-[36px] sm:leading-[46px] lg:text-[48px] lg:leading-[64px] font-extrabold tracking-tight text-foreground">
-              All 8 Product Design Systems & Documentations
-            </h2>
+            <h4 className="figma-h4 text-[24px] leading-[36px] lg:text-[24px] lg:leading-[36px] font-bold tracking-tight text-foreground">All 8 Product Design Systems & Documentations</h4>
             <p className="figma-body2 text-sm text-muted-foreground mt-1">
               Reorganized by priority: Linear App (#1), EdgeTrade Terminal (#2), and Minimals UI (#3), complete with verified cover thumbnails and telemetry.
             </p>
           </div>
 
-          {/* Filter Buttons (Figma Medium Button: h-9 px-4 py-[6px] r-8 text-sm font-bold) */}
-          <div className="flex items-center gap-1.5 p-1 rounded-[10px] border border-border bg-card/80 self-start sm:self-auto">
-            <button
-              onClick={() => setFilterType("all")}
-              className={`h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
-                filterType === "all"
-                  ? "bg-foreground text-background shadow-xs font-black"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
+                    {/* Filter Dropdown */}
+          <div className="self-start sm:self-auto">
+            <select
+              value={filterType}
+              onChange={(e) => setFilterType(e.target.value as any)}
+              className="h-10 px-4 py-2 rounded-[8px] text-sm font-bold border border-border bg-card text-foreground cursor-pointer outline-none shadow-sm focus:ring-2 focus:ring-primary/20 transition-all appearance-none pr-10 relative"
+              style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27currentColor%27%3E%3Cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27%3E%3C/path%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.75rem center', backgroundSize: '1rem' }}
             >
-              All Projects ({allProjects.length})
-            </button>
-            <button
-              onClick={() => setFilterType("studio")}
-              className={`h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
-                filterType === "studio"
-                  ? "bg-foreground text-background shadow-xs font-black"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              In-Studio Systems ({allProjects.filter((p) => p.type === "studio").length})
-            </button>
-            <button
-              onClick={() => setFilterType("external")}
-              className={`h-9 min-h-[36px] px-4 py-[6px] rounded-[8px] text-sm font-bold transition-all cursor-pointer ${
-                filterType === "external"
-                  ? "bg-foreground text-background shadow-xs font-black"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Live Portals ({allProjects.filter((p) => p.type === "external").length})
-            </button>
+              <option value="all">All Projects ({allProjects.length})</option>
+              <option value="mobile">Mobile Apps (2)</option>
+              <option value="desktop">Desktop Clients (3)</option>
+              <option value="web">Web Portals (3)</option>
+            </select>
           </div>
         </div>
 
@@ -453,11 +436,11 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                   }}
                 >
                   <div className="flex items-center gap-3">
-                    <div
-                      className="flex size-10 items-center justify-center rounded-2xl font-black text-white text-sm shadow-sm shrink-0"
+                                        <div
+                      className="flex size-10 items-center justify-center rounded-xl font-black text-white text-sm shadow-sm shrink-0"
                       style={{ backgroundColor: project.brandColor }}
                     >
-                      {project.brandLogoText}
+                      {project.brandIcon || project.brandLogoText}
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
@@ -645,7 +628,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                     </span>
                   </div>
 
-                  <p className="figma-body1 text-sm sm:text-base font-semibold text-foreground/90 max-w-2xl leading-snug">
+                  <p className="figma-body1 text-sm sm:text-base font-semibold text-foreground/90 leading-snug">
                     "14+ yrs Senior Product Designer & Developer at Airbnb, GitHub, and BBC – built and shipped polished websites and digital products used by millions globally"
                   </p>
 
@@ -879,3 +862,16 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
     </motion.div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
