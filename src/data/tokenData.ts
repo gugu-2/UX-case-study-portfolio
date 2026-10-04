@@ -7,17 +7,6 @@ export interface ColorToken {
   usage: string
 }
 
-export interface TypoToken {
-  name: string
-  typeface: string
-  weight: string
-  size: string
-  case: string
-  letterSpacing: string
-  lineHeight?: string
-  usage?: string
-}
-
 export const colorPalette: { category: string; tokens: ColorToken[] }[] = [
   {
     category: 'Brand Primary (Emerald Vitality)',
@@ -60,20 +49,216 @@ export const colorPalette: { category: string; tokens: ColorToken[] }[] = [
   },
 ]
 
+export interface TypoToken {
+  name: string
+  category: 'Headline' | 'Text' | 'Component'
+  typeface: string
+  weight: string
+  numericWeight: number
+  size: string
+  mobileSize?: string
+  case: string
+  letterSpacing: string
+  lineHeight: string
+  mobileLineHeight?: string
+  cssClass: string
+  specimen: string
+  usage: string
+}
+
 export const typographyScale: TypoToken[] = [
-  { name: 'H1', typeface: 'Roboto', weight: 'Light (300)', size: '96px', case: 'Sentence', letterSpacing: '-1.5', lineHeight: '112px', usage: 'Hero greetings, major milestone titles' },
-  { name: 'H2', typeface: 'Roboto', weight: 'Light (300)', size: '60px', case: 'Sentence', letterSpacing: '-0.5', lineHeight: '72px', usage: 'Hero module titles, primary section headers' },
-  { name: 'H3', typeface: 'Roboto', weight: 'Regular (400)', size: '48px', case: 'Sentence', letterSpacing: '0', lineHeight: '56px', usage: 'Major dashboard card headers, analytics titles' },
-  { name: 'H4', typeface: 'Roboto', weight: 'Regular (400)', size: '34px', case: 'Sentence', letterSpacing: '0.25', lineHeight: '42px', usage: 'Sub-section titles, dialog hero headers' },
-  { name: 'H5', typeface: 'Roboto', weight: 'Regular (400)', size: '24px', case: 'Sentence', letterSpacing: '0', lineHeight: '32px', usage: 'Widget titles, modal card titles, table headers' },
-  { name: 'H6', typeface: 'Roboto', weight: 'Medium (500)', size: '20px', case: 'Sentence', letterSpacing: '0.15', lineHeight: '28px', usage: 'Sub-widget titles, drawer headers, KPI titles' },
-  { name: 'Subtitle 1', typeface: 'Roboto', weight: 'Regular (400)', size: '16px', case: 'Sentence', letterSpacing: '0.15', lineHeight: '24px', usage: 'Card subtitles, prominent body lead copy' },
-  { name: 'Subtitle 2', typeface: 'Roboto', weight: 'Medium (500)', size: '14px', case: 'Sentence', letterSpacing: '0.1', lineHeight: '22px', usage: 'Secondary subtitles, form section subtitles' },
-  { name: 'Body 1', typeface: 'Roboto', weight: 'Regular (400)', size: '16px', case: 'Sentence', letterSpacing: '0.5', lineHeight: '24px', usage: 'Standard long-form reading, documentation paragraphs' },
-  { name: 'Body 2', typeface: 'Roboto', weight: 'Regular (400)', size: '14px', case: 'Sentence', letterSpacing: '0.25', lineHeight: '22px', usage: 'Dense dashboard body, table cells, lists' },
-  { name: 'BUTTON', typeface: 'Roboto', weight: 'Medium (500)', size: '14px', case: 'All caps', letterSpacing: '1.25', lineHeight: '20px', usage: 'Primary and secondary CTA button text' },
-  { name: 'Caption', typeface: 'Roboto', weight: 'Regular (400)', size: '12px', case: 'Sentence', letterSpacing: '0.4', lineHeight: '18px', usage: 'Axis timestamps, helper notes, status tags' },
-  { name: 'OVERLINE', typeface: 'Roboto', weight: 'Regular (400)', size: '10px', case: 'All caps', letterSpacing: '1.5', lineHeight: '16px', usage: 'Category super-headings, metadata overlines' },
+  {
+    name: 'H1',
+    category: 'Headline',
+    typeface: 'Public Sans',
+    weight: 'ExtraBold (800)',
+    numericWeight: 800,
+    size: '64px',
+    mobileSize: '40px',
+    case: 'Sentence',
+    letterSpacing: '-0.02em',
+    lineHeight: '80px',
+    mobileLineHeight: '50px',
+    cssClass: '.figma-h3',
+    specimen: 'Almost before we kne...',
+    usage: 'Hero page titles, major document headers, primary portal intros',
+  },
+  {
+    name: 'H2',
+    category: 'Headline',
+    typeface: 'Public Sans',
+    weight: 'ExtraBold (800)',
+    numericWeight: 800,
+    size: '48px',
+    mobileSize: '32px',
+    case: 'Sentence',
+    letterSpacing: '-0.015em',
+    lineHeight: '64px',
+    mobileLineHeight: '42px',
+    cssClass: '.figma-h2',
+    specimen: 'Almost before we knew it, we...',
+    usage: 'Primary section titles, artifact headers, core dashboard module titles',
+  },
+  {
+    name: 'H3',
+    category: 'Headline',
+    typeface: 'Public Sans',
+    weight: 'Bold (700)',
+    numericWeight: 700,
+    size: '32px',
+    mobileSize: '24px',
+    case: 'Sentence',
+    letterSpacing: '-0.01em',
+    lineHeight: '48px',
+    mobileLineHeight: '36px',
+    cssClass: '.figma-h3',
+    specimen: 'Almost before we knew it, we had left the grou...',
+    usage: 'Sub-section titles, major card group headings, modal headers',
+  },
+  {
+    name: 'H4',
+    category: 'Headline',
+    typeface: 'Public Sans',
+    weight: 'Bold (700)',
+    numericWeight: 700,
+    size: '24px',
+    mobileSize: '20px',
+    case: 'Sentence',
+    letterSpacing: '0px',
+    lineHeight: '36px',
+    mobileLineHeight: '30px',
+    cssClass: '.figma-h4',
+    specimen: 'Almost before we knew it, we had left the ground.',
+    usage: 'Card titles, dialog headers, section subheaders',
+  },
+  {
+    name: 'H5',
+    category: 'Headline',
+    typeface: 'Public Sans',
+    weight: 'Bold (700)',
+    numericWeight: 700,
+    size: '20px',
+    mobileSize: '18px',
+    case: 'Sentence',
+    letterSpacing: '0px',
+    lineHeight: '30px',
+    mobileLineHeight: '27px',
+    cssClass: '.figma-h5',
+    specimen: 'Almost before we knew it, we had left the ground.',
+    usage: 'Widget titles, table group headers, drawer headers',
+  },
+  {
+    name: 'H6',
+    category: 'Headline',
+    typeface: 'Public Sans',
+    weight: 'Bold (700)',
+    numericWeight: 700,
+    size: '18px',
+    mobileSize: '17px',
+    case: 'Sentence',
+    letterSpacing: '0px',
+    lineHeight: '28px',
+    mobileLineHeight: '26px',
+    cssClass: '.figma-h6',
+    specimen: 'Almost before we knew it, we had left the ground.',
+    usage: 'Small widget headers, KPI card titles, popover titles',
+  },
+  {
+    name: 'SUBTITLE1',
+    category: 'Text',
+    typeface: 'Public Sans',
+    weight: 'SemiBold (600)',
+    numericWeight: 600,
+    size: '16px',
+    mobileSize: '16px',
+    case: 'Sentence',
+    letterSpacing: '0px',
+    lineHeight: '24px',
+    mobileLineHeight: '24px',
+    cssClass: '.figma-subtitle1',
+    specimen: 'Almost before we knew it, we had left the ground.',
+    usage: 'Lead paragraphs, prominent subtitles, card intro descriptions',
+  },
+  {
+    name: 'SUBTITLE2',
+    category: 'Text',
+    typeface: 'Public Sans',
+    weight: 'SemiBold (600)',
+    numericWeight: 600,
+    size: '14px',
+    mobileSize: '14px',
+    case: 'Sentence',
+    letterSpacing: '0px',
+    lineHeight: '22px',
+    mobileLineHeight: '22px',
+    cssClass: '.figma-subtitle2',
+    specimen: 'Almost before we knew it, we had left the ground.',
+    usage: 'Secondary subtitles, form section labels, badge lead copy',
+  },
+  {
+    name: 'body1',
+    category: 'Text',
+    typeface: 'Public Sans',
+    weight: 'Regular (400)',
+    numericWeight: 400,
+    size: '16px',
+    mobileSize: '16px',
+    case: 'Sentence',
+    letterSpacing: '0px',
+    lineHeight: '24px',
+    mobileLineHeight: '24px',
+    cssClass: '.figma-body1',
+    specimen: 'Almost before we knew it, we had left the ground.',
+    usage: 'Standard long-form prose, UX case study narratives, documentation body',
+  },
+  {
+    name: 'body2',
+    category: 'Text',
+    typeface: 'Public Sans',
+    weight: 'Regular (400)',
+    numericWeight: 400,
+    size: '14px',
+    mobileSize: '14px',
+    case: 'Sentence',
+    letterSpacing: '0px',
+    lineHeight: '22px',
+    mobileLineHeight: '22px',
+    cssClass: '.figma-body2',
+    specimen: 'Almost before we knew it, we had left the ground.',
+    usage: 'Dense table cells, list items, card details, form helper text',
+  },
+  {
+    name: 'CAPTION',
+    category: 'Text',
+    typeface: 'Public Sans',
+    weight: 'Regular (400)',
+    numericWeight: 400,
+    size: '12px',
+    mobileSize: '12px',
+    case: 'Sentence',
+    letterSpacing: '0px',
+    lineHeight: '18px',
+    mobileLineHeight: '18px',
+    cssClass: '.figma-caption',
+    specimen: 'Almost before we knew it, we had left the ground.',
+    usage: 'Diagram captions, metadata tags, chart axis labels, footnote notices',
+  },
+  {
+    name: 'OVERLINE',
+    category: 'Text',
+    typeface: 'Public Sans',
+    weight: 'Bold (700)',
+    numericWeight: 700,
+    size: '12px',
+    mobileSize: '12px',
+    case: 'All caps',
+    letterSpacing: '1px',
+    lineHeight: '18px',
+    mobileLineHeight: '18px',
+    cssClass: '.figma-overline',
+    specimen: 'ALMOST BEFORE WE KNEW IT, WE HAD LEFT THE GROUND.',
+    usage: 'Category super-labels, metadata pills, section index markers',
+  },
 ]
 
 export const spatialCadence = [
@@ -86,3 +271,5 @@ export const spatialCadence = [
   { token: 'space-48', px: '48px', usage: 'Section padding on expanded desktop layouts' },
   { token: 'space-64', px: '64px', usage: 'Page margin bounds on ultrawide viewports' },
 ]
+
+
