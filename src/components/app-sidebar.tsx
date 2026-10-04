@@ -103,10 +103,18 @@ export function AppSidebar({
                 title="Go to All Projects Portal"
               >
                 <div
-                  className="flex size-9 items-center justify-center rounded-xl font-black text-white text-sm shadow-xs transition-colors shrink-0"
+                  className="flex size-9 items-center justify-center rounded-xl font-black text-white text-sm shadow-xs transition-colors shrink-0 overflow-hidden p-1.5"
                   style={{ backgroundColor: productConfig.brandColor }}
                 >
-                  {productConfig.brandLogoText}
+                  {productConfig.logoUrl ? (
+                    <img
+                      src={productConfig.logoUrl}
+                      alt={productConfig.name}
+                      className="size-full object-contain"
+                    />
+                  ) : (
+                    productConfig.brandLogoText
+                  )}
                 </div>
                 <div className="flex flex-col leading-tight min-w-0 flex-1">
                   <span className="font-bold text-sm tracking-tight text-sidebar-foreground truncate">
@@ -390,7 +398,19 @@ export function AppSidebar({
         )}
       </SidebarContent>
 
-      <SidebarFooter className="p-4 border-t border-sidebar-border space-y-2">
+      <SidebarFooter className="p-4 border-t border-sidebar-border space-y-2.5">
+        {/* Designer Profile with Real Avatar */}
+        <div className="flex items-center gap-2.5 p-2 rounded-xl bg-sidebar-accent/30 border border-sidebar-border/60">
+          <div className="relative size-8 rounded-lg overflow-hidden shrink-0 border border-border/50">
+            <img src="/logos/avatar.png" alt="Pritam Maji" className="size-full object-cover" />
+            <div className="absolute -bottom-0.5 -right-0.5 size-2 rounded-full bg-emerald-500 border border-card" />
+          </div>
+          <div className="flex flex-col min-w-0 flex-1 leading-none">
+            <span className="text-xs font-bold text-sidebar-foreground truncate">Pritam Maji</span>
+            <span className="text-[10px] text-muted-foreground font-mono mt-0.5 truncate">Lead UI/UX Architect</span>
+          </div>
+        </div>
+
         <a
           href={productConfig.figmaUrl}
           target="_blank"

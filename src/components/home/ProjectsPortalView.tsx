@@ -38,6 +38,7 @@ interface UnifiedProjectCard {
   description: string
   brandColor: string
   brandLogoText?: string
+  brandLogoUrl?: string
   brandIcon?: React.ReactNode
   coverImage: string
   badgeText: string
@@ -61,6 +62,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
     // 1st Product: Linear App
     {
       id: "linear",
+      brandLogoUrl: "/logos/linear.svg",
       title: "Linear App",
       subtitle: "High-Velocity Product Operations Architecture",
       tagline: "The Issue Tracking System for High-Performance Teams",
@@ -87,6 +89,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
     // 2nd Product: EdgeTrade App
     {
       id: "edgetrade",
+      brandLogoUrl: "/logos/edgetrade.svg",
       title: "EdgeTrade",
       subtitle: "Algorithmic Trading & High-Frequency Terminal",
       tagline: "Sub-Millisecond Institutional Financial Execution",
@@ -113,6 +116,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
     // 3rd Product: Minimals UI (Complete Design System & Multi-Framework Ecosystem)
     {
       id: "minimal",
+      brandLogoUrl: "/logos/minimal.svg",
       title: "Minimals UI",
       subtitle: "Universal Design System & Enterprise Application Ecosystem",
       tagline: "Multi-Framework Design System for React, Next.js, Vite & MUI",
@@ -139,6 +143,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
     // 4th Product: Mixpanel (Product Intelligence Platform for the AI Era)
     {
       id: "mixpanel",
+      brandLogoUrl: "/logos/mixpanel.svg",
       title: "Mixpanel",
       subtitle: "Product Intelligence Platform for the AI Era",
       tagline: "Combining Analytics, Session Replay, Experiments, Feature Flags & AI Insights",
@@ -165,6 +170,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
     // 5th Product: Frame.so
     {
       id: "frame",
+      brandLogoUrl: "/logos/frame.png",
       title: "Frame.so",
       subtitle: "Connected Team Workspace & Operating System",
       tagline: "All-in-One Docs, Tasks & Whiteboards Platform",
@@ -191,6 +197,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
     // 6th Product: Miro
     {
       id: "miro",
+      brandLogoUrl: "/logos/miro.png",
       title: "Miro",
       subtitle: "Multiplayer Visual Workspace & Infinite Canvas",
       tagline: "Infinite Digital Whiteboard for Distributed Teams",
@@ -437,10 +444,20 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                 >
                   <div className="flex items-center gap-3">
                                         <div
-                      className="flex size-10 items-center justify-center rounded-xl font-black text-white text-sm shadow-sm shrink-0"
+                      className="flex size-10 items-center justify-center rounded-xl font-black text-white text-sm shadow-sm shrink-0 overflow-hidden p-1.5"
                       style={{ backgroundColor: project.brandColor }}
                     >
-                      {project.brandIcon || project.brandLogoText}
+                      {project.brandLogoUrl ? (
+                        <img
+                          src={project.brandLogoUrl}
+                          alt={project.title}
+                          className="size-full object-contain"
+                        />
+                      ) : project.brandIcon ? (
+                        project.brandIcon
+                      ) : (
+                        project.brandLogoText
+                      )}
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
@@ -606,10 +623,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
               <div className="flex items-start sm:items-center gap-4 flex-col sm:flex-row">
                 {/* Designer Monogram / Avatar */}
                 <div className="relative size-16 sm:size-20 rounded-2xl bg-gradient-to-br from-primary via-blue-600 to-indigo-600 p-0.5 shadow-md shrink-0">
-                  <div className="size-full rounded-[14px] bg-card flex flex-col items-center justify-center text-foreground font-black">
-                    <span className="text-lg sm:text-xl tracking-tighter">PM</span>
-                    <span className="text-[9px] font-mono text-muted-foreground uppercase tracking-widest -mt-1">Architect</span>
-                  </div>
+                  <img src="/logos/avatar.png" alt="Pritam Maji" className="size-full rounded-[14px] object-cover bg-card" />
                   <div className="absolute -bottom-1 -right-1 size-4 rounded-full bg-emerald-500 border-2 border-card ring-1 ring-emerald-500/30" title="Active & Available" />
                 </div>
 

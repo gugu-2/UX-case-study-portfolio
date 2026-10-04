@@ -59,10 +59,18 @@ export function SiteHeader({
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-2.5 px-3 py-1.5 rounded-[8px] border border-border bg-card/60 hover:bg-muted/60 transition group text-left cursor-pointer">
                 <div
-                  className="flex size-7 items-center justify-center rounded-[6px] font-black text-white text-xs shadow-xs transition-colors shrink-0"
+                  className="flex size-7 items-center justify-center rounded-[6px] font-black text-white text-xs shadow-xs transition-colors shrink-0 overflow-hidden p-1"
                   style={{ backgroundColor: productConfig.brandColor }}
                 >
-                  {productConfig.brandLogoText}
+                  {productConfig.logoUrl ? (
+                    <img
+                      src={productConfig.logoUrl}
+                      alt={productConfig.name}
+                      className="size-full object-contain"
+                    />
+                  ) : (
+                    productConfig.brandLogoText
+                  )}
                 </div>
                 <div className="flex flex-col">
                   <div className="flex items-center gap-1">
@@ -93,10 +101,18 @@ export function SiteHeader({
                   >
                     <div className="flex items-center gap-2.5">
                       <div
-                        className="flex size-6 items-center justify-center rounded-md font-bold text-white text-xs shadow-xs"
+                        className="flex size-6 items-center justify-center rounded-md font-bold text-white text-xs shadow-xs overflow-hidden p-1 shrink-0"
                         style={{ backgroundColor: p.brandColor }}
                       >
-                        {p.brandLogoText}
+                        {p.logoUrl ? (
+                          <img
+                            src={p.logoUrl}
+                            alt={p.name}
+                            className="size-full object-contain"
+                          />
+                        ) : (
+                          p.brandLogoText
+                        )}
                       </div>
                       <div className="flex flex-col">
                         <span className="text-xs font-bold text-foreground">{p.name}</span>

@@ -216,10 +216,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="mt-8 rounded-xl border border-slate-800/90 bg-gradient-to-b from-slate-900/80 to-slate-950 p-3.5">
           <div className="flex items-center gap-2.5">
             <div className="relative">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-600 font-bold text-white shadow-md">
-                P
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl overflow-hidden border border-slate-700/60 shadow-md">
+                <img src="/logos/avatar.png" alt="Pritam" className="size-full object-cover" />
               </div>
-              <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#00AB55] ring-2 ring-[#0d121c]" />
+              <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-[#00AB55] ring-2 ring-[#0d121c]" />
             </div>
             <div>
               <p className="text-xs font-bold text-slate-200">Pritam</p>

@@ -92,8 +92,8 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Author Badge */}
           <div className="flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-800/60 py-1 pl-1 pr-3">
-            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-xs font-bold text-white shadow-sm">
-              P
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg overflow-hidden border border-border/50 shadow-sm shrink-0">
+              <img src="/logos/avatar.png" alt="Pritam" className="size-full object-cover" />
             </div>
             <div className="hidden text-left sm:block">
               <div className="flex items-center gap-1">

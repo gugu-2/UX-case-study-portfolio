@@ -12,6 +12,7 @@ export interface ProductConfig {
   brandColor: string
   brandHoverColor: string
   brandLogoText: string
+  logoUrl?: string
   screensCount: number
   primaryEntity: string
   description: string
@@ -29,6 +30,7 @@ export const productsConfig: Record<ProductId, ProductConfig> = {
     brandColor: "#00AB55",
     brandHoverColor: "#007B55",
     brandLogoText: "M",
+    logoUrl: "/logos/minimal.svg",
     screensCount: 6,
     primaryEntity: "Dashboard Archetypes",
     description: "Multi-archetype SaaS administration dashboard system with dual navigation rail, OKLCH token engine, and rigorous front-end contracts."
@@ -45,6 +47,7 @@ export const productsConfig: Record<ProductId, ProductConfig> = {
     brandColor: "#5E6AD2",
     brandHoverColor: "#4752B3",
     brandLogoText: "L",
+    logoUrl: "/logos/linear.svg",
     screensCount: 14,
     primaryEntity: "Product Workflows",
     description: "The purpose-built product management and issue tracking system engineered for high-velocity software teams with sub-50ms keyboard ergonomics."
@@ -60,6 +63,7 @@ export const productsConfig: Record<ProductId, ProductConfig> = {
     brandColor: "#FFD02F",
     brandHoverColor: "#E5B925",
     brandLogoText: "M",
+    logoUrl: "/logos/miro.png",
     screensCount: 7,
     primaryEntity: "Whiteboard Canvases",
     description: "Enterprise-grade visual collaboration workspace with infinite canvas rendering, real-time multiplayer cursor synchronization, and node-based diagramming architecture."
@@ -76,6 +80,7 @@ export const productsConfig: Record<ProductId, ProductConfig> = {
     brandColor: "#7856FF",
     brandHoverColor: "#613CE6",
     brandLogoText: "MP",
+    logoUrl: "/logos/mixpanel.svg",
     screensCount: 13,
     primaryEntity: "Analytics Dashboards",
     description: "Advanced product intelligence platform transforming complex SQL data sets into self-serve visual workflows, enabling intuitive user path exploration and funnel segmentation."
@@ -92,6 +97,7 @@ export const productsConfig: Record<ProductId, ProductConfig> = {
     brandColor: "#000000",
     brandHoverColor: "#333333",
     brandLogoText: "F",
+    logoUrl: "/logos/frame.png",
     screensCount: 10,
     primaryEntity: "Workspaces",
     description: "A connected OS for modern teams that unifies documentation, project management, and whiteboarding into one seamless interface to reduce context switching."
