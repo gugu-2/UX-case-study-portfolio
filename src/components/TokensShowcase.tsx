@@ -3,6 +3,7 @@ import { Palette, Type, Ruler, CheckCircle2, Activity, Sparkles, Layers } from '
 import { colorPalette, typographyScale, spatialCadence } from '../data/tokenData'
 import { Badge } from '@/components/ui/badge'
 import { MermaidDiagram } from '@/components/ui/mermaid-diagram'
+import { TypographySpecimen } from './TypographySpecimen'
 
 export const TokensShowcase: React.FC = () => {
   const stateModelChart = `flowchart TD
@@ -37,14 +38,14 @@ export const TokensShowcase: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
             <Palette className="size-3.5" />
             <span>08 — Design System, Tokens & Interaction States</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Interaction State Machine, Tokens & 8pt Cadence
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             A unified design system is only as strong as its immutable token primitives and deterministic state transitions.
             Minimal UI enforces an atomic state-machine model across every interactive surface, seamlessly compiling to CSS Custom Properties,
@@ -58,9 +59,9 @@ export const TokensShowcase: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Activity className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               8.1 Interaction State Model (Deterministic State Machine)
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
             12 Finite States
@@ -175,9 +176,9 @@ export const TokensShowcase: React.FC = () => {
       <div className="space-y-6">
         <div className="flex items-center gap-2">
           <Palette className="size-4 text-primary" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             Color Primitives & Contrast Ratios
-          </h2>
+          </h5>
         </div>
 
         <div className="space-y-6">
@@ -234,62 +235,34 @@ export const TokensShowcase: React.FC = () => {
 
       {/* Typography Scale Grid */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
-        <div className="flex items-center justify-between border-b border-border pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Type className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
-              Typography Optical Hierarchy (Roboto Type Scale)
-            </h2>
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
+              Typography Optical Hierarchy (Public Sans Type Scale)
+            </h5>
           </div>
-          <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
-            13-Level Material Spec
-          </Badge>
+          <div className="flex items-center gap-2">
+            <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
+              12-Level Figma Spec
+            </Badge>
+          </div>
         </div>
 
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          Standardized 13-tier optical typographic hierarchy utilizing <strong>Roboto</strong> across all viewport scales.
-          Calibrated for high data density, enhanced subtext/description legibility (+30%), and crisp contrast ratios across desktop and mobile devices.
+        <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+          Standardized 12-tier optical typographic hierarchy utilizing <strong>Public Sans</strong> across all viewport scales matching the Figma design system. Calibrated for high clarity, proportional letterforms, and crisp contrast ratios across desktop and mobile devices.
         </p>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="border-b border-border text-xs font-semibold text-muted-foreground uppercase tracking-wider bg-muted/40">
-              <tr>
-                <th className="p-3">Scale Token</th>
-                <th className="p-3">Typeface</th>
-                <th className="p-3">Weight</th>
-                <th className="p-3">Size</th>
-                <th className="p-3">Case</th>
-                <th className="p-3">Letter Spacing</th>
-                <th className="p-3">Line Height</th>
-                <th className="p-3">Typical Application</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border text-foreground">
-              {typographyScale.map((t) => (
-                <tr key={t.name} className="hover:bg-muted/30 transition-colors">
-                  <td className="p-3 font-mono font-bold text-primary">{t.name}</td>
-                  <td className="p-3 font-medium text-foreground">{t.typeface}</td>
-                  <td className="p-3">{t.weight}</td>
-                  <td className="p-3 font-mono font-bold">{t.size}</td>
-                  <td className="p-3">{t.case}</td>
-                  <td className="p-3 font-mono">{t.letterSpacing}</td>
-                  <td className="p-3 font-mono text-muted-foreground">{t.lineHeight}</td>
-                  <td className="p-3 text-muted-foreground">{t.usage}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <TypographySpecimen />
       </div>
 
       {/* 8pt Spatial Cadence Scale */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Ruler className="size-4 text-primary" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             8pt Linear Spatial Cadence
-          </h2>
+          </h5>
         </div>
 
         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -319,3 +292,8 @@ export const TokensShowcase: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

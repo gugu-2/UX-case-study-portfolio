@@ -28,14 +28,14 @@ export const AccessibilityView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
             <ShieldCheck className="size-3.5" />
             <span>10 — Accessibility & Regulatory Compliance (WCAG 2.2 AA)</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             WCAG 2.2 Level AA Contrast Engine & ARIA Structure
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Accessibility is an architectural primitive in Minimal UI.
             Every color token, typographic scale, keyboard focus ring, and screen-reader landmark is designed to guarantee
@@ -56,9 +56,9 @@ export const AccessibilityView: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Eye className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               Empirical Color Contrast Audit Ratios
-            </h2>
+            </h5>
           </div>
           <Badge className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30 font-bold text-xs">
             <CheckCircle2 className="size-3 mr-1" />
@@ -99,9 +99,9 @@ export const AccessibilityView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Keyboard className="size-4 text-primary" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             Keyboard & Screen-Reader Protocols
-          </h2>
+          </h5>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
@@ -123,3 +123,8 @@ export const AccessibilityView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

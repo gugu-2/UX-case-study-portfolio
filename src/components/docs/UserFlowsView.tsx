@@ -74,14 +74,14 @@ export const UserFlowsView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
             <GitFork className="size-3.5" />
             <span>06 — User & Task Flows, Decision Trees & State Matrices</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             End-to-End Operational Flows & Screen-State Matrix
-          </h1>
+          </h3>
           <p className="figma-body1 text-sm sm:text-base leading-relaxed text-muted-foreground">
             Every critical task in Minimal UI is mapped through deterministic flowchart topologies.
             We eliminate ambiguous UI paths by specifying exact user actions, branching logic, optimistic feedback cycles,
@@ -95,9 +95,9 @@ export const UserFlowsView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <GitFork className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
               6.1 Primary User Flow: Banking Quick Transfer & Treasury Settlement
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
             12s Target Latency
@@ -120,9 +120,9 @@ export const UserFlowsView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <ListTree className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
               6.2 Granular Task Flow: Hospitality Booking & Review Escalation
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="text-xs font-bold">
             Cognitive Audit
@@ -145,9 +145,9 @@ export const UserFlowsView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Layers className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
               6.3 Architectural Decision Tree: Cloud Ingestion & Quota Allocation
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="text-xs font-bold">
             Branching Logic
@@ -170,9 +170,9 @@ export const UserFlowsView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Table className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
               6.4 Master Screen Inventory (The 6 Canonical Archetypes)
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
             6 Archetypes
@@ -210,9 +210,9 @@ export const UserFlowsView: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <CheckSquare className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
               6.5 Comprehensive 17-State Screen Matrix
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
             100% Edge-Case Coverage
@@ -265,3 +265,8 @@ export const UserFlowsView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

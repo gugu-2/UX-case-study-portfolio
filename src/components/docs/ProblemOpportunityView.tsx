@@ -116,14 +116,14 @@ export const ProblemOpportunityView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">
             <AlertTriangle className="size-3.5" />
             <span>03 — Problem Space & Opportunity Matrix</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             5-Layer Problem Hierarchy & Strategic Opportunity Matrix
-          </h1>
+          </h3>
           <p className="figma-body1 text-sm sm:text-base leading-relaxed text-muted-foreground">
             Clear problem definition precedes elegant architectural solutions.
             Minimal UI systematically dissects enterprise friction across 5 operational layers and prioritizes high-impact
@@ -136,9 +136,9 @@ export const ProblemOpportunityView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Target className="size-4 text-primary" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
             3.1 Formal UX Problem Statement
-          </h2>
+          </h5>
         </div>
 
         <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-5 text-xs text-foreground leading-relaxed space-y-3">
@@ -155,9 +155,9 @@ export const ProblemOpportunityView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Layers className="size-4 text-primary" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
             3.2 The 5-Layer Problem Hierarchy (From Root Cause to Interaction Fault)
-          </h2>
+          </h5>
         </div>
 
         <MermaidDiagram
@@ -214,9 +214,9 @@ export const ProblemOpportunityView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Lightbulb className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
               3.3 Strategic Opportunity Matrix (Value vs. Effort Prioritization)
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
             4 Opportunity Quadrants
@@ -265,9 +265,9 @@ export const ProblemOpportunityView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <HelpCircle className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground">
               3.4 Core Architectural Assumption Map
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
             100% Validated
@@ -302,3 +302,8 @@ export const ProblemOpportunityView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

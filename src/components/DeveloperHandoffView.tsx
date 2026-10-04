@@ -43,14 +43,14 @@ export const DeveloperHandoffView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
             <FileCode2 className="size-3.5" />
             <span>11 — Developer Handoff, API Contracts & Design QA</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Machine-Readable Token Engine & Design Decision Records (DDRs)
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Zero ambiguity in engineering handoff. Minimal UI delivers strict component API contracts,
             versioned W3C-compliant Design Tokens in JSON format, and immutable architectural records detailing the exact research rationale behind every interaction.
@@ -70,9 +70,9 @@ export const DeveloperHandoffView: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Layers className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               Production Design Token Schema Specifications
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
             <CheckCircle2 className="size-3 mr-1" /> W3C DTCG Standard
@@ -152,9 +152,9 @@ export const DeveloperHandoffView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Award className="size-4 text-primary" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             Design Decision Records (DDRs)
-          </h2>
+          </h5>
         </div>
 
         <div className="space-y-4">
@@ -197,3 +197,8 @@ export const DeveloperHandoffView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

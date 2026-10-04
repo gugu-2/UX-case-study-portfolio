@@ -131,14 +131,14 @@ export const ArtifactMapView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
             <Map className="size-3.5" />
             <span>28 — The Ideal UX Artifact Map (Full Ecosystem Topology)</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Master UX Artifact Topology & Deliverable Traceability
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             A complete enterprise design system requires unbroken traceability between high-level vision and production code.
             This topology maps every canonical artifact produced in Minimal UI, establishing clear ownership, tools,
@@ -152,9 +152,9 @@ export const ArtifactMapView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Layers className="size-4 text-primary" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               Master UX Artifact Topology Map
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs px-4 py-2 min-h-[32px] rounded-full">
             End-to-End Traceability
@@ -173,9 +173,9 @@ export const ArtifactMapView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <FileText className="size-4 text-primary" />
-            <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">
+            <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-foreground tracking-tight">
               Artifact Ecosystem Matrix & Responsibility Mapping
-            </h3>
+            </h6>
           </div>
           <Badge variant="outline" className="text-xs font-semibold px-4 py-2 min-h-[32px] rounded-full">
             9 Core Streams
@@ -210,3 +210,8 @@ export const ArtifactMapView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

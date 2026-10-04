@@ -21,14 +21,14 @@ export const MobileErgonomicsView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
             <Smartphone className="size-3.5" />
             <span>Mobile UX Kit & Touch Ergonomics</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Thumb-Zone Architecture & 48px Touch Ergonomics
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Desktop dashboards cannot simply be shrunk down to mobile. In Minimal UI, every surface
             undergoes structural reflow: tables receive horizontal scroll affordances with sticky headers,
@@ -48,9 +48,9 @@ export const MobileErgonomicsView: React.FC = () => {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         {/* Left: Interactive Phone Mockup with Thumb Zones (5 cols) */}
         <div className="rounded-2xl border border-border bg-card p-6 shadow-xs lg:col-span-5 flex flex-col items-center">
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight mb-4 text-center">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight mb-4 text-center">
             375px Natural Thumb-Sweep Ergonomic Mapping
-          </h2>
+          </h5>
 
           {/* Interactive Zone Filter Buttons */}
           <div className="flex items-center gap-1.5 mb-6 bg-muted/60 p-1 rounded-xl border border-border">
@@ -132,9 +132,9 @@ export const MobileErgonomicsView: React.FC = () => {
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
             <div className="flex items-center gap-2 border-b border-border pb-3">
               <Hand className="size-4 text-primary" />
-              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+              <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
                 48px Immutable Touch Target Bounds
-              </h2>
+              </h5>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Every interactive element rendered on viewport widths &lt; 768px strictly adheres to WCAG 2.2 Target Size Level AA requirements. Even when visual icon glyphs measure 18px–20px, their hit-testing bounding boxes expand seamlessly to at least 48×48px.
@@ -159,3 +159,8 @@ export const MobileErgonomicsView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

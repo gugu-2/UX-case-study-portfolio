@@ -68,9 +68,9 @@ export function ScreenExplainer({
             <span className="flex size-9 items-center justify-center rounded-[8px] bg-primary font-bold text-primary-foreground text-sm shadow-xs">
               {screen.id}
             </span>
-            <h1 className="figma-h2 text-[32px] leading-[42px] lg:text-[48px] lg:leading-[64px] font-extrabold tracking-tight text-foreground">
+            <h2 className="figma-h2 text-[32px] leading-[42px] lg:text-[48px] lg:leading-[64px] font-extrabold tracking-tight text-foreground">
               {screen.name}
-            </h1>
+            </h2>
             <Badge variant="outline" className="font-bold">
               {screen.platform}
             </Badge>
@@ -180,7 +180,7 @@ export function ScreenExplainer({
                 <ZoomIn className="mr-1.5 size-3.5" /> Zoom High-Res
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-6xl max-h-[92vh] overflow-y-auto p-4">
+            <DialogContent className="max-h-[92vh] overflow-y-auto p-4">
               <DialogHeader>
                 <DialogTitle className="flex items-center gap-2 text-base">
                   <Maximize2 className="size-4" />
@@ -501,3 +501,5 @@ export function ScreenExplainer({
     </div>
   )
 }
+
+

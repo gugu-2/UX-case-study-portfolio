@@ -206,10 +206,10 @@ export function DocsViewer({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
             <div>
               <div className="flex items-center gap-2.5 flex-wrap">
-                <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+                <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
                   {currentItem.number && `${currentItem.number} — `}
                   {currentItem.title}
-                </h1>
+                </h3>
                 <Badge
                   variant="outline"
                   className="font-bold text-xs min-h-[22px] px-2.5 py-0.5 rounded-[6px]"
@@ -243,13 +243,13 @@ export function DocsViewer({
               </p>
             </div>
 
-            <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex flex-col items-start md:items-end gap-2.5 shrink-0">
               {/* Main CTA: Real Master Figma Design File (Figma Large Button: 48px, 15px font, r: 8px) */}
               <a
                 href={productConfig.figmaUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-white font-bold text-[15px] leading-[26px] transition-all group active:scale-[0.98] hover:brightness-105 cursor-pointer"
+                className="inline-flex items-center gap-2.5 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-white font-bold text-[15px] leading-[26px] transition-all group active:scale-[0.98] hover:brightness-105 cursor-pointer shadow-sm"
                 style={{ backgroundColor: productConfig.brandColor, boxShadow: `0 8px 16px ${productConfig.brandColor}3d` }}
                 title={`Open real master Figma design file for ${productConfig.name}`}
               >
@@ -260,7 +260,7 @@ export function DocsViewer({
                   <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
                   <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
                 </svg>
-                <span>Open Master Figma File</span>
+                <span>Figma file</span>
                 <ExternalLink className="size-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform" />
               </a>
 
@@ -344,9 +344,9 @@ export function DocsViewer({
                 </div>
 
                 <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-                  <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
                     How to Read This Linear Documentation
-                  </h2>
+                  </h5>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Review empirical usability metrics in the <strong>Research Dashboard</strong> or traverse sections 01 through 28 to inspect the 14 annotated screen archetypes, interactive task flowcharts (Mermaid.js with zoom/drag controls), design tokens, and developer sync protocols.
                   </p>
@@ -425,9 +425,9 @@ export function DocsViewer({
                 </div>
 
                 <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-                  <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
                     How to Read This Documentation
-                  </h2>
+                  </h5>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Stakeholders and product executives can immediately review the top-level research numbers in the <strong>Research Dashboard</strong>. Product designers and engineers can traverse through sections 01 to 28 below to inspect user flows, annotated screen hotspots with research rationale, design tokens, and developer QA contracts.
                   </p>
@@ -493,7 +493,7 @@ export function DocsViewer({
             {currentProduct === "linear" ? (
               <>
                 <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-                  <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">4.1 Continuous Cycles vs Sprint Ceremony</h2>
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">4.1 Continuous Cycles vs Sprint Ceremony</h5>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                     <div className="p-3 rounded-lg border border-border bg-muted/30">
                       <span className="font-bold text-foreground">1. Continuous Rolling Cadence:</span> 1 to 2-week continuous cycles replace artificial sprint deadlines and pressure.
@@ -511,7 +511,7 @@ export function DocsViewer({
                 </div>
 
                 <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-                  <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">4.2 Linear High-Velocity MVP Scope Matrix</h2>
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">4.2 Linear High-Velocity MVP Scope Matrix</h5>
                   <div className="border border-border rounded-lg overflow-hidden">
                     <table className="w-full text-xs text-left">
                       <thead className="bg-muted text-muted-foreground uppercase font-semibold border-b border-border">
@@ -545,7 +545,7 @@ export function DocsViewer({
             ) : currentProduct === "miro" ? (
               <>
                 <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-                  <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">4.1 Core Strategy</h2>
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">4.1 Core Strategy</h5>
                   <div className="grid grid-cols-1 gap-4 text-xs">
                     <div className="p-3 rounded-lg border border-border bg-muted/30">
                       <span className="font-bold text-foreground">1. Unlimited Space:</span> No artboards. One continuous plane of existence.
@@ -556,7 +556,7 @@ export function DocsViewer({
             ) : (
               <>
                 <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-                  <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">4.1 The 6 Core Operational Pillars</h2>
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">4.1 The 6 Core Operational Pillars</h5>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                     <div className="p-3 rounded-lg border border-border bg-muted/30">
                       <span className="font-bold text-foreground">1. App Cockpit:</span> Telemetry, extension management, disk consumption, billing.
@@ -580,7 +580,7 @@ export function DocsViewer({
                 </div>
 
                 <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-                  <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">4.2 MVP Scope Matrix</h2>
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">4.2 MVP Scope Matrix</h5>
                   <div className="border border-border rounded-lg overflow-hidden">
                     <table className="w-full text-xs text-left">
                       <thead className="bg-muted text-muted-foreground uppercase font-semibold border-b border-border">
@@ -705,7 +705,7 @@ export function DocsViewer({
         {currentSectionId === "testing" && (
           <div className="space-y-6">
             <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">9.1 Usability Benchmarks Across Iterations</h2>
+              <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">9.1 Usability Benchmarks Across Iterations</h5>
               <div className="border border-border rounded-lg overflow-hidden">
                 <table className="w-full text-xs text-left">
                   <thead className="bg-muted text-muted-foreground uppercase font-semibold border-b border-border">
@@ -814,7 +814,7 @@ export function DocsViewer({
         {currentSectionId === "metrics" && (
           <div className="space-y-6">
             <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">12.1 Google HEART Framework Implementation</h2>
+              <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">12.1 Google HEART Framework Implementation</h5>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div className="p-4 rounded-xl border border-border bg-muted/20 space-y-1">
                   <span className="font-bold text-foreground">Happiness:</span>
@@ -879,9 +879,9 @@ export function DocsViewer({
                   ✓
                 </div>
                 <div>
-                  <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
                     {productConfig.name} Production Sign-Off & Approval
-                  </h2>
+                  </h5>
                   <p className="text-xs text-muted-foreground">
                     {productConfig.name} {productConfig.versionBadge} is certified for production deployment.
                   </p>
@@ -1081,3 +1081,7 @@ export function DocsViewer({
     </div>
   )
 }
+
+
+
+

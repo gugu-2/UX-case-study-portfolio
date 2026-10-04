@@ -58,17 +58,17 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
     <div className="space-y-10 animate-in fade-in-50 duration-300">
       {/* Hero Presentation */}
       <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 sm:p-12 shadow-xs">
-        <div className="relative z-10 max-w-4xl space-y-4">
+        <div className="relative z-10 space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
             <Sparkles className="size-3.5" />
             <span>Created by Pritam • 14+ Years Lead UI/UX Systems Architect</span>
           </div>
 
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground leading-[1.1]">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground leading-[1.1]">
             Minimal UI Design System
-          </h1>
+          </h3>
 
-          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground max-w-2xl">
+          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground ">
             A comprehensive, battle-tested SaaS product framework engineered for extreme data density without cognitive exhaustion.
             Grounded in empirical research across 148 enterprise practitioners and 6 complete operational domains.
           </p>
@@ -111,9 +111,9 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               The 6 Core Operational Dashboards
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground">
               Each module is custom-tailored with unique data visualizers, micro-interactions, and responsive layouts.
             </p>
@@ -175,9 +175,9 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Target className="size-4 text-primary" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             The 5 Immutable UX Principles of Minimal UI
-          </h2>
+          </h5>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -219,3 +219,8 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
     </div>
   )
 }
+
+
+
+
+
