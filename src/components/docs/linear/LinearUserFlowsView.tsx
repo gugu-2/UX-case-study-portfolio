@@ -74,14 +74,14 @@ export const LinearUserFlowsView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#5E6AD2]/30 bg-[#5E6AD2]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#5E6AD2] dark:text-[#7C88E8]">
             <GitFork className="size-3.5" />
             <span>06 — User & Task Flows</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             High-Velocity Task Execution & Git State Synchronization
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Every user flow in Linear is engineered to minimize cognitive overhead, eliminate unnecessary clicks, and remove context switching between the codebase and the issue tracker.
           </p>
@@ -93,9 +93,9 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Terminal className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               6.1 Flow 1: Rapid Issue Creation via 'C' Shortcut
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Sub-16ms modal mount, keyboard shortcuts for attributes, and optimistic client commitment.
             </p>
@@ -114,9 +114,9 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <CheckSquare className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               6.2 Flow 2: Quick Status Switcher ('S' Shortcut) & Self-Assignment
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Instant keyboard state transition with zero full-table DOM re-render lag.
             </p>
@@ -135,9 +135,9 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <GitBranch className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               6.3 Flow 3: Git Branch Linking & Pull Request Auto-Close
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Event-driven webhook orchestration between GitHub/GitLab and Linear status ledger.
             </p>
@@ -156,9 +156,9 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Table className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               6.4 Complete 14-Screen Master Inventory
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Comprehensive index of all 14 workflow archetypes captured from the production build.
             </p>
@@ -207,9 +207,9 @@ export const LinearUserFlowsView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Layers className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               6.5 Comprehensive 17 Screen-State Matrix
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               UI states verified across every screen archetype for bulletproof front-end stability.
             </p>
@@ -233,3 +233,8 @@ export const LinearUserFlowsView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

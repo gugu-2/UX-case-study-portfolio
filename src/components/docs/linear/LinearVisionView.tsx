@@ -202,14 +202,14 @@ export const LinearVisionView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#5E6AD2]/30 bg-[#5E6AD2]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#5E6AD2] dark:text-[#7C88E8]">
             <Compass className="size-3.5" />
             <span>01 — Product & UX Vision (The Linear Method)</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             The Purpose-Built System for Modern Product Teams
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Linear was created as the definitive response to bloated, slow enterprise issue tracking systems.
             It pairs radical sub-50ms speed, keyboard ergonomics, and opinionated engineering practices to help high-performing teams build software with clarity and momentum.
@@ -221,9 +221,9 @@ export const LinearVisionView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-6">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Sparkles className="size-4 text-[#5E6AD2]" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             1.1 Comprehensive Product Overview
-          </h2>
+          </h5>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
@@ -263,9 +263,9 @@ export const LinearVisionView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-6">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Zap className="size-4 text-[#5E6AD2]" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             1.2 The 6 Linear UX Design Principles
-          </h2>
+          </h5>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -296,9 +296,9 @@ export const LinearVisionView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Layers className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               1.3 Linear Product Ecosystem & Architecture Map
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Client local-first engine, 14 workflow archetypes, Git automation, and outcome metrics.
             </p>
@@ -317,9 +317,9 @@ export const LinearVisionView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Terminal className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               2.3 Core User Personas
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Engineered around the distinct ergonomics of engineers, designers, and engineering leadership.
             </p>
@@ -383,9 +383,9 @@ export const LinearVisionView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Workflow className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               2.5 Daily Developer User Journey Map
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Step-by-step emotional velocity curve from morning standup triage to PR merge auto-close.
             </p>
@@ -404,9 +404,9 @@ export const LinearVisionView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Cpu className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               2.6 Frontstage & Backstage Experience Map
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Correlation between user gestures, optimistic local-first client mutations, and distributed backend synchronization.
             </p>
@@ -422,3 +422,8 @@ export const LinearVisionView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

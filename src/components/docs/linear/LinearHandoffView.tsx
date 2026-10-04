@@ -65,14 +65,14 @@ export const LinearHandoffView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#5E6AD2]/30 bg-[#5E6AD2]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#5E6AD2] dark:text-[#7C88E8]">
             <Code2 className="size-3.5" />
             <span>11 — Developer Handoff & Sync Engine</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Front-End Component Contracts & Sync Protocol
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Specifications for front-end architecture, strict props contracts, and the sub-50ms local-first synchronization protocol that powers Linear.
           </p>
@@ -84,9 +84,9 @@ export const LinearHandoffView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Zap className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               11.1 The Sub-50ms Local-First Sync Protocol
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               The four lifecycle stages executed on every single mutation.
             </p>
@@ -111,9 +111,9 @@ export const LinearHandoffView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Cpu className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               11.2 Core Component API Contracts
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Type-safe interface boundaries and accessibility guarantees for engineering implementation.
             </p>
@@ -158,3 +158,8 @@ export const LinearHandoffView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

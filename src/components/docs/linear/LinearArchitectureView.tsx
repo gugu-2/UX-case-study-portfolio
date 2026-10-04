@@ -61,14 +61,14 @@ export const LinearArchitectureView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#5E6AD2]/30 bg-[#5E6AD2]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#5E6AD2] dark:text-[#7C88E8]">
             <Layers className="size-3.5" />
             <span>05 — Information Architecture</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Dual Cadence Hierarchy & Universal Command Graph
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Linear organizes product development around two distinct dimensions: continuous time-boxed momentum (Cycles) and strategic outcome initiatives (Projects).
             Every issue connects directly to code branches without complex enterprise nested hierarchies.
@@ -81,9 +81,9 @@ export const LinearArchitectureView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <FolderTree className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               5.1 Ecosystem Information Architecture Diagram
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               From organization root down to teams, dual tracks (cycles/projects), deterministic states, and Git commit linkages.
             </p>
@@ -102,9 +102,9 @@ export const LinearArchitectureView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Command className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               5.2 Global Command Menu (⌘K) Navigation Topology
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Hierarchical search and execution paths indexed locally in memory for sub-10ms response.
             </p>
@@ -122,7 +122,7 @@ export const LinearArchitectureView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Filter className="size-4 text-[#5E6AD2]" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">5.3 Multidimensional View Dimension Matrix</h2>
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">5.3 Multidimensional View Dimension Matrix</h5>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
@@ -149,3 +149,8 @@ export const LinearArchitectureView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

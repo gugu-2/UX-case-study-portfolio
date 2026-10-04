@@ -102,14 +102,14 @@ export const LinearProblemOpportunityView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#5E6AD2]/30 bg-[#5E6AD2]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#5E6AD2] dark:text-[#7C88E8]">
             <AlertTriangle className="size-3.5" />
             <span>03 — Problem & Opportunity Matrix</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             The Problem Space: Legacy Sluggishness vs High-Velocity Flow
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Modern software engineers work in rapid, keyboard-centric terminal and IDE environments.
             Legacy project management tools broke that flow with heavy web forms, server latency, and ceremonial bureaucracy.
@@ -121,7 +121,7 @@ export const LinearProblemOpportunityView: React.FC = () => {
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-4">
         <div className="flex items-center gap-2 border-b border-border pb-3">
           <Target className="size-4 text-primary" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">3.1 Root Problem Statement</h2>
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">3.1 Root Problem Statement</h5>
         </div>
         <blockquote className="text-sm sm:text-base font-semibold text-foreground/90 border-l-4 border-[#5E6AD2] pl-4 py-2 bg-[#5E6AD2]/5 rounded-r-xl">
           "Software creators lose up to 45 minutes of productive engineering time every day wrestling with sluggish issue tracking interfaces, waiting on slow page reloads, and manually updating ticket statuses that should be automatically derived from Git commits."
@@ -133,9 +133,9 @@ export const LinearProblemOpportunityView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <ShieldAlert className="size-4 text-red-500" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               3.2 The 5-Layer Problem Hierarchy
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Tracing visible developer dissatisfaction to fundamental architectural and interaction flaws.
             </p>
@@ -168,9 +168,9 @@ export const LinearProblemOpportunityView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Lightbulb className="size-4 text-amber-500" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               3.3 Strategic Opportunity Matrix
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               High-leverage architectural innovations engineered to reclaim developer momentum.
             </p>
@@ -207,3 +207,8 @@ export const LinearProblemOpportunityView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

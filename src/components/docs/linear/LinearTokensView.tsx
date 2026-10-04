@@ -11,6 +11,7 @@ import {
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { MermaidDiagram } from "@/components/ui/mermaid-diagram"
+import { TypographySpecimen } from "@/components/TypographySpecimen"
 
 export const LinearTokensView: React.FC = () => {
   const stateModelChart = `stateDiagram-v2
@@ -104,14 +105,14 @@ export const LinearTokensView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#5E6AD2]/30 bg-[#5E6AD2]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#5E6AD2] dark:text-[#7C88E8]">
             <Palette className="size-3.5" />
             <span>08 — Design System & Tokens</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Obsidian Dark Architecture & Keyboard Interaction Model
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Linear's visual aesthetic is characterized by deep obsidian blacks, glowing violet-indigo accents, high contrast typography, and an uncompromising dedication to single-key home-row ergonomics.
           </p>
@@ -123,9 +124,9 @@ export const LinearTokensView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Workflow className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               8.1 Interaction State Model
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Finite state machine governing focus states, optimistic commits, and offline WebSocket delta synchronization.
             </p>
@@ -144,9 +145,9 @@ export const LinearTokensView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Palette className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               8.2 Obsidian Dark Mode Color Primitives
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Calibrated for 100% WCAG 2.2 AA contrast compliance on desktop and high-DPI displays.
             </p>
@@ -182,14 +183,17 @@ export const LinearTokensView: React.FC = () => {
         </div>
       </div>
 
+      <TypographySpecimen />
+      <TypographySpecimen />
+
       {/* 8.3 Keyboard Ergonomics Index */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs space-y-6">
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Keyboard className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               8.3 Universal Keyboard Shortcuts Master Index
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               The core keys that enable 98.2% unassisted keyboard traversal across all product operations.
             </p>
@@ -218,3 +222,10 @@ export const LinearTokensView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+
+
+

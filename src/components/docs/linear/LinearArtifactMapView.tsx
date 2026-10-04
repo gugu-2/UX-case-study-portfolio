@@ -102,14 +102,14 @@ export const LinearArtifactMapView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#5E6AD2]/30 bg-[#5E6AD2]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#5E6AD2] dark:text-[#7C88E8]">
             <Layers className="size-3.5" />
             <span>28 — The Ideal UX Artifact Map</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             End-to-End Artifact Topology & Figma Traceability
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Linear maintains unbroken traceability between UX research benchmarks, master Figma design files, local sync engine architecture, and production delivery.
           </p>
@@ -121,9 +121,9 @@ export const LinearArtifactMapView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Workflow className="size-4 text-[#5E6AD2]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               28.1 Linear Ecosystem Artifact Topology
-            </h2>
+            </h5>
             <p className="text-xs text-muted-foreground mt-0.5">
               Visual map illustrating how UX research informs tokens, Figma components, client code, and continuous verification.
             </p>
@@ -143,9 +143,9 @@ export const LinearArtifactMapView: React.FC = () => {
           <div className="flex items-center gap-2">
             <FileCheck className="size-4 text-[#5E6AD2]" />
             <div>
-              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+              <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
                 28.2 Figma-to-Code Traceability Matrix
-              </h2>
+              </h5>
               <p className="text-xs text-muted-foreground mt-0.5">
                 Connecting official Figma nodes to production screen archetypes.
               </p>
@@ -200,3 +200,8 @@ export const LinearArtifactMapView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+
