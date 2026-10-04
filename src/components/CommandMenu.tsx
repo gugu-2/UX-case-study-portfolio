@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   Sparkles,
   Command,
+  Type,
 } from "lucide-react"
 import { ProductId, productsConfig } from "@/config/products"
 import { linearScreensData } from "@/data/linearScreensData"
@@ -70,8 +71,7 @@ export function CommandMenu({
     { label: "04. Strategy & Scope Matrix", category: "Docs", tab: "strategy", icon: Layers },
     { label: "05. Information Architecture", category: "Docs", tab: "architecture", icon: Layers },
     { label: "06. User & Task Flows (Mermaid Flowcharts)", category: "Docs", tab: "flows", icon: Layers },
-    { label: "08. Design System Tokens & State Model", category: "Design System", tab: "tokens", icon: Palette },
-    { label: "09. Usability Testing & Benchmarks (V1→V3)", category: "Testing", tab: "testing", icon: CheckCircle2 },
+    { label: "08. Design System Tokens & State Model", category: "Design System", tab: "tokens", icon: Palette },    { label: "09. Usability Testing & Benchmarks (V1→V3)", category: "Testing", tab: "testing", icon: CheckCircle2 },
     { label: "10. Accessibility (WCAG 2.2 AA Contrast & Focus)", category: "Accessibility", tab: "accessibility", icon: ShieldCheck },
     { label: "11. Developer Handoff, API Contracts & Sync", category: "Governance", tab: "handoff", icon: FileCode2 },
     { label: "13. Final Production Sign-Off & Roadmap", category: "Sign-Off", tab: "sign-off", icon: CheckCircle2 },
@@ -161,3 +161,4 @@ export function CommandMenu({
     </div>
   )
 }
+

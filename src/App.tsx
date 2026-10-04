@@ -25,7 +25,7 @@ export function App() {
       return "linear"
     })
 
-  // Initialize view: "home" (unified portal), "dashboard", or "docs"
+  // Initialize view: "home" (unified portal), "dashboard", "docs", or "typography"
   const [currentView, setCurrentView] = useState<"home" | "dashboard" | "docs">(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search)
@@ -84,8 +84,7 @@ export function App() {
   }, [currentProduct, currentView])
 
   // Navigate to documentation with specific section and screen
-  const handleNavigateToDocs = (sectionId = "overview", screenId?: string) => {
-    setCurrentView("docs")
+  const handleNavigateToDocs = (sectionId = "overview", screenId?: string) => {    setCurrentView("docs")
     setActiveSection(sectionId)
     if (screenId) {
       setActiveScreenId(screenId)
@@ -135,7 +134,7 @@ export function App() {
           />
 
           {/* Main View Port */}
-          <main className="flex-1 p-4 lg:p-8 max-w-7xl mx-auto w-full">
+          <main className="flex-1 p-4 lg:p-8 mx-auto w-full">
             {currentView === "home" ? (
               /* PART 0 — UNIFIED HOME PAGE (ALL PROJECTS IN ONE PLACE) */
               <ProjectsPortalView
@@ -156,8 +155,7 @@ export function App() {
               /* PART B — MASTER UX DOCUMENTATION (sidebar-03) */
               <DocsViewer
                 currentSectionId={activeSection}
-                onNavigateSection={(sectionId, screenId) => {
-                  setActiveSection(sectionId)
+                onNavigateSection={(sectionId, screenId) => {                  setActiveSection(sectionId)
                   if (screenId) setActiveScreenId(screenId)
                   window.scrollTo({ top: 0, behavior: "smooth" })
                 }}
@@ -187,3 +185,5 @@ export function App() {
 }
 
 export default App
+
+

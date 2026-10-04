@@ -36,6 +36,7 @@ import {
   ExternalLink,
   FolderKanban,
   Check,
+  Type,
 } from "lucide-react"
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
@@ -151,12 +152,12 @@ export function AppSidebar({
       </SidebarHeader>
 
       <SidebarContent className="px-2 py-3 space-y-4">
-        {/* Navigation Mode Quick Switch (All Projects | Dashboard | Docs) */}
+        {/* Navigation Mode Quick Switch (All Projects | Dashboard | Docs | Typography) */}
         <div className="px-2">
-          <div className="flex items-center gap-1 bg-sidebar-accent/60 p-1 rounded-[8px] border border-sidebar-border text-[11px]">
+          <div className="flex items-center gap-2 text-[11px]">
             <button
               onClick={() => setCurrentView("home")}
-              className={`flex-1 py-1.5 px-1.5 rounded-[6px] font-bold text-center transition-all cursor-pointer ${
+              className={`flex-1 py-1.5 px-1 rounded-[6px] border border-sidebar-border font-bold text-center transition-all cursor-pointer ${
                 currentView === "home"
                   ? "bg-background text-foreground shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -167,7 +168,7 @@ export function AppSidebar({
             </button>
             <button
               onClick={() => setCurrentView("dashboard")}
-              className={`flex-1 py-1.5 px-1.5 rounded-[6px] font-bold text-center transition-all cursor-pointer ${
+              className={`flex-1 py-1.5 px-1 rounded-[6px] border border-sidebar-border font-bold text-center transition-all cursor-pointer ${
                 currentView === "dashboard"
                   ? "bg-background text-foreground shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -177,7 +178,7 @@ export function AppSidebar({
             </button>
             <button
               onClick={() => setCurrentView("docs")}
-              className={`flex-1 py-1.5 px-1.5 rounded-[6px] font-bold text-center transition-all cursor-pointer ${
+              className={`flex-1 py-1.5 px-1 rounded-[6px] border border-sidebar-border font-bold text-center transition-all cursor-pointer ${
                 currentView === "docs"
                   ? "bg-background text-foreground shadow-xs font-black"
                   : "text-muted-foreground hover:text-foreground"
@@ -325,7 +326,7 @@ export function AppSidebar({
             </SidebarMenu>
           </SidebarGroup>
         ) : (
-          /* 3. If in DOCS VIEW (Official sidebar-03 structure with submenus) */
+          /* 4. If in DOCS VIEW (Official sidebar-03 structure with submenus) */
           <SidebarGroup>
             <div className="px-3 pb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Master UX Documentation
@@ -404,7 +405,7 @@ export function AppSidebar({
               <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
               <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
             </svg>
-            <span className="truncate">Open Master Figma</span>
+            <span className="truncate">Figma file</span>
           </div>
           <ExternalLink className="size-3 text-muted-foreground group-hover:text-foreground" />
         </a>
@@ -419,3 +420,6 @@ export function AppSidebar({
     </Sidebar>
   )
 }
+
+
+

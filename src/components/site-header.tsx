@@ -12,6 +12,7 @@ import {
   Check,
   Sparkles,
   FolderKanban,
+  Type,
 } from "lucide-react"
 import {
   DropdownMenu,
@@ -198,6 +199,8 @@ export function SiteHeader({
           <BookOpen className="size-4" />
           <span>Documentation</span>
         </button>
+
+
       </div>
 
       {/* Right: Quick Tools (Search, Figma CTA, Version Badge, Theme Toggle) */}
@@ -221,7 +224,7 @@ export function SiteHeader({
           target="_blank"
           rel="noopener noreferrer"
           className="hidden sm:inline-flex items-center gap-2 rounded-[8px] border border-border bg-muted/40 hover:bg-muted px-3.5 py-[6px] text-sm font-bold text-foreground transition group h-9 min-h-[36px] cursor-pointer"
-          title={`Open ${productConfig.name} real master Figma design file in a new tab`}
+          title={`Open ${productConfig.name} Figma file in a new tab`}
         >
           <svg className="size-3.5 shrink-0" viewBox="0 0 38 57" fill="none">
             <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
@@ -230,7 +233,7 @@ export function SiteHeader({
             <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
             <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
           </svg>
-          <span className="hidden md:inline">Figma</span>
+          <span className="hidden md:inline">Figma file</span>
           <ExternalLink className="size-3 text-muted-foreground group-hover:text-foreground" />
         </a>
 
@@ -262,3 +265,5 @@ export function SiteHeader({
     </header>
   )
 }
+
+
