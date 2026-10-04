@@ -219,14 +219,14 @@ export const MixpanelResearchView: React.FC = () => {
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       {/* Header Banner */}
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-bold text-purple-600 dark:text-purple-400">
             <Users className="size-3.5" />
             <span>02 — Research & Human Insight (Cohort n=45)</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Mixpanel User Personas, Journey Maps & End-to-End Experience
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Empirical field research conducted across product managers, marketers, and data engineers uncovered the behavioral friction points that drove Mixpanel's visual query architecture. Here we document our archetypal personas, 8-stage journey progression, and multi-tier experience topology.
           </p>
@@ -238,9 +238,9 @@ export const MixpanelResearchView: React.FC = () => {
         <div className="flex items-center justify-between border-b border-border pb-4">
           <div className="flex items-center gap-2">
             <Target className="size-4 text-purple-600" />
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
               2.3 Core Persona Templates (Analytics Archetypes)
-            </h2>
+            </h5>
           </div>
           <Badge variant="outline" className="border-purple-500/30 bg-purple-500/10 text-purple-600 dark:text-purple-400 font-bold text-xs">
             Validated Profiles
@@ -344,9 +344,9 @@ export const MixpanelResearchView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Compass className="size-4 text-[#7856FF]" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             2.5 End-to-End User Journey Map (8-Stage Flowchart & Progression Table)
-          </h2>
+          </h5>
         </div>
 
         <MermaidDiagram
@@ -356,9 +356,9 @@ export const MixpanelResearchView: React.FC = () => {
         />
 
         <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-          <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">
+          <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-foreground tracking-tight">
             Stage-by-Stage Journey Analysis Matrix
-          </h3>
+          </h6>
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-left">
               <thead className="bg-muted text-muted-foreground uppercase font-semibold border-b border-border">
@@ -392,9 +392,9 @@ export const MixpanelResearchView: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <Shield className="size-4 text-[#7856FF]" />
-          <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">
+          <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
             2.6 Holistic Experience Map (Frontstage, Channels & Backstage Architecture)
-          </h2>
+          </h5>
         </div>
 
         <MermaidDiagram
@@ -404,9 +404,9 @@ export const MixpanelResearchView: React.FC = () => {
         />
 
         <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4">
-          <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">
+          <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-foreground tracking-tight">
             Cross-Layer Architecture Mapping Matrix
-          </h3>
+          </h6>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
             <div className="p-4 rounded-xl border border-border bg-muted/20 space-y-2">
               <span className="font-bold text-[#7856FF] uppercase text-[11px] block">1. Frontstage UI</span>
@@ -438,3 +438,8 @@ export const MixpanelResearchView: React.FC = () => {
     </div>
   )
 }
+
+
+
+
+

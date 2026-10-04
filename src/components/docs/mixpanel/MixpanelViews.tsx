@@ -1,5 +1,6 @@
 import React from "react"
 import { MermaidDiagram } from "@/components/ui/mermaid-diagram"
+import { TypographySpecimen } from "@/components/TypographySpecimen"
 import { Users, Search, Target, Heart, AlertTriangle, ArrowRight, CheckCircle2, MessageSquare, Compass, Shield, GitFork, Workflow, ShieldCheck, Box, Layers, Table, CheckSquare, ListTree } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
@@ -43,13 +44,13 @@ export function MixpanelVisionView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="space-y-4">
-        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">1.1 Visual Workspace Overview</h2>
+        <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight border-b border-border pb-2">1.1 Visual Workspace Overview</h5>
         <p className="text-sm text-muted-foreground leading-relaxed">
           Mixpanel is an advanced product analytics platform that transforms complex event stream data into visual, interactive reports. It empowers product managers and growth teams to query billions of events in seconds without SQL.
         </p>
       </div>
       <div className="space-y-4">
-        <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight border-b border-border pb-2">1.2 Spatial Principles</h2>
+        <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight border-b border-border pb-2">1.2 Spatial Principles</h5>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 border border-border rounded-xl bg-card">
             <h3 className="font-bold text-sm text-foreground">1. Query as a Visual Block</h3>
@@ -85,14 +86,14 @@ export const MixpanelProcessView: React.FC = () => {
   return (
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#7856FF]/30 bg-[#7856FF]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#7856FF]">
             <Workflow className="size-3.5" />
             <span>27 — Master UX Process</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             The Mixpanel Data-Driven Design Process
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             How data teams implement tracking, govern events, and distribute insights to the rest of the product organization at speed.
           </p>
@@ -103,7 +104,7 @@ export const MixpanelProcessView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Workflow className="size-4 text-[#7856FF]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">27.1 End-to-End Data Lifecycle Flowchart</h2>
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">27.1 End-to-End Data Lifecycle Flowchart</h5>
             <p className="text-xs text-muted-foreground mt-0.5">The 7-stage lifecycle of tracking and querying data.</p>
           </div>
         </div>
@@ -144,14 +145,14 @@ export const MixpanelArchitectureView: React.FC = () => {
   return (
     <div className="space-y-8 animate-in fade-in-50 duration-300">
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#7856FF]/30 bg-[#7856FF]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#7856FF]">
             <Layers className="size-3.5" />
             <span>05 — Information Architecture</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Mixpanel Architecture Ecosystem Topology
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             The structural blueprint mapping Analysis modules against Data Governance and Dashboard delivery systems.
           </p>
@@ -162,7 +163,7 @@ export const MixpanelArchitectureView: React.FC = () => {
         <div className="flex items-center gap-2 border-b border-border pb-4">
           <Layers className="size-4 text-[#7856FF]" />
           <div>
-            <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">5.1 Global Sitemap & Module Interactions</h2>
+            <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">5.1 Global Sitemap & Module Interactions</h5>
             <p className="text-xs text-muted-foreground mt-0.5">Showing how the Lexicon dictionary powers the visual query builders.</p>
           </div>
         </div>
@@ -204,14 +205,14 @@ export function MixpanelUserFlowsView() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
+        <div className="space-y-2">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#7856FF]/30 bg-[#7856FF]/10 px-4 py-2 min-h-[32px] text-xs font-bold text-[#7856FF]">
             <GitFork className="size-3.5" />
             <span>06 — User & Task Flows</span>
           </div>
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">
             Mixpanel Interaction Decision Trees
-          </h1>
+          </h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Algorithmic mapping of core user workflows including ad-hoc querying, dashboard distribution, and data governance.
           </p>
@@ -223,7 +224,7 @@ export function MixpanelUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <CheckSquare className="size-4 text-[#7856FF]" />
             <div>
-              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.1 Core Funnel Analysis Flow</h2>
+              <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">6.1 Core Funnel Analysis Flow</h5>
               <p className="text-xs text-muted-foreground mt-0.5">The visual query building process for product managers.</p>
             </div>
           </div>
@@ -234,7 +235,7 @@ export function MixpanelUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <ListTree className="size-4 text-[#7856FF]" />
             <div>
-              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.2 Dashboard Distribution Task Flow</h2>
+              <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">6.2 Dashboard Distribution Task Flow</h5>
               <p className="text-xs text-muted-foreground mt-0.5">Scheduling automated reports for executives.</p>
             </div>
           </div>
@@ -245,7 +246,7 @@ export function MixpanelUserFlowsView() {
           <div className="flex items-center gap-2 border-b border-border pb-4">
             <GitFork className="size-4 text-[#7856FF]" />
             <div>
-              <h2 className="figma-h2 text-[28px] leading-[38px] lg:text-[48px] lg:leading-[64px] font-extrabold text-foreground tracking-tight">6.3 Lexicon Data Governance Decision Tree</h2>
+              <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">6.3 Lexicon Data Governance Decision Tree</h5>
               <p className="text-xs text-muted-foreground mt-0.5">How the system handles new or hidden events.</p>
             </div>
           </div>
@@ -260,17 +261,21 @@ export function MixpanelTokensView() {
   return (
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs">
-        <div className="max-w-3xl space-y-2">
-          <h1 className="figma-h1 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">Mixpanel Design System & Tokens</h1>
+        <div className="space-y-2">
+          <h3 className="figma-h3 text-[40px] leading-[50px] lg:text-[64px] lg:leading-[80px] font-extrabold tracking-tight text-foreground">Mixpanel Design System & Tokens</h3>
           <p className="text-sm leading-relaxed text-muted-foreground">
             Mixpanel's design system is engineered for data density and clarity. It heavily utilizes a distinct purple primary brand color, combined with strict charting palettes (categorical colors) to ensure data visualizations remain accessible (WCAG AA) and distinguishable even when segmenting dozens of properties.
           </p>
         </div>
       </div>
 
+      <div className="mt-8">
+        <TypographySpecimen />
+      </div>
+
       <div className="space-y-8">
         <div className="p-6 rounded-2xl border border-border bg-card space-y-4">
-          <h3 className="figma-h3 text-[22px] leading-[32px] lg:text-[32px] lg:leading-[48px] font-bold text-foreground tracking-tight">Charting & Brand Tokens</h3>
+          <h6 className="figma-h6 text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-semibold text-foreground tracking-tight">Charting & Brand Tokens</h6>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-4 rounded-xl bg-muted border border-border flex flex-col gap-2">
               <div className="w-full h-12 bg-[#7856FF] rounded-md"></div>
@@ -294,3 +299,10 @@ export function MixpanelTokensView() {
     </div>
   )
 }
+
+
+
+
+
+
+
