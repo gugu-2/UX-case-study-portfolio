@@ -599,68 +599,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
           </div>
         </div>
 
-        {/* Master UX Documentation Library Ribbon / Quick Launcher */}
-        <div className="rounded-3xl border border-primary/25 bg-gradient-to-r from-primary/10 via-card to-blue-500/10 p-5 sm:p-7 shadow-sm space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border/60">
-            <div className="flex items-center gap-3">
-              <div className="size-10 rounded-2xl bg-primary text-white flex items-center justify-center font-bold shadow-md shrink-0">
-                <BookOpen className="size-5" />
-              </div>
-              <div>
-                <h5 className="font-extrabold text-base sm:text-lg text-foreground flex items-center gap-2 flex-wrap">
-                  <span>Master UX Architecture Documentation Library</span>
-                  <Badge variant="outline" className="text-[11px] font-bold bg-primary/15 text-primary border-primary/30">
-                    100% In-App Readable
-                  </Badge>
-                </h5>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  Click any system below to read the comprehensive architecture specification and design system audit directly inside this application:
-                </p>
-              </div>
-            </div>
-            <span className="text-xs font-mono text-muted-foreground bg-muted/60 px-3 py-1.5 rounded-full shrink-0">
-              7 Enterprise Suites · 2.1+ MB Total Specs
-            </span>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {[
-              { id: "qolaba", title: "Qolaba AI App", badge: "296.5 KB Spec", tag: "2023 Sprint", color: "#3045C9" },
-              { id: "brilliant", title: "Brilliant.org", badge: "477.8 KB Spec", tag: "2022 EdTech", color: "#04A777" },
-              { id: "monday", title: "monday.com", badge: "446.2 KB Spec", tag: "2022 Work OS", color: "#0073EA" },
-              { id: "minimal", title: "Minimals UI", badge: "140.8 KB Spec", tag: "2021 Foundation", color: "#00A76F" },
-              { id: "github", title: "GitHub Web", badge: "180.9 KB Spec", tag: "2019-2020 Dev", color: "#24292F" },
-              { id: "officevibe", title: "Officevibe", badge: "190.8 KB Spec", tag: "2021 HR Tech", color: "#FF5C5C" },
-              { id: "copyai", title: "Copy.ai", badge: "128.8 KB Spec", tag: "2021 GenAI", color: "#2563EB" },
-              { id: "linear", title: "Linear App", badge: "Production Spec", tag: "Sub-50ms Sync", color: "#5E6AD2" },
-            ].map((doc) => (
-              <button
-                key={doc.id}
-                onClick={() => handleOpenDoc(doc.id)}
-                className="flex items-center justify-between p-3 rounded-2xl border border-border bg-card/90 hover:bg-muted transition-all hover:-translate-y-0.5 text-left cursor-pointer group shadow-2xs hover:border-primary/40"
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <span
-                    className="size-3 rounded-full shrink-0 shadow-xs"
-                    style={{ backgroundColor: doc.color }}
-                  />
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-xs font-bold text-foreground truncate group-hover:text-primary transition-colors">
-                      {doc.title}
-                    </span>
-                    <span className="text-[10px] text-muted-foreground font-mono truncate">
-                      {doc.badge} · {doc.tag}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1 text-[11px] font-bold text-primary shrink-0 ml-1.5 opacity-90 group-hover:opacity-100">
-                  <span>Read</span>
-                  <ArrowRight className="size-3 group-hover:translate-x-0.5 transition-transform" />
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* 14 Cards Responsive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
