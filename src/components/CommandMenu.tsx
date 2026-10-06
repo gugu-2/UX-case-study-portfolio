@@ -20,6 +20,12 @@ import { screensData } from "@/data/screensData"
 import { miroScreensData } from "@/data/miroScreensData"
 import { mixpanelScreensData } from "@/data/mixpanelScreensData"
 import { frameScreensData } from "@/data/frameScreensData"
+import { qolabaScreensData } from "@/data/qolabaScreensData"
+import { brilliantScreensData } from "@/data/brilliantScreensData"
+import { mondayScreensData } from "@/data/mondayScreensData"
+import { copyaiScreensData } from "@/data/copyaiScreensData"
+import { githubScreensData } from "@/data/githubScreensData"
+import { officevibeScreensData } from "@/data/officevibeScreensData"
 
 interface CommandMenuProps {
   isOpen: boolean
@@ -52,7 +58,18 @@ export function CommandMenu({
 
   if (!isOpen) return null
 
-  const activeScreens = currentProduct === "linear" ? linearScreensData : currentProduct === "miro" ? miroScreensData : currentProduct === "mixpanel" ? mixpanelScreensData : currentProduct === "frame" ? frameScreensData : screensData
+  const activeScreens =
+    currentProduct === "linear" ? linearScreensData :
+    currentProduct === "miro" ? miroScreensData :
+    currentProduct === "mixpanel" ? mixpanelScreensData :
+    currentProduct === "frame" ? frameScreensData :
+    currentProduct === "qolaba" ? qolabaScreensData :
+    currentProduct === "brilliant" ? brilliantScreensData :
+    currentProduct === "monday" ? mondayScreensData :
+    currentProduct === "copyai" ? copyaiScreensData :
+    currentProduct === "github" ? githubScreensData :
+    currentProduct === "officevibe" ? officevibeScreensData :
+    screensData
   const productConfig = productsConfig[currentProduct] || productsConfig.minimal
   interface MenuItem {
     label: string

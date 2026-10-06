@@ -24,7 +24,7 @@ interface PersonaCardData {
   accessibilityNeed: string
 }
 
-const personasByProduct: Record<ProductId, PersonaCardData[]> = {
+const personasByProduct: Partial<Record<ProductId, PersonaCardData[]>> = {
   linear: [
     {
       name: "Karri Saarinen",
@@ -262,6 +262,279 @@ const personasByProduct: Record<ProductId, PersonaCardData[]> = {
         "Fail-safe confirmation barriers for critical transactions.",
       ],
       accessibilityNeed: "Strict adherence to WCAG 2.2 AA contrast ratios across all financial data tables.",
+    },
+  ],
+  qolaba: [
+    {
+      name: "Kenji Sato",
+      role: "Senior Game Concept Artist",
+      age: "31",
+      experience: "8 years in AAA Gaming Studios",
+      device: "MacBook Pro M2 Max + Wacom Cintiq 27",
+      proficiency: "Prompt Power User & Digital Painter",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      quote: "Midjourney Discord bot prompts felt like screaming into an echo chamber. Qolaba gives me an actual creative studio canvas with progressive denoising previews.",
+      goals: [
+        "Generate high-resolution environment concept sketches in under 4 minutes.",
+        "Use surgical inpainting to fix hands, props, and lighting without regenerating from scratch.",
+        "Maintain visual consistency across characters using custom LoRA weights.",
+      ],
+      motivations: [
+        "Accelerating concept ideation for game directors.",
+        "Full control over CFG guidance and diffusion samplers.",
+      ],
+      frustrations: [
+        "Black-box waiting spinners with zero clue how the image is rendering.",
+        "Destructive inpainting that overwrites surrounding pixels.",
+        "Prompt token guessing games in text-only chatbots.",
+      ],
+      behaviors: [
+        "Keeps obsidian dark mode active to judge true color contrast.",
+        "Uses Ctrl+Enter to batch generate 4 variations simultaneously.",
+      ],
+      needs: [
+        "Sub-4s progressive latent denoising previews.",
+        "Brush radius hotkeys ([ and ]) for precision masking.",
+      ],
+      accessibilityNeed: "Requires high-contrast dark UI (#0B0C10) to reduce eye fatigue during long painting sessions.",
+    },
+    {
+      name: "Elena Rostova",
+      role: "Brand Creative Director",
+      age: "37",
+      experience: "14 years in Advertising & Visual Branding",
+      device: "Studio Display 5K + iPad Pro",
+      proficiency: "Creative Executive",
+      avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      quote: "Our brand identity requires strict chromatic fidelity. Qolaba allows our team to turn brand guidelines into repeatable visual style presets.",
+      goals: [
+        "Empower junior designers to produce on-brand imagery quickly.",
+        "Curate a shared team prompt library with vetted keywords.",
+        "Export print-ready 4K upscaled assets with metadata.",
+      ],
+      motivations: [
+        "Brand visual consistency across multi-channel campaigns.",
+        "Cutting asset production timelines from weeks to hours.",
+      ],
+      frustrations: [
+        "Inconsistent AI style outputs that drift away from brand guidelines.",
+        "Hidden credit billing and sudden token depletion.",
+      ],
+      behaviors: [
+        "Browses prompt marketplace for inspiration.",
+        "Exports seed parameters to share with freelance illustrators.",
+      ],
+      needs: [
+        "Transparent credit balances and team asset folders.",
+        "One-click style presets with locked color palettes.",
+      ],
+      accessibilityNeed: "Full keyboard accessibility and clear high-contrast status feedback.",
+    },
+  ],
+  brilliant: [
+    {
+      name: "Maya Patel",
+      role: "Undergraduate STEM Student",
+      age: "20",
+      experience: "2nd Year Applied Physics Major",
+      device: "iPad Pro with Apple Pencil + MacBook Air",
+      proficiency: "Intermediate Learner",
+      avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+      quote: "Watching 2-hour lecture videos never worked for me. On Brilliant, moving the Galton board pins made probability click in 5 minutes.",
+      goals: [
+        "Master foundational calculus and probability without math anxiety.",
+        "Maintain a daily 15-minute problem-solving habit streak.",
+        "Prepare for technical engineering exams through active inquiry.",
+      ],
+      motivations: [
+        "Developing genuine conceptual intuition rather than rote memorization.",
+        "Unlocking daily challenges and keeping the streak lightning ('⚡') alive.",
+      ],
+      frustrations: [
+        "Dry textbook equations that feel detached from physical intuition.",
+        "Passive video lectures where the mind drifts after 6 minutes.",
+        "Binary grading that penalizes honest exploratory mistakes.",
+      ],
+      behaviors: [
+        "Solves the daily challenge during her morning commute.",
+        "Uses tactile drag-and-drop chips to test hypotheses iteratively.",
+      ],
+      needs: [
+        "Micro-stepping scaffolding that guides without giving away answers.",
+        "Celebratory animations upon solving difficult problems.",
+      ],
+      accessibilityNeed: "KaTeX mathematical equations readable with screen readers and high contrast text.",
+    },
+    {
+      name: "David Kim",
+      role: "Senior Frontend Engineer (Career Switcher)",
+      age: "34",
+      experience: "8 years in Web Development",
+      device: "MacBook Pro 16\"",
+      proficiency: "Technical Power User",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      quote: "I'm transitioning into Machine Learning. Brilliant's interactive math visualizers give me the geometric grounding I need to understand neural networks.",
+      goals: [
+        "Build intuition for linear algebra and high-dimensional spaces.",
+        "Learn in bite-sized chunks outside of a 50-hour work week.",
+        "Bridge the gap between theoretical math and software code.",
+      ],
+      motivations: [
+        "Future-proofing software career for the AI era.",
+        "Enjoying the intellectual thrill of solving elegant STEM puzzles.",
+      ],
+      frustrations: [
+        "Overly academic textbooks filled with jargon and proofs.",
+        "Platforms that don't remember where you left off across devices.",
+      ],
+      behaviors: [
+        "Completes 2 lessons every evening on his laptop.",
+        "Takes interactive notes on code concepts.",
+      ],
+      needs: [
+        "Fast resume button directly to current course module.",
+        "Clear prerequisite skill trees.",
+      ],
+      accessibilityNeed: "Full keyboard navigation (Space/Enter to drop puzzle tiles).",
+    },
+  ],
+  monday: [
+    {
+      name: "Maya Lin",
+      role: "VP of Business Operations",
+      age: "42",
+      experience: "16 years leading Enterprise PMOs",
+      device: "Dell XPS 15 + Dual UltraWide Monitors",
+      proficiency: "Enterprise Architect",
+      avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      quote: "Before monday.com, status reporting took 3 days every month. Now our executive board sees real-time battery progress across all 50 initiative boards.",
+      goals: [
+        "Eliminate fragmented spreadsheets and departmental silos.",
+        "Track cross-functional project deliverables in real time.",
+        "Standardize PMO delivery governance across 400 employees.",
+      ],
+      motivations: [
+        "Predictable organizational execution and zero missed client deadlines.",
+        "Freeing team leaders from repetitive status sync meetings.",
+      ],
+      frustrations: [
+        "Endless status update syncs that could have been an auto-updated board.",
+        "Rigid enterprise software that requires IT tickets to add a single column.",
+        "Lack of executive rollup dashboards.",
+      ],
+      behaviors: [
+        "Checks executive battery summary widgets every Monday morning.",
+        "Sets up automation recipes: 'When status changes to Stuck, notify Director'.",
+      ],
+      needs: [
+        "Infinite columnar flexibility without coding.",
+        "Multi-board rollup reports with real-time calculations.",
+      ],
+      accessibilityNeed: "Color-blind safe dual-coding (icons + status colors) for battery charts.",
+    },
+  ],
+  copyai: [
+    {
+      name: "Sarah Jenkins",
+      role: "Director of Integrated Content Marketing",
+      age: "35",
+      experience: "11 years in SaaS Growth & Copywriting",
+      device: "MacBook Air M2",
+      proficiency: "Advanced Marketer",
+      avatarUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      quote: "Copy.ai replaced 4 hours of staring at a blank cursor with structured outlines and tone-calibrated drafts in 5 minutes.",
+      goals: [
+        "Produce 10+ SEO-optimized blog articles and 30 social hooks every week.",
+        "Maintain strict brand voice consistency across 6 freelance writers.",
+        "Publish directly to Webflow and HubSpot without manual reformatting.",
+      ],
+      motivations: [
+        "Scaling content velocity 10x without compromising editorial tone.",
+        "Testing high-converting ad variations on Facebook and Google.",
+      ],
+      frustrations: [
+        "Generic, robotic AI copy that requires complete rewriting.",
+        "Messy scattered Google Docs and lost generated snippets.",
+      ],
+      behaviors: [
+        "Uses Blog Post Wizard for weekly long-form pillar content.",
+        "Calibrates brand voice from company URL before onboarding new writers.",
+      ],
+      needs: [
+        "Tone-of-voice modifier pills and custom brand voice training.",
+        "1-click export to CMS platforms.",
+      ],
+      accessibilityNeed: "Clean typography hierarchy and high-contrast text editor.",
+    },
+  ],
+  github: [
+    {
+      name: "Alex Chen",
+      role: "Staff Software Engineer & OSS Maintainer",
+      age: "32",
+      experience: "10 years in Distributed Systems & Open Source",
+      device: "MacBook Pro 16\" + ThinkPad X1 Carbon",
+      proficiency: "Keyboard-Only Power User",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      quote: "Code review is where software quality lives. GitHub's split diffs and inline suggested changes turn pull requests from arguments into collaborative refinement.",
+      goals: [
+        "Review 15 PRs daily with zero mouse-induced wrist strain.",
+        "Enforce strict branch protection and automated CI test gates.",
+        "Keep Git histories clean and linear using Squash & Merge.",
+      ],
+      motivations: [
+        "Shipping bulletproof software with minimal review latency.",
+        "Fostering an inclusive and productive open-source contributor community.",
+      ],
+      frustrations: [
+        "Messy 40-commit PRs filled with 'fix typo' entries.",
+        "Reviewers having to manually test code because CI checks are missing.",
+        "Laggy web diff viewers that freeze on large PRs.",
+      ],
+      behaviors: [
+        "Navigates repositories using 't' (file finder) and 'w' (branch switcher).",
+        "Uses 'Suggested Changes' widgets so authors commit fixes in 1 click.",
+      ],
+      needs: [
+        "Sub-50ms fuzzy file navigation.",
+        "Primer dark theme with high-contrast syntax highlighting.",
+      ],
+      accessibilityNeed: "Accessible split diff line narration and color-blind safe diff indicators.",
+    },
+  ],
+  officevibe: [
+    {
+      name: "Chloe Martin",
+      role: "VP of People Operations",
+      age: "39",
+      experience: "14 years in People & Culture",
+      device: "MacBook Pro 14\"",
+      proficiency: "HR & Engagement Specialist",
+      avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      quote: "Annual employee surveys are an autopsy; weekly pulse surveys are real-time medicine. Officevibe gives employees a psychologically safe voice.",
+      goals: [
+        "Detect morale dips and burnout risks weeks before resignations happen.",
+        "Provide first-time engineering managers with actionable coaching tips.",
+        "Ensure 100% cryptographic anonymity so employees speak truthfully.",
+      ],
+      motivations: [
+        "Fostering psychological safety and transparent workplace culture.",
+        "Empowering managers to conduct meaningful, continuous 1-on-1s.",
+      ],
+      frustrations: [
+        "Low participation on long annual surveys (sub-35%).",
+        "Employees fearing retaliation if they speak honestly about management.",
+        "Managers who don't know how to follow up on feedback.",
+      ],
+      behaviors: [
+        "Reviews weekly eNPS trendline and 10 engagement metric cards every Tuesday.",
+        "Monitors team vs company benchmark heatmaps for department outliers.",
+      ],
+      needs: [
+        "Strict 5-member minimum anonymity thresholds.",
+        "Automated 1-on-1 meeting agenda templates.",
+      ],
+      accessibilityNeed: "Full WCAG 2.2 AA contrast on coral/emerald sentiment dials and screen reader support.",
     },
   ],
 }

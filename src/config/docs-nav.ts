@@ -1,3 +1,5 @@
+import { ProductId } from "./products"
+
 export interface NavSubItem {
   title: string
   id: string
@@ -747,18 +749,278 @@ export const frameDocsNav: NavItem[] = docsNav.map((section) => {
   return section
 })
 
-export function getDocsNav(productId: "minimal" | "linear" | "miro" | "mixpanel" | "frame" = "minimal"): NavItem[] {
-  if (productId === "linear") {
-    return linearDocsNav
+export const qolabaDocsNav: NavItem[] = docsNav.map((section) => {
+  if (section.id === "screens") {
+    return {
+      title: "Screens & Archetypes",
+      id: "screens",
+      number: "07",
+      badge: "14 Screens",
+      items: [
+        { title: "Q01 — Flagship Studio Canvas", id: "screen-q01", hash: "q01" },
+        { title: "Q02 — Parameter Tuning Dock", id: "screen-q02", hash: "q02" },
+        { title: "Q03 — Generation Quad Grid", id: "screen-q03", hash: "q03" },
+        { title: "Q04 — Latent Synthesis Queue", id: "screen-q04", hash: "q04" },
+        { title: "Q05 — Studio Lightbox", id: "screen-q05", hash: "q05" },
+        { title: "Q06 — Inpainting & Mask Canvas", id: "screen-q06", hash: "q06" },
+        { title: "Q07 — Outpainting Expansion", id: "screen-q07", hash: "q07" },
+        { title: "Q08 — LoRA & Style Presets", id: "screen-q08", hash: "q08" },
+        { title: "Q09 — Aspect Ratio Selector", id: "screen-q09", hash: "q09" },
+        { title: "Q10 — AI Chat Co-Pilot", id: "screen-q10", hash: "q10" },
+        { title: "Q11 — Prompt Marketplace", id: "screen-q11", hash: "q11" },
+        { title: "Q12 — Creator Auth Gate", id: "screen-q12", hash: "q12" },
+        { title: "Q13 — Onboarding & Credits", id: "screen-q13", hash: "q13" },
+        { title: "Q14 — Dual-Theme Dark & Light", id: "screen-q14", hash: "q14" },
+      ],
+    }
   }
-  if (productId === "miro") {
-    return miroDocsNav
+  if (section.id === "flows") {
+    return {
+      ...section,
+      items: [
+        { title: "6.1 Prompt to Generation Flow", id: "flows", hash: "prompt-flow" },
+        { title: "6.2 Inpainting & Mask Pipeline", id: "flows", hash: "inpaint-flow" },
+        { title: "6.3 14-Screen Inventory", id: "flows", hash: "inventory" },
+      ],
+    }
   }
-  if (productId === "mixpanel") {
-    return mixpanelDocsNav
+  return section
+})
+
+export const brilliantDocsNav: NavItem[] = docsNav.map((section) => {
+  if (section.id === "screens") {
+    return {
+      title: "Screens & Archetypes",
+      id: "screens",
+      number: "07",
+      badge: "19 Screens",
+      items: [
+        { title: "B01 — Master Hero & STEM Suite", id: "screen-b01", hash: "b01" },
+        { title: "B02 — Flagship STEM Homepage", id: "screen-b02", hash: "b02" },
+        { title: "B03 — Community Wall of Love", id: "screen-b03", hash: "b03" },
+        { title: "B04 — Pricing & Subscription", id: "screen-b04", hash: "b04" },
+        { title: "B05 — Daily Challenges Hub", id: "screen-b05", hash: "b05" },
+        { title: "B06 — Interactive Challenge Solver", id: "screen-b06", hash: "b06" },
+        { title: "B07 — STEM Course Catalog", id: "screen-b07", hash: "b07" },
+        { title: "B08 — About Us & Mission", id: "screen-b08", hash: "b08" },
+        { title: "B09 — Beautiful Geometry Tree", id: "screen-b09", hash: "b09" },
+        { title: "B10 — Pedagogical Manifesto", id: "screen-b10", hash: "b10" },
+        { title: "B11 — Authors & Engineers", id: "screen-b11", hash: "b11" },
+        { title: "B12 — Orbital Physics Auth", id: "screen-b12", hash: "b12" },
+        { title: "B13 — Intent Qualification", id: "screen-b13", hash: "b13" },
+        { title: "B14 — Rocket Propulsion Hook", id: "screen-b14", hash: "b14" },
+        { title: "B15 — Authenticated Catalog", id: "screen-b15", hash: "b15" },
+        { title: "B16 — Today Habit Surface", id: "screen-b16", hash: "b16" },
+        { title: "B17 — Probability & Galton Board", id: "screen-b17", hash: "b17" },
+        { title: "B18 — In-Lesson Dice Player", id: "screen-b18", hash: "b18" },
+        { title: "B19 — Student Home & Streak", id: "screen-b19", hash: "b19" },
+      ],
+    }
   }
-  if (productId === "frame") {
-    return frameDocsNav
+  if (section.id === "flows") {
+    return {
+      ...section,
+      items: [
+        { title: "6.1 Interactive Problem Flow", id: "flows", hash: "problem-flow" },
+        { title: "6.2 Daily Habit & Streak Loop", id: "flows", hash: "streak-flow" },
+        { title: "6.3 19-Screen Inventory", id: "flows", hash: "inventory" },
+      ],
+    }
   }
-  return minimalDocsNav
+  return section
+})
+
+export const mondayDocsNav: NavItem[] = docsNav.map((section) => {
+  if (section.id === "screens") {
+    return {
+      title: "Screens & Archetypes",
+      id: "screens",
+      number: "07",
+      badge: "21 Screens",
+      items: [
+        { title: "MN01 — Master Work OS Hero Card", id: "screen-mn01", hash: "mn01" },
+        { title: "MN02 — Flagship Homepage & Demo", id: "screen-mn02", hash: "mn02" },
+        { title: "MN03 — Master Pricing Matrix", id: "screen-mn03", hash: "mn03" },
+        { title: "MN04 — About Us & Heritage", id: "screen-mn04", hash: "mn04" },
+        { title: "MN05 — Authentication & Proof", id: "screen-mn05", hash: "mn05" },
+        { title: "MN06 — Work Management Suite", id: "screen-mn06", hash: "mn06" },
+        { title: "MN07 — Template Center Library", id: "screen-mn07", hash: "mn07" },
+        { title: "MN08 — monday dev Agile Suite", id: "screen-mn08", hash: "mn08" },
+        { title: "MN09 — Executive BI Dashboards", id: "screen-mn09", hash: "mn09" },
+        { title: "MN10 — Integrations Ecosystem", id: "screen-mn10", hash: "mn10" },
+        { title: "MN11 — Enterprise Consultation", id: "screen-mn11", hash: "mn11" },
+        { title: "MN12 — Onboarding: Intent", id: "screen-mn12", hash: "mn12" },
+        { title: "MN13 — Onboarding: Domain", id: "screen-mn13", hash: "mn13" },
+        { title: "MN14 — Onboarding: Needs", id: "screen-mn14", hash: "mn14" },
+        { title: "MN15 — Onboarding: Attribution", id: "screen-mn15", hash: "mn15" },
+        { title: "MN16 — Team Provisioning Modal", id: "screen-mn16", hash: "mn16" },
+        { title: "MN17 — Dark Workspace Directory", id: "screen-mn17", hash: "mn17" },
+        { title: "MN18 — Updates Inbox Stream", id: "screen-mn18", hash: "mn18" },
+        { title: "MN19 — Board Canvas & Battery", id: "screen-mn19", hash: "mn19" },
+        { title: "MN20 — Search Everything (Ctrl+B)", id: "screen-mn20", hash: "mn20" },
+        { title: "MN21 — Personal Home & Tasks", id: "screen-mn21", hash: "mn21" },
+      ],
+    }
+  }
+  if (section.id === "flows") {
+    return {
+      ...section,
+      items: [
+        { title: "6.1 Board & Column Automation Flow", id: "flows", hash: "board-flow" },
+        { title: "6.2 Multi-View Virtualization", id: "flows", hash: "view-flow" },
+        { title: "6.3 21-Screen Inventory", id: "flows", hash: "inventory" },
+      ],
+    }
+  }
+  return section
+})
+
+export const copyaiDocsNav: NavItem[] = docsNav.map((section) => {
+  if (section.id === "screens") {
+    return {
+      title: "Screens & Archetypes",
+      id: "screens",
+      number: "07",
+      badge: "12 Screens",
+      items: [
+        { title: "C01 — Flagship Copy Studio", id: "screen-c01", hash: "c01" },
+        { title: "C02 — 90+ Template Directory", id: "screen-c02", hash: "c02" },
+        { title: "C03 — Blog Post Wizard", id: "screen-c03", hash: "c03" },
+        { title: "C04 — High-CTR Ad Copy Engine", id: "screen-c04", hash: "c04" },
+        { title: "C05 — Brand Voice Tuning", id: "screen-c05", hash: "c05" },
+        { title: "C06 — Real-Time Editor Workspace", id: "screen-c06", hash: "c06" },
+        { title: "C07 — Project Folders & Docs", id: "screen-c07", hash: "c07" },
+        { title: "C08 — Multi-Seat Team Hub", id: "screen-c08", hash: "c08" },
+        { title: "C09 — Workflow Prompt Studio", id: "screen-c09", hash: "c09" },
+        { title: "C10 — CMS Export & Publishing", id: "screen-c10", hash: "c10" },
+        { title: "C11 — Enterprise Usage Telemetry", id: "screen-c11", hash: "c11" },
+        { title: "C12 — Onboarding Walkthrough", id: "screen-c12", hash: "c12" },
+      ],
+    }
+  }
+  if (section.id === "flows") {
+    return {
+      ...section,
+      items: [
+        { title: "6.1 Prompt Scaffolding to Variation", id: "flows", hash: "scaffold-flow" },
+        { title: "6.2 Blog Wizard 4-Step Pipeline", id: "flows", hash: "blog-flow" },
+        { title: "6.3 12-Screen Inventory", id: "flows", hash: "inventory" },
+      ],
+    }
+  }
+  return section
+})
+
+export const githubDocsNav: NavItem[] = docsNav.map((section) => {
+  if (section.id === "screens") {
+    return {
+      title: "Screens & Archetypes",
+      id: "screens",
+      number: "07",
+      badge: "18 Screens",
+      items: [
+        { title: "GH01 — Repository Root & Primer UI", id: "screen-gh01", hash: "gh01" },
+        { title: "GH02 — Pull Request & CI Checks", id: "screen-gh02", hash: "gh02" },
+        { title: "GH03 — Split Diff Code Review", id: "screen-gh03", hash: "gh03" },
+        { title: "GH04 — Git Blame & History", id: "screen-gh04", hash: "gh04" },
+        { title: "GH05 — Issues & Project Board", id: "screen-gh05", hash: "gh05" },
+        { title: "GH06 — GitHub Actions CI/CD Logs", id: "screen-gh06", hash: "gh06" },
+        { title: "GH07 — Branch Protection Rules", id: "screen-gh07", hash: "gh07" },
+        { title: "GH08 — Discussions & Community", id: "screen-gh08", hash: "gh08" },
+        { title: "GH09 — Profile & 365d Heatmap", id: "screen-gh09", hash: "gh09" },
+        { title: "GH10 — Repository Traffic Stats", id: "screen-gh10", hash: "gh10" },
+        { title: "GH11 — Dependabot Security CVEs", id: "screen-gh11", hash: "gh11" },
+        { title: "GH12 — Releases & Binary Downloads", id: "screen-gh12", hash: "gh12" },
+        { title: "GH13 — Fork & Upstream Sync", id: "screen-gh13", hash: "gh13" },
+        { title: "GH14 — Command Palette ('t' Finder)", id: "screen-gh14", hash: "gh14" },
+        { title: "GH15 — GFM & Mermaid Renderer", id: "screen-gh15", hash: "gh15" },
+        { title: "GH16 — Organization Teams RBAC", id: "screen-gh16", hash: "gh16" },
+        { title: "GH17 — PR Squash & Merge Matrix", id: "screen-gh17", hash: "gh17" },
+        { title: "GH18 — Global Code Search & Grep", id: "screen-gh18", hash: "gh18" },
+      ],
+    }
+  }
+  if (section.id === "flows") {
+    return {
+      ...section,
+      items: [
+        { title: "6.1 Pull Request Code Review Flow", id: "flows", hash: "pr-flow" },
+        { title: "6.2 CI Check to Merge Decision", id: "flows", hash: "ci-merge-flow" },
+        { title: "6.3 18-Screen Inventory", id: "flows", hash: "inventory" },
+      ],
+    }
+  }
+  return section
+})
+
+export const officevibeDocsNav: NavItem[] = docsNav.map((section) => {
+  if (section.id === "screens") {
+    return {
+      title: "Screens & Archetypes",
+      id: "screens",
+      number: "07",
+      badge: "19 Screens",
+      items: [
+        { title: "OV01 — Platform Hero Dashboard", id: "screen-ov01", hash: "ov01" },
+        { title: "OV02 — 10 Metrics Pulse Radar", id: "screen-ov02", hash: "ov02" },
+        { title: "OV03 — Weekly Pulse Survey Card", id: "screen-ov03", hash: "ov03" },
+        { title: "OV04 — Anonymous Feedback Drawer", id: "screen-ov04", hash: "ov04" },
+        { title: "OV05 — eNPS Loyalty Trendline", id: "screen-ov05", hash: "ov05" },
+        { title: "OV06 — 1-on-1 Collaborative Agenda", id: "screen-ov06", hash: "ov06" },
+        { title: "OV07 — Action Items & Commitments", id: "screen-ov07", hash: "ov07" },
+        { title: "OV08 — Psychological Safety Report", id: "screen-ov08", hash: "ov08" },
+        { title: "OV09 — Manager Relationship Health", id: "screen-ov09", hash: "ov09" },
+        { title: "OV10 — Good Vibes Peer Praise Hub", id: "screen-ov10", hash: "ov10" },
+        { title: "OV11 — Wellness & Burnout Warning", id: "screen-ov11", hash: "ov11" },
+        { title: "OV12 — Personal Growth & Mastery", id: "screen-ov12", hash: "ov12" },
+        { title: "OV13 — Feedback Quality Benchmark", id: "screen-ov13", hash: "ov13" },
+        { title: "OV14 — Ambassadorship & Pride", id: "screen-ov14", hash: "ov14" },
+        { title: "OV15 — Custom Micro-Poll Builder", id: "screen-ov15", hash: "ov15" },
+        { title: "OV16 — Team Benchmark Heatmap", id: "screen-ov16", hash: "ov16" },
+        { title: "OV17 — Executive PDF Report", id: "screen-ov17", hash: "ov17" },
+        { title: "OV18 — Mobile Responsive Survey", id: "screen-ov18", hash: "ov18" },
+        { title: "OV19 — Anonymity Shield Guarantee", id: "screen-ov19", hash: "ov19" },
+      ],
+    }
+  }
+  if (section.id === "flows") {
+    return {
+      ...section,
+      items: [
+        { title: "6.1 5-Question Weekly Pulse Flow", id: "flows", hash: "pulse-flow" },
+        { title: "6.2 Anonymous Two-Way Dialogue", id: "flows", hash: "dialogue-flow" },
+        { title: "6.3 19-Screen Inventory", id: "flows", hash: "inventory" },
+      ],
+    }
+  }
+  return section
+})
+
+export function getDocsNav(productId: ProductId = "minimal"): NavItem[] {
+  switch (productId) {
+    case "linear":
+      return linearDocsNav
+    case "miro":
+      return miroDocsNav
+    case "mixpanel":
+      return mixpanelDocsNav
+    case "frame":
+      return frameDocsNav
+    case "qolaba":
+      return qolabaDocsNav
+    case "brilliant":
+      return brilliantDocsNav
+    case "monday":
+      return mondayDocsNav
+    case "copyai":
+      return copyaiDocsNav
+    case "github":
+      return githubDocsNav
+    case "officevibe":
+      return officevibeDocsNav
+    case "minimal":
+    default:
+      return minimalDocsNav
+  }
 }
+

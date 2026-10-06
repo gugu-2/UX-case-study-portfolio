@@ -112,6 +112,17 @@ interface DocsViewerProps {
 import { miroScreensData } from "@/data/miroScreensData"
 import { mixpanelScreensData } from "@/data/mixpanelScreensData"
 import { frameScreensData } from "@/data/frameScreensData"
+import { qolabaScreensData } from "@/data/qolabaScreensData"
+import { brilliantScreensData } from "@/data/brilliantScreensData"
+import { mondayScreensData } from "@/data/mondayScreensData"
+import { copyaiScreensData } from "@/data/copyaiScreensData"
+import { githubScreensData } from "@/data/githubScreensData"
+import { officevibeScreensData } from "@/data/officevibeScreensData"
+import {
+  ProductSuiteVisionView,
+  ProductSuiteResearchView,
+  ProductSuiteTokensView,
+} from "@/components/docs/products/ProductSuiteViews"
 
 export function DocsViewer({
   currentSectionId,
@@ -121,7 +132,18 @@ export function DocsViewer({
 }: DocsViewerProps) {
   const productConfig = productsConfig[currentProduct] || productsConfig.minimal
   const docsNav = getDocsNav(currentProduct)
-  const activeScreens = currentProduct === "linear" ? linearScreensData : currentProduct === "miro" ? miroScreensData : currentProduct === "mixpanel" ? mixpanelScreensData : currentProduct === "frame" ? frameScreensData : screensData
+  const activeScreens =
+    currentProduct === "linear" ? linearScreensData :
+    currentProduct === "miro" ? miroScreensData :
+    currentProduct === "mixpanel" ? mixpanelScreensData :
+    currentProduct === "frame" ? frameScreensData :
+    currentProduct === "qolaba" ? qolabaScreensData :
+    currentProduct === "brilliant" ? brilliantScreensData :
+    currentProduct === "monday" ? mondayScreensData :
+    currentProduct === "copyai" ? copyaiScreensData :
+    currentProduct === "github" ? githubScreensData :
+    currentProduct === "officevibe" ? officevibeScreensData :
+    screensData
 
   // Find current doc nav item
   const currentIndex = docsNav.findIndex(
@@ -382,6 +404,115 @@ export function DocsViewer({
                   </div>
                 </div>
               </>
+            ) : currentProduct !== "minimal" ? (
+              <>
+                <Alert
+                  className="border"
+                  style={{
+                    borderColor: `${productConfig.brandColor}40`,
+                    backgroundColor: `${productConfig.brandColor}08`,
+                  }}
+                >
+                  <Sparkles className="size-4" style={{ color: productConfig.brandColor }} />
+                  <AlertTitle className="text-sm font-bold text-foreground">
+                    {productConfig.name} — {productConfig.subtitle}
+                  </AlertTitle>
+                  <AlertDescription className="text-xs text-muted-foreground leading-relaxed mt-1">
+                    {productConfig.description}
+                  </AlertDescription>
+                </Alert>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Card className="border-border bg-card">
+                    <CardHeader className="p-4 pb-2">
+                      <CardTitle className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                        Empirical Baseline
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-4 pt-0">
+                      <div className="text-2xl font-black text-foreground">
+                        {currentProduct === "qolaba" ? "-84.3% TTFV" :
+                         currentProduct === "brilliant" ? "+6.2x Retention" :
+                         currentProduct === "monday" ? "-81% Switching" :
+                         currentProduct === "copyai" ? "10x Drafting" :
+                         currentProduct === "github" ? "-90.8% Finder" :
+                         currentProduct === "officevibe" ? "84% Weekly Rate" :
+                         "88%+ Usability"}
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {currentProduct === "qolaba" ? "3.8m first image vs 24m Discord CLI." :
+                         currentProduct === "brilliant" ? "78% 30-day concept retention vs 12.5% video." :
+                         currentProduct === "monday" ? "0.8h/day in Work OS vs 4.2h fragmented tools." :
+                         currentProduct === "copyai" ? "2.5 mins per outline vs 45 mins manual." :
+                         currentProduct === "github" ? "1.1s fuzzy file search vs 12s manual tree." :
+                         currentProduct === "officevibe" ? "Weekly check-ins vs 32% annual survey." :
+                         "High task success benchmark."}
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-border bg-card">
+                    <CardHeader className="p-4 pb-2">
+                      <CardTitle className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                        Core Archetypes
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-4 pt-0">
+                      <div className="text-2xl font-black text-foreground">{activeScreens.length} Archetypes</div>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Deep hotspot audits, interactive state models, and analytics triggers.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-border bg-card">
+                    <CardHeader className="p-4 pb-2">
+                      <CardTitle className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                        Design System
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-4 pt-0">
+                      <div className="text-2xl font-black" style={{ color: productConfig.brandColor }}>W3C DTCG Tokens</div>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        WCAG 2.2 AA verified contrast and accessibility specifications.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="rounded-xl border border-border bg-card p-6 space-y-4">
+                  <h5 className="figma-h5 text-[18px] leading-[28px] lg:text-[20px] lg:leading-[30px] font-bold text-foreground tracking-tight">
+                    How to Read This {productConfig.name} Documentation
+                  </h5>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Stakeholders and product executives can immediately review the system vision and research insights in sections 01 and 02. Product designers and engineers can traverse through sections 00 to 28 below to inspect the {activeScreens.length} annotated screen archetypes, interactive task flowcharts, design tokens, and developer QA contracts.
+                  </p>
+                  <div className="flex gap-3 pt-2 flex-wrap">
+                    <Button
+                      onClick={() => onNavigateSection("vision")}
+                      className="font-bold text-sm text-white shadow-xs"
+                      style={{ backgroundColor: productConfig.brandColor }}
+                    >
+                      Start Reading Section 01 <ArrowRight className="size-4 ml-1.5" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => onNavigateSection("screens")}
+                      className="font-bold text-sm"
+                    >
+                      Jump to {activeScreens.length} Screens Gallery
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => setDocReaderOpen(true)}
+                      className="font-bold text-sm border-border"
+                    >
+                      <BookOpen className="size-4 mr-1.5 text-primary" />
+                      Read Full Markdown Spec
+                    </Button>
+                  </div>
+                </div>
+              </>
             ) : (
               <>
                 <Alert className="border-emerald-500/30 bg-emerald-500/5">
@@ -468,12 +599,22 @@ export function DocsViewer({
 
         {/* ---------------- 01. PRODUCT & VISION ---------------- */}
         {currentSectionId === "vision" && (
-          currentProduct === "linear" ? <LinearVisionView /> : currentProduct === "miro" ? <MiroVisionView /> : currentProduct === "mixpanel" ? <MixpanelVisionView /> : currentProduct === "frame" ? <FrameVisionView /> : <ProductVisionView />
+          currentProduct === "linear" ? <LinearVisionView /> :
+          currentProduct === "miro" ? <MiroVisionView /> :
+          currentProduct === "mixpanel" ? <MixpanelVisionView /> :
+          currentProduct === "frame" ? <FrameVisionView /> :
+          ["qolaba", "brilliant", "monday", "copyai", "github", "officevibe"].includes(currentProduct) ? <ProductSuiteVisionView productId={currentProduct} /> :
+          <ProductVisionView />
         )}
 
         {/* ---------------- 02. RESEARCH & HUMAN INSIGHT ---------------- */}
         {currentSectionId === "research-doc" && (
-          currentProduct === "mixpanel" ? <MixpanelResearchView /> : currentProduct === "frame" ? <FrameResearchView /> : currentProduct === "linear" ? <LinearResearchView /> : currentProduct === "miro" ? <MiroResearchView /> : <ResearchInsightView />
+          currentProduct === "mixpanel" ? <MixpanelResearchView /> :
+          currentProduct === "frame" ? <FrameResearchView /> :
+          currentProduct === "linear" ? <LinearResearchView /> :
+          currentProduct === "miro" ? <MiroResearchView /> :
+          ["qolaba", "brilliant", "monday", "copyai", "github", "officevibe"].includes(currentProduct) ? <ProductSuiteResearchView productId={currentProduct} /> :
+          <ResearchInsightView />
         )}
 
         {/* ---------------- 02A. USER PERSONAS ---------------- */}
@@ -712,7 +853,12 @@ export function DocsViewer({
 
         {/* ---------------- 08. DESIGN SYSTEM & TOKENS ---------------- */}
         {currentSectionId === "tokens" && (
-          currentProduct === "linear" ? <LinearTokensView /> : currentProduct === "miro" ? <MiroTokensView /> : currentProduct === "mixpanel" ? <MixpanelTokensView /> : currentProduct === "frame" ? <FrameTokensView /> : <TokensShowcase />
+          currentProduct === "linear" ? <LinearTokensView /> :
+          currentProduct === "miro" ? <MiroTokensView /> :
+          currentProduct === "mixpanel" ? <MixpanelTokensView /> :
+          currentProduct === "frame" ? <FrameTokensView /> :
+          ["qolaba", "brilliant", "monday", "copyai", "github", "officevibe"].includes(currentProduct) ? <ProductSuiteTokensView productId={currentProduct} /> :
+          <TokensShowcase />
         )}
 
         {/* ---------------- 09. TESTING & ITERATION ---------------- */}

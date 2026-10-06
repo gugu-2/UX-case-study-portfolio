@@ -200,7 +200,7 @@ const defaultReferenceSkills: PolarSkill[] = [
 ]
 
 // Product-specific customized skill levels showing authentic distribution for each product
-const productSkillOverrides: Record<ProductId, Record<string, number>> = {
+const productSkillOverrides: Partial<Record<ProductId, Record<string, number>>> = {
   linear: {
     "ia": 5,
     "user-flows": 5,
@@ -303,7 +303,7 @@ const productSkillOverrides: Record<ProductId, Record<string, number>> = {
   },
 }
 
-const productSkillDetails: Record<ProductId, Record<string, { description?: string; deliverables?: string }>> = {
+const productSkillDetails: Partial<Record<ProductId, Record<string, { description?: string; deliverables?: string }>>> = {
   linear: {
     ia: {
       description: "Sub-50ms Keyboard-First IA, 14-screen workflow hierarchy, single-key action bindings ('C', 'S', 'P', 'A'), and bidirectional Git branch state synchronization.",
@@ -428,12 +428,18 @@ const productSkillDetails: Record<ProductId, Record<string, { description?: stri
   },
 }
 
-const productProductionContext: Record<ProductId, string> = {
+const productProductionContext: Partial<Record<ProductId, string>> = {
   linear: "Applied rigorously across Linear's 3-month high-velocity sprint in 2020 to establish a new gold standard in developer ergonomics.",
   mixpanel: "Engineered across Mixpanel's 4-month architecture initiative in 2021 to redefine self-serve product intelligence for the AI era.",
   frame: "Developed across Frame's 2-month rapid build cycle in 2021, launching to #1 Product of the Day on Product Hunt.",
   miro: "Refined across Miro's 1.5-month visual collaboration overhaul in late 2020 to power remote enterprise war rooms.",
   minimal: "Architected across Pritam's comprehensive 1-year master systems build (2020–2021) as the foundational backbone for enterprise SaaS.",
+  qolaba: "Engineered across Qolaba AI's 2-month focused sprint in 2023 by Pritam to establish a multimodal spatial AI creation studio.",
+  brilliant: "Architected across Brilliant.org's October 2022 interactive STEM systems sprint by Pritam, pioneering intuition-first active problem solving.",
+  monday: "Developed as monday.com's Work OS reference architecture in 2022 by Pritam, resolving enterprise silos through modular columnar boards.",
+  copyai: "Authored for Copy.ai's generative marketing content engine in 2021 by Pritam, accelerating brand drafting velocity 10x.",
+  github: "Engineered across GitHub Web's developer platform architecture in 2019-2020 by Pritam, refining pull request review ergonomics and Primer design tokens.",
+  officevibe: "Architected for Officevibe's continuous listening employee experience platform in 2021 by Pritam, replacing annual surveys with safe weekly pulse cycles.",
 }
 
 export function CompetencyMatrixView({ currentProduct = "linear" }: CompetencyMatrixViewProps) {

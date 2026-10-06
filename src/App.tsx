@@ -8,22 +8,38 @@ import { DocsViewer } from "@/components/docs/DocsViewer"
 import { CommandMenu } from "@/components/CommandMenu"
 import { ProductId, productsConfig } from "@/config/products"
 
+const getDefaultScreenForProduct = (productId: ProductId): string => {
+  switch (productId) {
+    case "linear": return "L01"
+    case "miro": return "M01"
+    case "mixpanel": return "MX01"
+    case "frame": return "FR01"
+    case "qolaba": return "Q01"
+    case "brilliant": return "B01"
+    case "monday": return "MN01"
+    case "copyai": return "C01"
+    case "github": return "GH01"
+    case "officevibe": return "OV01"
+    default: return "D01"
+  }
+}
+
 export function App() {
   // Initialize product from URL, localStorage, or default to "linear"
-    const [currentProduct, setCurrentProduct] = useState<ProductId>(() => {
-      if (typeof window !== "undefined") {
-        const params = new URLSearchParams(window.location.search)
-        const productParam = params.get("product") as ProductId | null
-        if (productParam && (productParam === "minimal" || productParam === "linear" || productParam === "miro" || productParam === "mixpanel" || productParam === "frame")) {
-          return productParam
-        }
-        const saved = localStorage.getItem("ux_docs_active_product") as ProductId | null
-        if (saved && (saved === "minimal" || saved === "linear" || saved === "miro" || saved === "mixpanel" || saved === "frame")) {
-          return saved
-        }
+  const [currentProduct, setCurrentProduct] = useState<ProductId>(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search)
+      const productParam = params.get("product") as ProductId | null
+      if (productParam && productParam in productsConfig) {
+        return productParam
       }
-      return "linear"
-    })
+      const saved = localStorage.getItem("ux_docs_active_product") as ProductId | null
+      if (saved && saved in productsConfig) {
+        return saved
+      }
+    }
+    return "linear"
+  })
 
   // Initialize view: "home" (unified portal), "dashboard", "docs", or "typography"
   const [currentView, setCurrentView] = useState<"home" | "dashboard" | "docs">(() => {
@@ -39,7 +55,7 @@ export function App() {
 
   const [activeSection, setActiveSection] = useState<string>("overview")
   const [activeScreenId, setActiveScreenId] = useState<string>(() =>
-    currentProduct === "linear" ? "L01" : currentProduct === "miro" ? "M01" : currentProduct === "mixpanel" ? "MX01" : currentProduct === "frame" ? "FR01" : "D01"
+    getDefaultScreenForProduct(currentProduct)
   )
   // By default, light theme is active
   const [isDark, setIsDark] = useState<boolean>(false)
@@ -68,7 +84,7 @@ export function App() {
     localStorage.setItem("ux_docs_active_product", newProduct)
 
     // Reset default screen id
-    const defaultScreen = newProduct === "linear" ? "L01" : newProduct === "miro" ? "M01" : newProduct === "mixpanel" ? "MX01" : newProduct === "frame" ? "FR01" : "D01"
+    const defaultScreen = getDefaultScreenForProduct(newProduct)
     setActiveScreenId(defaultScreen)
     setActiveSection("overview")
   }

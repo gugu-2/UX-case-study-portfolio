@@ -251,7 +251,7 @@ const exactReferenceDataset: ProductJourneyDataset = {
 }
 
 // 2. PRODUCT DATASETS MAPPED TO THE SAME EXACT GEOMETRY
-const productDatasets: Record<ProductId, ProductJourneyDataset> = {
+const productDatasets: Partial<Record<ProductId, ProductJourneyDataset>> = {
   linear: {
     ...exactReferenceDataset,
     nodes: [

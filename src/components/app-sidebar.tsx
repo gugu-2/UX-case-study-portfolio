@@ -16,6 +16,15 @@ import {
 import { getDocsNav, NavItem } from "@/config/docs-nav"
 import { screensData } from "@/data/screensData"
 import { linearScreensData } from "@/data/linearScreensData"
+import { miroScreensData } from "@/data/miroScreensData"
+import { mixpanelScreensData } from "@/data/mixpanelScreensData"
+import { frameScreensData } from "@/data/frameScreensData"
+import { qolabaScreensData } from "@/data/qolabaScreensData"
+import { brilliantScreensData } from "@/data/brilliantScreensData"
+import { mondayScreensData } from "@/data/mondayScreensData"
+import { copyaiScreensData } from "@/data/copyaiScreensData"
+import { githubScreensData } from "@/data/githubScreensData"
+import { officevibeScreensData } from "@/data/officevibeScreensData"
 import { ProductId, productsConfig } from "@/config/products"
 import { externalProjects } from "@/config/external-projects"
 import {
@@ -63,7 +72,18 @@ export function AppSidebar({
 }: AppSidebarProps) {
   const productConfig = productsConfig[currentProduct] || productsConfig.minimal
   const docsNav = getDocsNav(currentProduct)
-  const activeScreens = currentProduct === "linear" ? linearScreensData : screensData
+  const activeScreens =
+    currentProduct === "linear" ? linearScreensData :
+    currentProduct === "miro" ? miroScreensData :
+    currentProduct === "mixpanel" ? mixpanelScreensData :
+    currentProduct === "frame" ? frameScreensData :
+    currentProduct === "qolaba" ? qolabaScreensData :
+    currentProduct === "brilliant" ? brilliantScreensData :
+    currentProduct === "monday" ? mondayScreensData :
+    currentProduct === "copyai" ? copyaiScreensData :
+    currentProduct === "github" ? githubScreensData :
+    currentProduct === "officevibe" ? officevibeScreensData :
+    screensData
 
   // Smooth scroll handler for dashboard telemetry anchors
   const handleTelemetryClick = (id: string) => {

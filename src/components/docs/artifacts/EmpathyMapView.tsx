@@ -20,7 +20,7 @@ interface PersonaEmpathyData {
   pains: string[]
 }
 
-const empathyDataByProduct: Record<ProductId, PersonaEmpathyData[]> = {
+const empathyDataByProduct: Partial<Record<ProductId, PersonaEmpathyData[]>> = {
   linear: [
     {
       personaName: "Karri Saarinen",

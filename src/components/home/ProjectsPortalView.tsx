@@ -24,6 +24,7 @@ import {
   Briefcase,
   Award,
   Code2,
+  FileText,
 } from "lucide-react"
 
 interface ProjectsPortalViewProps {
@@ -293,16 +294,17 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       brandLogoText: "Q",
       coverImage: "/thumbnails/qolaba.png",
       badgeText: "2023 GenAI",
-      type: "external",
+      type: "studio",
+      studioProductId: "qolaba",
       externalUrl: "https://www.figma.com/design/TwXTBJhwGg3Pi3YzH1sLsp/Qolaba---AI-App--dark-theme?node-id=7-45267",
-      screensCountText: "45 Production Assets",
+      screensCountText: "14 Screen Archetypes",
       kpis: [
         { label: "TTFV Acceleration", value: "3.8m", note: "-84.3% vs Discord" },
         { label: "SUS Usability Score", value: "89.6", note: "Grade A+ (n=76 study)" },
         { label: "Cognitive Load", value: "-71.4%", note: "NASA-TLX reduction" },
       ],
       highlights: [
-        "45 Master Production Assets & Design Tokens",
+        "14 Master Screen Hotspots & Archetypes",
         "Multimodal Canvas with Real-time Denoising Preview",
         "Surgical Inpainting Brush & Generative Fill",
         "Obsidian Dark Substrate (#0B0C10) with WCAG AAA Contrast",
@@ -319,7 +321,8 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       brandLogoText: "B",
       coverImage: "/thumbnails/brilliant.png",
       badgeText: "2022 EdTech",
-      type: "external",
+      type: "studio",
+      studioProductId: "brilliant",
       externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=1146-17675",
       screensCountText: "19 Screen Archetypes",
       kpis: [
@@ -345,7 +348,8 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       brandLogoText: "M",
       coverImage: "/thumbnails/monday.png",
       badgeText: "2022 Work OS",
-      type: "external",
+      type: "studio",
+      studioProductId: "monday",
       externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=1143-87",
       screensCountText: "21 Screen Archetypes",
       kpis: [
@@ -371,16 +375,17 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       brandLogoText: "C",
       coverImage: "/thumbnails/copyai.png",
       badgeText: "2021 GenAI",
-      type: "external",
+      type: "studio",
+      studioProductId: "copyai",
       externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=1-52010",
-      screensCountText: "Generative AI Platform",
+      screensCountText: "12 Screen Archetypes",
       kpis: [
         { label: "Drafting Velocity", value: "10x", note: "Instant copy generation" },
         { label: "Workflow Adoption", value: "88%", note: "Multi-channel teams" },
         { label: "Editorial Quality", value: "Grade A", note: "Tone consistency" },
       ],
       highlights: [
-        "Enterprise Marketing Copy Generation Pipelines",
+        "12 Master Copywriting Screen Hotspots",
         "Tone-of-Voice Parameter Modifiers",
         "Multi-Channel Export & CMS Synchronization",
         "W3C Design System Foundations",
@@ -397,7 +402,8 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       brandLogoText: "GH",
       coverImage: "/thumbnails/github.png",
       badgeText: "2019-2020 Dev",
-      type: "external",
+      type: "studio",
+      studioProductId: "github",
       externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=0-1",
       screensCountText: "18 Screen Archetypes",
       kpis: [
@@ -423,7 +429,8 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       brandLogoText: "OV",
       coverImage: "/thumbnails/officevibe.png",
       badgeText: "2021 HR Tech",
-      type: "external",
+      type: "studio",
+      studioProductId: "officevibe",
       externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=1-57423",
       screensCountText: "19 Screen Archetypes",
       kpis: [
@@ -432,10 +439,10 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
         { label: "eNPS Score", value: "+38", note: "Employee advocacy" },
       ],
       highlights: [
+        "19 Master Pulse Survey & Engagement Screens",
         "10 Engagement Metric Radar Dimension Cards",
         "Encrypted Anonymous Feedback Chat Drawer",
         "Collaborative 1-on-1 Meeting Agenda Builder",
-        "Color-Blind Accessible Sentiment Visualizers",
       ],
     },
   ]
@@ -713,7 +720,13 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                   {/* Top-Right Header Actions: In-App UX Spec + External link */}
                   <div className="flex items-center gap-1.5 shrink-0">
                     <button
-                      onClick={() => handleOpenDoc(project.id)}
+                      onClick={() => {
+                        if (project.type === "studio" && project.studioProductId) {
+                          onSelectProject(project.studioProductId, "docs")
+                        } else {
+                          handleOpenDoc(project.id)
+                        }
+                      }}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-xs font-bold text-primary transition-all duration-150 active:scale-95 cursor-pointer shadow-2xs"
                       title={`Read complete UX Documentation for ${project.title}`}
                     >
@@ -737,9 +750,15 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
 
                 {/* Cover Image Thumbnail (Clickable to open UX Documentation) */}
                 <div
-                  onClick={() => handleOpenDoc(project.id)}
+                  onClick={() => {
+                    if (project.type === "studio" && project.studioProductId) {
+                      onSelectProject(project.studioProductId, "docs")
+                    } else {
+                      handleOpenDoc(project.id)
+                    }
+                  }}
                   className="relative aspect-video w-full overflow-hidden bg-muted/40 border-b border-border cursor-pointer group/thumb"
-                  title={`Click to read full UX specification for ${project.title}`}
+                  title={`Click to read UX documentation for ${project.title}`}
                 >
                   <img
                     src={project.coverImage}
@@ -753,7 +772,11 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                     <button
                       onClick={(e) => {
                         e.stopPropagation()
-                        handleOpenDoc(project.id)
+                        if (project.type === "studio" && project.studioProductId) {
+                          onSelectProject(project.studioProductId, "docs")
+                        } else {
+                          handleOpenDoc(project.id)
+                        }
                       }}
                       className="px-3 py-1.5 rounded-xl bg-black/85 hover:bg-primary backdrop-blur-md text-white font-mono text-[11px] font-bold shadow-md flex items-center gap-1.5 transition-all cursor-pointer"
                       title="Click to read full UX specification"
@@ -764,7 +787,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                   </div>
                   <div className="absolute top-3 right-3 opacity-0 group-hover/thumb:opacity-100 transition-opacity">
                     <span className="px-3 py-1 rounded-xl bg-primary text-white text-xs font-bold shadow-lg flex items-center gap-1">
-                      <BookOpen className="size-3" /> Click to Read Spec
+                      <BookOpen className="size-3" /> Click to Open Studio Docs
                     </span>
                   </div>
                 </div>
@@ -824,7 +847,7 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                   <div className="flex flex-col sm:flex-row items-center gap-3">
                     <Button
                       size="lg"
-                      onClick={() => handleOpenDoc(project.id)}
+                      onClick={() => onSelectProject(project.studioProductId!, "docs")}
                       className="w-full sm:flex-1 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold text-white cursor-pointer active:scale-[0.98] transition-all hover:brightness-105 border-transparent shadow-sm"
                       style={{ backgroundColor: project.brandColor, boxShadow: `0 8px 16px ${project.brandColor}3d` }}
                     >
@@ -835,12 +858,41 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                     <Button
                       variant="outline"
                       size="lg"
-                      onClick={() => onSelectProject(project.studioProductId!, "dashboard")}
-                      className="w-full sm:w-auto h-12 min-h-[48px] px-5 py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold border-border/80 hover:bg-muted text-foreground cursor-pointer active:scale-[0.98] transition-all"
+                      onClick={() => handleOpenDoc(project.id)}
+                      className="w-full sm:w-auto h-12 min-h-[48px] px-4 py-[11px] rounded-[8px] text-[14px] leading-[24px] font-bold border-border/80 hover:bg-muted text-foreground cursor-pointer active:scale-[0.98] transition-all"
+                      title="Read Full Markdown Architecture Specification"
                     >
-                      <LayoutDashboard className="size-4 mr-2" />
-                      Dashboard
+                      <FileText className="size-4 mr-1.5" />
+                      MD Spec
                     </Button>
+
+                    {project.externalUrl && (
+                      <a
+                        href={project.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 h-12 min-h-[48px] px-4 py-[11px] rounded-[8px] text-sm font-bold border border-border bg-card hover:bg-muted text-foreground transition-all active:scale-[0.98] shrink-0"
+                        title={project.externalUrl.includes("figma.com") ? "Open Master Figma Design File" : "Visit Live Application"}
+                      >
+                        {project.externalUrl.includes("figma.com") ? (
+                          <>
+                            <svg className="size-4 shrink-0" viewBox="0 0 38 57" fill="none">
+                              <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
+                              <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
+                              <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
+                              <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
+                              <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+                            </svg>
+                            <span>Figma File</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Live App</span>
+                            <ExternalLink className="size-3.5" />
+                          </>
+                        )}
+                      </a>
+                    )}
                   </div>
                 ) : (
                   <div className="flex flex-col sm:flex-row items-center gap-3">
