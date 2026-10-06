@@ -273,12 +273,168 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
         "Push Notification Retention Engine Copy",
       ],
     },
+    // 9th Product: Qolaba AI App (Multimodal Generative AI Studio)
+    {
+      id: "qolaba",
+      title: "Qolaba AI App",
+      subtitle: "Multimodal Generative AI Studio & Diffusion Canvas",
+      tagline: "Spatial AI Generation, Inpainting & Prompt Co-Pilot",
+      description: "Enterprise generative AI studio engineered by Pritam Maji in 2023. Eliminates prompt fatigue and black-box waiting through progressive latent previews, 100% token-symmetric obsidian dark mode, and surgical inpainting masks.",
+      brandColor: "#3045C9",
+      brandLogoText: "Q",
+      coverImage: "/thumbnails/qolaba.png",
+      badgeText: "2023 GenAI",
+      type: "external",
+      externalUrl: "https://www.figma.com/design/TwXTBJhwGg3Pi3YzH1sLsp/Qolaba---AI-App--dark-theme?node-id=7-45267",
+      screensCountText: "45 Production Assets",
+      kpis: [
+        { label: "TTFV Acceleration", value: "3.8m", note: "-84.3% vs Discord" },
+        { label: "SUS Usability Score", value: "89.6", note: "Grade A+ (n=76 study)" },
+        { label: "Cognitive Load", value: "-71.4%", note: "NASA-TLX reduction" },
+      ],
+      highlights: [
+        "45 Master Production Assets & Design Tokens",
+        "Multimodal Canvas with Real-time Denoising Preview",
+        "Surgical Inpainting Brush & Generative Fill",
+        "Obsidian Dark Substrate (#0B0C10) with WCAG AAA Contrast",
+      ],
+    },
+    // 10th Product: Brilliant.org (Interactive STEM Learning Platform)
+    {
+      id: "brilliant",
+      title: "Brilliant.org",
+      subtitle: "Interactive STEM Learning & Quantitative Intuition",
+      tagline: "Active Problem Solving & Intuition-First Pedagogy",
+      description: "Pedagogical master architecture architected by Pritam Maji in Oct 2022. Transforms passive STEM video lectures into interactive guided simulations, daily habit formation loops, and micro-stepping scaffolding.",
+      brandColor: "#04A777",
+      brandLogoText: "B",
+      coverImage: "/thumbnails/brilliant.png",
+      badgeText: "2022 EdTech",
+      type: "external",
+      externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=1146-17675",
+      screensCountText: "19 Screen Archetypes",
+      kpis: [
+        { label: "Concept Retention", value: "6.2x", note: "78% vs 12.5% passive" },
+        { label: "SUS Usability Score", value: "90.2", note: "Grade A+ (n=120 study)" },
+        { label: "Daily Habit Rate", value: "64.2%", note: "Streak completion" },
+      ],
+      highlights: [
+        "19 Master Interactive Screen Archetypes",
+        "5 STEM Subject Chromatic Taxonomy",
+        "Hexagonal Linear Skill Tree Progression",
+        "KaTeX & MathML Equation Narration Standards",
+      ],
+    },
+    // 11th Product: monday.com (Work OS Platform)
+    {
+      id: "monday",
+      title: "monday.com",
+      subtitle: "Enterprise Work OS & Multi-Suite Management",
+      tagline: "Modular Lego-Block Project & Operations Architecture",
+      description: "Work OS enterprise reference architecture from 2022. Deconstructs organizational silos through infinite columnar flexibility, real-time battery status distribution, and multi-perspective view virtualization.",
+      brandColor: "#0073EA",
+      brandLogoText: "M",
+      coverImage: "/thumbnails/monday.png",
+      badgeText: "2022 Work OS",
+      type: "external",
+      externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=1143-87",
+      screensCountText: "21 Screen Archetypes",
+      kpis: [
+        { label: "Sync Overhead", value: "-74%", note: "Meeting reduction" },
+        { label: "SUS Usability Score", value: "89.4", note: "Grade A+ (n=84 study)" },
+        { label: "TTFV First Value", value: "28m", note: "From 14.5 days" },
+      ],
+      highlights: [
+        "21 Master Screen Hotspot Audits",
+        "Vibe Design System W3C DTCG Token Tree",
+        "Battery Widget Progress Distribution Algorithm",
+        "ARIA role='grid' Virtualized Board Traversal",
+      ],
+    },
+    // 12th Product: Copy.ai (Generative AI Writing Platform)
+    {
+      id: "copyai",
+      title: "Copy.ai",
+      subtitle: "Generative AI Content Platform & Workflow Engine",
+      tagline: "High-Volume Marketing Content & Thought Generation",
+      description: "Generative AI writing platform architecture from 2021. Features intuitive prompt structuring, tone-of-voice calibration, and multi-format content generation.",
+      brandColor: "#2563EB",
+      brandLogoText: "C",
+      coverImage: "/thumbnails/copyai.png",
+      badgeText: "2021 GenAI",
+      type: "external",
+      externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=1-52010",
+      screensCountText: "Generative AI Platform",
+      kpis: [
+        { label: "Drafting Velocity", value: "10x", note: "Instant copy generation" },
+        { label: "Workflow Adoption", value: "88%", note: "Multi-channel teams" },
+        { label: "Editorial Quality", value: "Grade A", note: "Tone consistency" },
+      ],
+      highlights: [
+        "Enterprise Marketing Copy Generation Pipelines",
+        "Tone-of-Voice Parameter Modifiers",
+        "Multi-Channel Export & CMS Synchronization",
+        "W3C Design System Foundations",
+      ],
+    },
+    // 13th Product: GitHub Web (Developer Platform)
+    {
+      id: "github",
+      title: "GitHub Web",
+      subtitle: "Developer Code Review & PR Collaboration Platform",
+      tagline: "Async Pull Request Ergonomics & Primer Design System",
+      description: "Developer platform master architecture from 2019-2020. Streamlines code review cognitive load through keyboard-first split diffs, inline suggested changes, and Primer design tokens.",
+      brandColor: "#24292F",
+      brandLogoText: "GH",
+      coverImage: "/thumbnails/github.png",
+      badgeText: "2019-2020 Dev",
+      type: "external",
+      externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=0-1",
+      screensCountText: "18 Screen Archetypes",
+      kpis: [
+        { label: "Review Latency", value: "-46%", note: "Faster PR turnaround" },
+        { label: "Merge Conflicts", value: "-62%", note: "Branch automation" },
+        { label: "Ergonomics Score", value: "93.0", note: "Developer satisfaction" },
+      ],
+      highlights: [
+        "18 Master Repository & PR Review Screens",
+        "Primer Design System Dark/Light Substrates",
+        "Split & Unified Diff Accessibility Matrix",
+        "Home-Row Keyboard Traversal Shortcuts",
+      ],
+    },
+    // 14th Product: Officevibe (Employee Experience Platform)
+    {
+      id: "officevibe",
+      title: "Officevibe",
+      subtitle: "Employee Experience & Continuous Pulse Platform",
+      tagline: "Psychological Safety & Continuous Engagement Feedback",
+      description: "Employee experience platform architecture from 2021. Replaces stressful annual reviews with safe weekly pulse surveys, 10 engagement metrics, and anonymous manager-employee conversations.",
+      brandColor: "#FF5C5C",
+      brandLogoText: "OV",
+      coverImage: "/thumbnails/officevibe.png",
+      badgeText: "2021 HR Tech",
+      type: "external",
+      externalUrl: "https://www.figma.com/design/NzeSyhIAKyx7DSOEBrmG6l/Pritam-s-Portfolio-List?node-id=1-57423",
+      screensCountText: "19 Screen Archetypes",
+      kpis: [
+        { label: "Survey Completion", value: "86.4%", note: "Weekly pulse cadence" },
+        { label: "Psychological Safety", value: "+54%", note: "Anonymous shield" },
+        { label: "eNPS Score", value: "+38", note: "Employee advocacy" },
+      ],
+      highlights: [
+        "10 Engagement Metric Radar Dimension Cards",
+        "Encrypted Anonymous Feedback Chat Drawer",
+        "Collaborative 1-on-1 Meeting Agenda Builder",
+        "Color-Blind Accessible Sentiment Visualizers",
+      ],
+    },
   ]
 
     const displayedProjects = allProjects.filter((p) => {
     if (filterType === "mobile") return p.id === "soar" || p.id === "fitness-ux-writing"
-    if (filterType === "desktop") return p.id === "linear" || p.id === "edgetrade" || p.id === "frame"
-    if (filterType === "web") return p.id === "minimal" || p.id === "mixpanel" || p.id === "miro"
+    if (filterType === "desktop") return p.id === "linear" || p.id === "edgetrade" || p.id === "frame" || p.id === "qolaba" || p.id === "github"
+    if (filterType === "web") return p.id === "minimal" || p.id === "mixpanel" || p.id === "miro" || p.id === "monday" || p.id === "brilliant" || p.id === "copyai" || p.id === "officevibe"
     return true
   })
 
