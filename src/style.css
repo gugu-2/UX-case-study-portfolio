@@ -593,3 +593,183 @@ button:not(.rounded-full):not([class*="rounded-full"]),
     border: 1px solid #e2e8f0 !important;
   }
 }
+
+/* Master UX Documentation Reader Typography & Table Engine */
+.doc-rendered-markdown {
+  color: var(--foreground);
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+
+.doc-rendered-markdown h1,
+.doc-heading.doc-h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+  letter-spacing: -0.025em;
+  scroll-margin-top: 1.5rem;
+}
+
+.doc-rendered-markdown h2,
+.doc-heading.doc-h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+  letter-spacing: -0.015em;
+  scroll-margin-top: 1.5rem;
+}
+
+.doc-rendered-markdown h3,
+.doc-heading.doc-h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.65rem;
+  color: var(--foreground);
+  scroll-margin-top: 1.5rem;
+}
+
+.doc-rendered-markdown h4,
+.doc-heading.doc-h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.doc-rendered-markdown p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+  opacity: 0.92;
+}
+
+.doc-rendered-markdown strong {
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.doc-rendered-markdown ul,
+.doc-rendered-markdown ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.doc-rendered-markdown ul {
+  list-style-type: disc;
+}
+
+.doc-rendered-markdown ol {
+  list-style-type: decimal;
+}
+
+.doc-rendered-markdown li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.6;
+}
+
+.doc-rendered-markdown blockquote {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1.25rem;
+  border-left: 4px solid var(--primary);
+  background-color: var(--muted);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+}
+
+.doc-rendered-markdown code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85em;
+  background-color: var(--muted);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.doc-rendered-markdown pre {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.doc-rendered-markdown pre code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: inherit;
+  font-size: 0.825rem;
+  line-height: 1.5;
+}
+
+.doc-table-wrapper {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background-color: var(--card);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.doc-table,
+.doc-rendered-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background-color: var(--card);
+}
+
+.doc-table th,
+.doc-rendered-markdown table th {
+  padding: 0.75rem 1rem;
+  background-color: var(--muted);
+  font-weight: 700;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.doc-table td,
+.doc-rendered-markdown table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+  vertical-align: top;
+}
+
+.doc-table tr:last-child td,
+.doc-rendered-markdown table tr:last-child td {
+  border-bottom: none;
+}
+
+.doc-table tr:hover td,
+.doc-rendered-markdown table tr:hover td {
+  background-color: var(--muted);
+}
+
+.doc-rendered-markdown hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}

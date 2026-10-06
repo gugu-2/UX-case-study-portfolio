@@ -3,6 +3,7 @@ import { getDocsNav, NavItem } from "@/config/docs-nav"
 import { screensData, ScreenData } from "@/data/screensData"
 import { linearScreensData } from "@/data/linearScreensData"
 import { ProductId, productsConfig } from "@/config/products"
+import { MarkdownDocReaderModal } from "@/components/docs/MarkdownDocReaderModal"
 import { ScreenExplainer } from "@/components/screens/ScreenExplainer"
 import { ScreenGallery } from "@/components/screens/ScreenGallery"
 import { TokensShowcase } from "@/components/TokensShowcase"
@@ -98,6 +99,7 @@ import {
   ExternalLink,
   Bookmark,
   Share2,
+  BookOpen,
 } from "lucide-react"
 
 interface DocsViewerProps {
@@ -150,6 +152,7 @@ export function DocsViewer({
 
   // Active screen in screens section
   const [selectedScreenId, setSelectedScreenId] = useState<string>(activeScreenId)
+  const [docReaderOpen, setDocReaderOpen] = useState<boolean>(false)
 
   useEffect(() => {
     if (activeScreenId) {
@@ -264,9 +267,20 @@ export function DocsViewer({
                 <ExternalLink className="size-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform" />
               </a>
 
-              <Badge variant="secondary" className="text-xs font-mono px-4 py-2 min-h-[32px] rounded-full">
-                WCAG 2.2 AA Verified
-              </Badge>
+              <div className="flex items-center gap-2 flex-wrap">
+                <Button
+                  variant="outline"
+                  onClick={() => setDocReaderOpen(true)}
+                  className="h-12 min-h-[48px] px-4 font-bold text-xs border-border/80 hover:bg-muted text-foreground cursor-pointer shadow-xs"
+                >
+                  <BookOpen className="size-4 mr-2 text-primary" />
+                  Read Full Markdown Spec
+                </Button>
+
+                <Badge variant="secondary" className="text-xs font-mono px-4 py-2 min-h-[32px] rounded-full">
+                  WCAG 2.2 AA Verified
+                </Badge>
+              </div>
             </div>
           </div>
         </div>
@@ -1078,6 +1092,13 @@ export function DocsViewer({
           </div>
         </div>
       </div>
+
+      {/* Master Markdown Documentation Reader Modal */}
+      <MarkdownDocReaderModal
+        isOpen={docReaderOpen}
+        onClose={() => setDocReaderOpen(false)}
+        initialProjectId={currentProduct}
+      />
     </div>
   )
 }

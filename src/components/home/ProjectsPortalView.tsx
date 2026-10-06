@@ -3,6 +3,8 @@ import { motion } from "framer-motion"
 import { ProductId, productsConfig } from "@/config/products"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { MarkdownDocReaderModal } from "@/components/docs/MarkdownDocReaderModal"
+import { docsRegistry } from "@/config/docs-registry"
 import {
   LayoutDashboard,
   BookOpen,
@@ -56,6 +58,13 @@ interface UnifiedProjectCard {
 
 export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps) {
   const [filterType, setFilterType] = useState<"all" | "mobile" | "desktop" | "web">("all")
+  const [docModalOpen, setDocModalOpen] = useState<boolean>(false)
+  const [activeDocProjectId, setActiveDocProjectId] = useState<string>("qolaba")
+
+  const handleOpenDoc = (projectId: string) => {
+    setActiveDocProjectId(projectId)
+    setDocModalOpen(true)
+  }
 
   // Reorganized unified project list where #1 is Linear App, #2 is EdgeTrade App, and #3 is Minimals UI
   const allProjects: UnifiedProjectCard[] = [
@@ -561,13 +570,13 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-1">
           <div>
-            <h4 className="figma-h4 text-[24px] leading-[36px] lg:text-[24px] lg:leading-[36px] font-bold tracking-tight text-foreground">All 8 Product Design Systems & Documentations</h4>
+            <h4 className="figma-h4 text-[24px] leading-[36px] lg:text-[24px] lg:leading-[36px] font-bold tracking-tight text-foreground">All 14 Enterprise Product Systems & UX Documentations</h4>
             <p className="figma-body2 text-sm text-muted-foreground mt-1">
-              Reorganized by priority: Linear App (#1), EdgeTrade Terminal (#2), and Minimals UI (#3), complete with verified cover thumbnails and telemetry.
+              Explore 14 enterprise design systems and read complete, verified in-app UX architecture specifications authored by Pritam Maji.
             </p>
           </div>
 
-                    {/* Filter Dropdown */}
+          {/* Filter Dropdown */}
           <div className="self-start sm:self-auto">
             <select
               value={filterType}
@@ -576,14 +585,77 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
               style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27currentColor%27%3E%3Cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M19 9l-7 7-7-7%27%3E%3C/path%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.75rem center', backgroundSize: '1rem' }}
             >
               <option value="all">All Projects ({allProjects.length})</option>
+              <option value="web">Web Portals (7)</option>
+              <option value="desktop">Desktop & Cloud (5)</option>
               <option value="mobile">Mobile Apps (2)</option>
-              <option value="desktop">Desktop Clients (3)</option>
-              <option value="web">Web Portals (3)</option>
             </select>
           </div>
         </div>
 
-        {/* 9 Cards Responsive Grid */}
+        {/* Master UX Documentation Library Ribbon / Quick Launcher */}
+        <div className="rounded-3xl border border-primary/25 bg-gradient-to-r from-primary/10 via-card to-blue-500/10 p-5 sm:p-7 shadow-sm space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border/60">
+            <div className="flex items-center gap-3">
+              <div className="size-10 rounded-2xl bg-primary text-white flex items-center justify-center font-bold shadow-md shrink-0">
+                <BookOpen className="size-5" />
+              </div>
+              <div>
+                <h5 className="font-extrabold text-base sm:text-lg text-foreground flex items-center gap-2 flex-wrap">
+                  <span>Master UX Architecture Documentation Library</span>
+                  <Badge variant="outline" className="text-[11px] font-bold bg-primary/15 text-primary border-primary/30">
+                    100% In-App Readable
+                  </Badge>
+                </h5>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Click any system below to read the comprehensive architecture specification and design system audit directly inside this application:
+                </p>
+              </div>
+            </div>
+            <span className="text-xs font-mono text-muted-foreground bg-muted/60 px-3 py-1.5 rounded-full shrink-0">
+              7 Enterprise Suites · 2.1+ MB Total Specs
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {[
+              { id: "qolaba", title: "Qolaba AI App", badge: "296.5 KB Spec", tag: "2023 Sprint", color: "#3045C9" },
+              { id: "brilliant", title: "Brilliant.org", badge: "477.8 KB Spec", tag: "2022 EdTech", color: "#04A777" },
+              { id: "monday", title: "monday.com", badge: "446.2 KB Spec", tag: "2022 Work OS", color: "#0073EA" },
+              { id: "minimal", title: "Minimals UI", badge: "140.8 KB Spec", tag: "2021 Foundation", color: "#00A76F" },
+              { id: "github", title: "GitHub Web", badge: "180.9 KB Spec", tag: "2019-2020 Dev", color: "#24292F" },
+              { id: "officevibe", title: "Officevibe", badge: "190.8 KB Spec", tag: "2021 HR Tech", color: "#FF5C5C" },
+              { id: "copyai", title: "Copy.ai", badge: "128.8 KB Spec", tag: "2021 GenAI", color: "#2563EB" },
+              { id: "linear", title: "Linear App", badge: "Production Spec", tag: "Sub-50ms Sync", color: "#5E6AD2" },
+            ].map((doc) => (
+              <button
+                key={doc.id}
+                onClick={() => handleOpenDoc(doc.id)}
+                className="flex items-center justify-between p-3 rounded-2xl border border-border bg-card/90 hover:bg-muted transition-all hover:-translate-y-0.5 text-left cursor-pointer group shadow-2xs hover:border-primary/40"
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <span
+                    className="size-3 rounded-full shrink-0 shadow-xs"
+                    style={{ backgroundColor: doc.color }}
+                  />
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-xs font-bold text-foreground truncate group-hover:text-primary transition-colors">
+                      {doc.title}
+                    </span>
+                    <span className="text-[10px] text-muted-foreground font-mono truncate">
+                      {doc.badge} · {doc.tag}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 text-[11px] font-bold text-primary shrink-0 ml-1.5 opacity-90 group-hover:opacity-100">
+                  <span>Read</span>
+                  <ArrowRight className="size-3 group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* 14 Cards Responsive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {displayedProjects.map((project, idx) => (
             <div
@@ -598,8 +670,8 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                     backgroundColor: `${project.brandColor}08`,
                   }}
                 >
-                  <div className="flex items-center gap-3">
-                                        <div
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div
                       className="flex size-10 items-center justify-center rounded-xl font-black text-white text-sm shadow-sm shrink-0 overflow-hidden p-1.5"
                       style={{ backgroundColor: project.brandColor }}
                     >
@@ -615,14 +687,14 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                         project.brandLogoText
                       )}
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="figma-h4 text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] font-bold tracking-tight text-foreground">
+                        <h3 className="figma-h4 text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] font-bold tracking-tight text-foreground truncate">
                           {project.title}
                         </h3>
                         <Badge
                           variant="outline"
-                          className="text-[11px] font-bold rounded-full"
+                          className="text-[11px] font-bold rounded-full shrink-0"
                           style={{
                             borderColor: `${project.brandColor}40`,
                             backgroundColor: `${project.brandColor}15`,
@@ -632,31 +704,43 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                           {project.badgeText}
                         </Badge>
                       </div>
-                      <p className="text-xs text-muted-foreground font-semibold">
+                      <p className="text-xs text-muted-foreground font-semibold truncate">
                         {project.tagline}
                       </p>
                     </div>
                   </div>
 
-                  {project.type === "external" ? (
-                    <a
-                      href={project.externalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-border bg-card hover:bg-muted text-xs font-bold text-foreground transition-all duration-150 active:scale-95 group/link shrink-0 shadow-2xs"
+                  {/* Top-Right Header Actions: In-App UX Spec + External link */}
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <button
+                      onClick={() => handleOpenDoc(project.id)}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 hover:bg-primary/20 text-xs font-bold text-primary transition-all duration-150 active:scale-95 cursor-pointer shadow-2xs"
+                      title={`Read complete UX Documentation for ${project.title}`}
                     >
-                      <span>Live Site</span>
-                      <ExternalLink className="size-3 text-muted-foreground group-hover/link:text-foreground" />
-                    </a>
-                  ) : (
-                    <span className="text-[10px] font-mono text-muted-foreground px-2 py-1 rounded bg-muted/50 border border-border/40 shrink-0">
-                      In-Studio UX
-                    </span>
-                  )}
+                      <BookOpen className="size-3" />
+                      <span>Read UX Spec</span>
+                    </button>
+                    {project.externalUrl && (
+                      <a
+                        href={project.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl border border-border bg-card hover:bg-muted text-xs font-semibold text-muted-foreground hover:text-foreground transition-all duration-150 active:scale-95"
+                        title={project.externalUrl.includes("figma.com") ? "Open Master Figma File" : "Visit Live Application"}
+                      >
+                        {project.externalUrl.includes("figma.com") ? "Figma" : "Live"}
+                        <ExternalLink className="size-3" />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
-                {/* Cover Image Thumbnail (Prominent aspect-video banner) */}
-                <div className="relative aspect-video w-full overflow-hidden bg-muted/40 border-b border-border">
+                {/* Cover Image Thumbnail (Clickable to open UX Documentation) */}
+                <div
+                  onClick={() => handleOpenDoc(project.id)}
+                  className="relative aspect-video w-full overflow-hidden bg-muted/40 border-b border-border cursor-pointer group/thumb"
+                  title={`Click to read full UX specification for ${project.title}`}
+                >
                   <img
                     src={project.coverImage}
                     alt={`${project.title} Cover Thumbnail`}
@@ -666,13 +750,21 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                     }}
                   />
                   <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-xl bg-black/85 backdrop-blur-md text-white font-mono text-[11px] font-bold shadow-md flex items-center gap-1.5">
-                      {project.type === "external" ? (
-                        <Globe className="size-3 text-emerald-400" />
-                      ) : (
-                        <Layers className="size-3 text-primary" />
-                      )}
-                      <span>{project.screensCountText}</span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        handleOpenDoc(project.id)
+                      }}
+                      className="px-3 py-1.5 rounded-xl bg-black/85 hover:bg-primary backdrop-blur-md text-white font-mono text-[11px] font-bold shadow-md flex items-center gap-1.5 transition-all cursor-pointer"
+                      title="Click to read full UX specification"
+                    >
+                      <BookOpen className="size-3 text-emerald-400" />
+                      <span>{docsRegistry[project.id]?.sizeText || project.screensCountText}</span>
+                    </button>
+                  </div>
+                  <div className="absolute top-3 right-3 opacity-0 group-hover/thumb:opacity-100 transition-opacity">
+                    <span className="px-3 py-1 rounded-xl bg-primary text-white text-xs font-bold shadow-lg flex items-center gap-1">
+                      <BookOpen className="size-3" /> Click to Read Spec
                     </span>
                   </div>
                 </div>
@@ -726,46 +818,76 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                 </div>
               </div>
 
-              {/* Action Buttons: Studio Dashboard/Docs vs External Portal Link */}
+              {/* Action Buttons: Prominent In-App "Read UX Documentation" on EVERY Card */}
               <div className="p-6 pt-0">
                 {project.type === "studio" && project.studioProductId ? (
                   <div className="flex flex-col sm:flex-row items-center gap-3">
                     <Button
                       size="lg"
-                      onClick={() => onSelectProject(project.studioProductId!, "dashboard")}
-                      className="w-full sm:flex-1 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold text-white cursor-pointer active:scale-[0.98] transition-all hover:brightness-105 border-transparent"
+                      onClick={() => handleOpenDoc(project.id)}
+                      className="w-full sm:flex-1 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold text-white cursor-pointer active:scale-[0.98] transition-all hover:brightness-105 border-transparent shadow-sm"
                       style={{ backgroundColor: project.brandColor, boxShadow: `0 8px 16px ${project.brandColor}3d` }}
                     >
-                      <LayoutDashboard className="size-4 mr-2" />
-                      Open Dashboard
+                      <BookOpen className="size-4 mr-2" />
+                      Read UX Documentation
                     </Button>
 
                     <Button
                       variant="outline"
                       size="lg"
-                      onClick={() => onSelectProject(project.studioProductId!, "docs")}
-                      className="w-full sm:flex-1 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold border-border/80 hover:bg-muted text-foreground cursor-pointer active:scale-[0.98] transition-all"
+                      onClick={() => onSelectProject(project.studioProductId!, "dashboard")}
+                      className="w-full sm:w-auto h-12 min-h-[48px] px-5 py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold border-border/80 hover:bg-muted text-foreground cursor-pointer active:scale-[0.98] transition-all"
                     >
-                      <BookOpen className="size-4 mr-2" />
-                      Documentation
+                      <LayoutDashboard className="size-4 mr-2" />
+                      Dashboard
                     </Button>
                   </div>
                 ) : (
-                  <a
-                    href={project.externalUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold text-white transition-all hover:brightness-105 active:scale-[0.98]"
-                    style={{ backgroundColor: project.brandColor, boxShadow: `0 8px 16px ${project.brandColor}3d` }}
-                  >
-                    <span>Visit Live UX Documentation</span>
-                    <ExternalLink className="size-4" />
-                  </a>
+                  <div className="flex flex-col sm:flex-row items-center gap-3">
+                    <Button
+                      size="lg"
+                      onClick={() => handleOpenDoc(project.id)}
+                      className="w-full sm:flex-1 h-12 min-h-[48px] px-[22px] py-[11px] rounded-[8px] text-[15px] leading-[26px] font-bold text-white cursor-pointer active:scale-[0.98] transition-all hover:brightness-105 border-transparent shadow-md"
+                      style={{ backgroundColor: project.brandColor, boxShadow: `0 8px 16px ${project.brandColor}3d` }}
+                    >
+                      <BookOpen className="size-4 mr-2" />
+                      Read Full UX Architecture Spec
+                    </Button>
+
+                    {project.externalUrl && (
+                      <a
+                        href={project.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto flex items-center justify-center gap-2 h-12 min-h-[48px] px-4 py-[11px] rounded-[8px] text-sm font-bold border border-border bg-card hover:bg-muted text-foreground transition-all active:scale-[0.98] shrink-0"
+                        title={project.externalUrl.includes("figma.com") ? "Open Master Figma Design File" : "Visit Live Application"}
+                      >
+                        {project.externalUrl.includes("figma.com") ? (
+                          <>
+                            <svg className="size-4 shrink-0" viewBox="0 0 38 57" fill="none">
+                              <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
+                              <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
+                              <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
+                              <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
+                              <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+                            </svg>
+                            <span>Figma File</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Live App</span>
+                            <ExternalLink className="size-3.5" />
+                          </>
+                        )}
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
           ))}
         </div>
+      </div>
 
         {/* 3. About Me & Master Portfolios Section */}
         <div className="mt-16 sm:mt-24 rounded-3xl border border-border bg-gradient-to-b from-card via-card to-muted/20 p-6 sm:p-10 shadow-sm relative overflow-hidden">
@@ -1026,9 +1148,15 @@ export function ProjectsPortalView({ onSelectProject }: ProjectsPortalViewProps)
                 </a>
               </div>
             </div>
-          </div>
         </div>
       </div>
+
+      {/* Master Markdown Documentation Reader Modal */}
+      <MarkdownDocReaderModal
+        isOpen={docModalOpen}
+        onClose={() => setDocModalOpen(false)}
+        initialProjectId={activeDocProjectId}
+      />
     </motion.div>
   )
 }
